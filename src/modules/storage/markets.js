@@ -16,7 +16,7 @@ const getCurrent = ()=>{
     let markets = JSON.parse(localStorage.markets)
     return markets.current
   }else{
-    return 'LRC-WETH'
+    return 'LRC-WEXP'
   }
 
 }

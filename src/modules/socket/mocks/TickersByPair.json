@@ -24,7 +24,7 @@
     "interval": "",
     "last": 0,
     "low": 0,
-    "market": "LRC-WETH",
+    "market": "LRC-WEXP",
     "open": 0,
     "sell": "0",
     "vol": 0
@@ -39,7 +39,7 @@
     "interval": "",
     "last": 0.00054,
     "low": 0.00049004,
-    "market": "LRC-WETH",
+    "market": "LRC-WEXP",
     "open": 0,
     "sell": "",
     "vol": 0

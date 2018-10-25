@@ -38,7 +38,7 @@ class TradeForm extends React.Component {
     const _this = this
     const RadioButton = Radio.Button;
     const RadioGroup = Radio.Group;
-    const {form, dispatch, side = 'sell', pair = 'LRC-WETH',assets,prices,tickersByLoopring,tickersByPair,account,settings} = this.props
+    const {form, dispatch, side = 'sell', pair = 'LRC-WEXP',assets,prices,tickersByLoopring,tickersByPair,account,settings} = this.props
     const tickerByLoopring = tickersByLoopring.getTickerByMarket(pair)
     if(!config.isSupportedMarket(pair)) {
       Notification.open({
@@ -46,7 +46,7 @@ class TradeForm extends React.Component {
         message:intl.get('trade.not_supported_market_title'),
         description:intl.get('trade.not_supported_market_content', {market:pair})
       });
-      window.routeActions.gotoPath('/trade/LRC-WETH')
+      window.routeActions.gotoPath('/trade/LRC-WEXP')
       return null
     }
     const tokenL = pair.split('-')[0].toUpperCase()
@@ -316,7 +316,7 @@ class TradeForm extends React.Component {
         }
         const frozenLrcInOrderResult = await getEstimatedAllocatedAllowance(window.WALLET.getAddress(), "LRC")
         frozenLrc = frozenLrc.add(fm.toBig(frozenLrcInOrderResult.result).div(1e18))
-        if(tokenL === 'LRC' && side === 'sell') {// sell lrc-weth
+        if(tokenL === 'LRC' && side === 'sell') {// sell LRC-WEXP
           frozenLrc = frozenLrc.add(fm.toBig(tradeInfo.amount))
         }
         if(tokenR === 'LRC' && side === 'buy'){// buy eos-lrc
