@@ -218,7 +218,7 @@ class TradeForm extends React.Component {
             return
           }
           tradeInfo.milliLrcFee = sliderMilliLrcFee
-          tradeInfo.lrcFee = 830000000000000000
+          tradeInfo.lrcFee = 1
           toConfirm(tradeInfo, _this.props.txs)
         }
       });
