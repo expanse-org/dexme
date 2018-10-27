@@ -41,7 +41,7 @@ export default {
   `,
   tradetips_title:"交易提示（Beta3期间）",
   tradetips_description:`
-    1. 交易地址上必须持有1000+LRC（仅限于公测期间）
+    1. 交易地址上必须持有1000+PEX（仅限于公测期间）
     <br />
     2. 每个订单的成交额不能低于500元（仅限于公测期间）
   `,
@@ -55,7 +55,7 @@ export default {
         <br />
         订单成交后：需要支付订单金额，由智能合约在订单成交以后从用户地址里自动扣除对。
         <br />
-        订单成交后：可能需要支付交易撮合费（LRC）给矿工, 由智能合约在订单成交以后从用户地址里自动扣除LRC。
+        订单成交后：可能需要支付交易撮合费（PEX）给矿工, 由智能合约在订单成交以后从用户地址里自动扣除PEX。
         <br />
         订单成交后：可能不需要支付交易撮合费，同时还能获得部分交易撮合奖励（交易分润）
         <br />
@@ -73,18 +73,18 @@ export default {
         <br />
         无提现手续费：路印协议无需提现，无需支付提现的手续费
         <br />
-        可能有交易额外收益：部分情况下，交易双方可能获得撮合奖励(LRC)
+        可能有交易额外收益：部分情况下，交易双方可能获得撮合奖励(PEX)
         <br />
-        可能有矿工撮合费：订单成交需要向矿工支付交易撮合费（LRC）
+        可能有矿工撮合费：订单成交需要向矿工支付交易撮合费（PEX）
         `,
     },
     {
         category:'费用',
         title:'为什么我的订单成交价比我的卖价更高？或者比我的买价更低？',
         content:`
-            B用户想要以 $1 价格出售LRC
+            B用户想要以 $1 价格出售PEX
             <br />
-            A用户想要以 $1.2 价格购买LRC
+            A用户想要以 $1.2 价格购买PEX
             <br />
             成交价格可能是: $1.16 （根据矿工和交易双方的交易高级设置动态计算出来）
             <br />
@@ -101,7 +101,7 @@ export default {
     },
     {
         category:'费用',
-        title:'怎么更合理的设置交易撮合费(LRC)？',
+        title:'怎么更合理的设置交易撮合费(PEX)？',
         content:`
             即将发布
         `,
@@ -112,7 +112,7 @@ export default {
         content:`
             可能原因1：您的订单没有与之价格匹配或者接近的买单/卖单
             <br />
-            可能原因2：您的订单的 LRC 交易撮合费 过小：矿工的撮合收益（LRC撮合费为主）小于 撮合成本（以太交易的油费）, 导致矿工不撮合您的订单。
+            可能原因2：您的订单的 PEX 交易撮合费 过小：矿工的撮合收益（PEX撮合费为主）小于 撮合成本（以太交易的油费）, 导致矿工不撮合您的订单。
             <br />
             可能原因3：您的订单已经被撮合了，并且已经被提交到以太网络，但是以太网络非常拥堵，导致交易无法确认（几分钟到几十分钟不等，甚至更长时间）
         `,
@@ -136,11 +136,11 @@ export default {
         content:`
             矿工优先选择撮合收益最大的订单进行撮合交易。
             <br />
-            矿工撮合收益 = 交易撮合费（LRC Fee） +  交易分润（订单价差）
+            矿工撮合收益 = 交易撮合费（PEX Fee） +  交易分润（订单价差）
             <br />
-            当出现匹配的订单时，矿工会优先选择 LRC Fee 更高的订单进行撮合（价格相同或者接近情况下）。
+            当出现匹配的订单时，矿工会优先选择 PEX Fee 更高的订单进行撮合（价格相同或者接近情况下）。
             <br />
-            所以：适当提高 撮合费（LRC Fee）会帮助您更快的抢到订单。
+            所以：适当提高 撮合费（PEX Fee）会帮助您更快的抢到订单。
         `,
     },
     {
@@ -256,7 +256,7 @@ export default {
     convert: "转换",
     buying: "您正在购买",
     selling: "您正在出售",
-    lrcfee: "订单交易费",
+    pexfee: "订单交易费",
     margin: "分润比例",
     since: "订单生效时间",
     till: "订单失效时间",
@@ -286,7 +286,7 @@ export default {
     <div class="p5">
         <div class="fs14 lh25"> 订单深度提示 </div>
         <div class="fs12"> 1、该深度可能正在撮合中：矿工需要一些时间提交以太坊交易  </div>
-        <div class="fs12"> 2、该深度可能已不被撮合：矿工获得的撮合收益（LRC Fee）小于撮合成本（以太交易油费）  </div>
+        <div class="fs12"> 2、该深度可能已不被撮合：矿工获得的撮合收益（PEX Fee）小于撮合成本（以太交易油费）  </div>
     </div>
     `
   },
@@ -341,8 +341,8 @@ export default {
     type_convert_title_weth: 'WETH 转换为 ETH',
     type_receive: '收款',
     type_others: '其他',
-    type_lrc_fee: 'LRC撮合费',
-    type_lrc_reward: 'LRC撮合奖励',
+    type_pex_fee: 'PEX撮合费',
+    type_pex_reward: 'PEX撮合奖励',
     type_sell: '卖出',
     type_buy: '买入',
     buy: "购买",
@@ -399,8 +399,8 @@ export default {
     amount: '数量',
     price: '价格',
     total: '金额',
-    LrcFee: 'LRC撮合费',
-    LrcReward:"LRC撮合奖励",
+    PexFee: 'PEX撮合费',
+    PexReward:"PEX撮合奖励",
     filled: '成交率',
     options: "动作",
     balance_not_enough: "{token} 余额不足!",
@@ -441,7 +441,7 @@ export default {
     contract: "合约版本",
     ttl: "有效期",
     ttl_tip: "请输入合法的整数",
-    lrcfee: "LRC 手续费",
+    pexfee: "PEX 手续费",
     margin: "分润比例",
     gasPrice: "Gas价格",
     slow: "慢",
@@ -483,12 +483,12 @@ export default {
     day: "天",
     week: "周",
     month: "月",
-    lrc_fee: "撮合费",
+    pex_fee: "撮合费",
     margin_split: "分润比例",
     place_order: "提交订单",
     unlock_your_wallet: "解锁你的钱包",
     to_trade: "去交易",
-    lrcFee_increased: "通过您的设定，您当前订单需要支付的LRC Fee 是 {userSet}LRC, 我们自动增加至下单允许最小的值: {increased}LRC, 您是否继续下单?",
+    pexFee_increased: "通过您的设定，您当前订单需要支付的PEX Fee 是 {userSet}PEX, 我们自动增加至下单允许最小的值: {increased}PEX, 您是否继续下单?",
     notice: "请注意",
     placing_order: '订单提交结果',
     place_order_failed: "订单提交失败 !",
@@ -504,8 +504,8 @@ export default {
     time_to_live_input_place_holder: '订单有效时间是多久？',
     ring: "环路",
     tips_time_to_live: "您希望提交的订单有效时间是多久？</br>设置较长的有效时间，可以给矿工足够时间寻找可匹配订单，提高撮合成功率。</br>如果设置的有效时间很短，您的订单有可能无法完成撮合。</br>推荐您将有效时间设置为大于1小时。",
-    tips_lrc_fee: "LRC Fee是订单撮合成功后您愿意支付矿工的gas，费用按订单金额的千分比计算。</br>矿工撮合订单需要花费gas，所以只有当您设置的撮合费用合理时，矿工才会愿意帮您撮合订单。</br>我们不推荐您修改这个值，除非您已经充分理解它的含义。",
-    tips_margin_split: "当您没有足够的LRC支付撮合手续费时，可以设置分润比例来支付手续费。</br>分润和LRC手续费只能取其一，所以不用担心会支付两次手续费。</br>我们不推荐您修改这个值，除非您已经充分理解它的含义。",
+    tips_pex_fee: "PEX Fee是订单撮合成功后您愿意支付矿工的gas，费用按订单金额的千分比计算。</br>矿工撮合订单需要花费gas，所以只有当您设置的撮合费用合理时，矿工才会愿意帮您撮合订单。</br>我们不推荐您修改这个值，除非您已经充分理解它的含义。",
+    tips_margin_split: "当您没有足够的PEX支付撮合手续费时，可以设置分润比例来支付手续费。</br>分润和PEX手续费只能取其一，所以不用担心会支付两次手续费。</br>我们不推荐您修改这个值，除非您已经充分理解它的含义。",
     confirm_warn_ledger: "请在您的Ledger设备上确认签名信息, 之后再回来提交订单",
     confirm_warn_trezor: "请在您的Trezor设备上确认签名信息, 之后再回来提交订单",
     confirm_warn_metamask: "您的MetaMask浏览器插件上会提示您签名, 请确认后再回来提交订单",
@@ -514,20 +514,20 @@ export default {
     place_order_watch_only_tips: '您当前使用地址解锁钱包，无法签名交易, 您可以切换其他方式解锁钱包后下单',
     custom_time_to_live: '设置本次有效的过期时间',
     custom_option_fee: '设置本次有效的值',
-    custom_lrc_fee_title: '设置本次生效的LRC撮合费',
+    custom_pex_fee_title: '设置本次生效的PEX撮合费',
     custom_time_to_live_title: '设置本次生效的有效时间',
     send_failed: '下单失败 !',
     failed_fetch_data: '从服务器获取数据失败, 请稍后在尝试',
     eth_is_required: '由于需要支付ETH油费, 根据您当前订单需要发送的以太坊交易计算，还需要 {required} ETH',
-    lrcfee_is_required: '由于需要支付LRC油费, 汇总您历史订单所需LRC，还需要 {required} LRC',
+    pexfee_is_required: '由于需要支付PEX油费, 汇总您历史订单所需PEX，还需要 {required} PEX',
     not_supported_token_to_trade_title: '我们暂时未支持{token}交易',
     not_supported_token_to_trade_content: '敬请期待我们开放更多市场',
     not_supported_market_title: "不支持的市场",
     not_supported_market_content: "我们暂未支持市场 {market}",
     not_allowed_place_order_worth_title: '订单金额过小',
     not_allowed_place_order_worth_content: '由于您当前订单总价值小于{worth}, 无法下单',
-    current_lrc_fee_ratio: '当前LRC Fee比率',
-    current_lrc_fee: '当前LRC Fee',
+    current_pex_fee_ratio: '当前PEX Fee比率',
+    current_pex_fee: '当前PEX Fee',
     order_ttl_expire_in: '设置持续时间',
     order_ttl_from_to: '设置起止时间',
     not_supported_market:'暂未开放交易'
@@ -830,7 +830,7 @@ export default {
     ring_hash: "环路哈希",
     ring_index:"环路",
     miner: "矿工",
-    total_lrc_fee: "总共的LRC费用",
+    total_pex_fee: "总共的PEX费用",
     total_split_fee: "总分的分润费用",
     time: '时间',
     trade_amount: "环路中订单个数",
@@ -850,7 +850,7 @@ export default {
     name_tip:"请输入您的姓名",
     email_tip:" 不合法的邮箱",
     email_phone_tip:'请提供姓名以及电话或者邮箱',
-    open_tip:'暂时只对拥护LRC超过的用户{amount}开放',
+    open_tip:'暂时只对拥护PEX超过的用户{amount}开放',
     no_trezor:'暂时不支持TREZOR',
     alert_title:'2018年数字经济高峰论坛门票领取活动已经开放',
     alert_action:'快去领取门票吧!',

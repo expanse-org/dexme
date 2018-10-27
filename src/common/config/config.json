@@ -1,7 +1,7 @@
 {
   "defaultPricePrecision": 8,
   "defaultVolumePrecision": 8,
-  "defaultLrcFeePermillage": 2,
+  "defaultPexFeePermillage": 2,
   "defaultGasPrice": 10,
   "defaultMarginSplitPercentage": 50,
   "defaultGasLimit": "0x30d40",
@@ -10,7 +10,7 @@
   "delegateAddress": "0x97b3a09cc403ba0fe9a054a8d50afeb9d3c5004a",
   "chainId":2,
   "bindContractAddress": "0xbf78B6E180ba2d1404c92Fc546cbc9233f616C42",
-  "minimumLrcfeeInEth":0.00045,
+  "minimumPexfeeInEth":0.00045,
   "localStorageVersion":201806040000,
   "walletAddress":"0xaF6CF28cB921027b2A134c52Cf5BF072c0E769D7",
   "contracts": [

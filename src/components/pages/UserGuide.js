@@ -41,10 +41,10 @@ const SettingPage = (props) => {
                 <div className="fs12 color-black-3">默认看到 ETH 资产信息</div>
               } />
               <Steps.Step status="process" title={"进入：资产页"} description={
-                  <div className="fs12 color-black-3">例如：选择左侧资产列表的LRC，看到LRC资产信息</div>
+                  <div className="fs12 color-black-3">例如：选择左侧资产列表的PEX，看到PEX资产信息</div>
               }/>
               <Steps.Step status="process" title={"进入：交易页"} description={
-                  <div className="fs12 color-black-3">例如：点击LRC资产页右上角的 买卖LRC 按钮</div>
+                  <div className="fs12 color-black-3">例如：点击PEX资产页右上角的 买卖PEX 按钮</div>
               }/>
               <Steps.Step status="process" title={"返回：钱包页"} description={
                   <div className="fs12 color-black-3">点击左上角安按钮，返回钱包页</div>

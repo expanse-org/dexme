@@ -66,7 +66,7 @@ class TradeFormTab extends React.Component {
 
 export default function Home(props){
   const { children, match } = props
-  let pair = match.params.pair || window.STORAGE.markets.getCurrent() || 'LRC-WEXP'
+  let pair = match.params.pair || window.STORAGE.markets.getCurrent() || 'PEX-WEXP'
   if(pair.indexOf('-') < 0){ }
   // TODO if market is not support or goto some route
 

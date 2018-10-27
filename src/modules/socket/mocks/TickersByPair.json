@@ -9,7 +9,7 @@
     "interval": "",
     "last": 0.000535,
     "low": 0.00048514,
-    "market": "LRC-ETH",
+    "market": "PEX-ETH",
     "open": 0.00055331,
     "sell": "",
     "vol": 2557.16906704
@@ -24,7 +24,7 @@
     "interval": "",
     "last": 0,
     "low": 0,
-    "market": "LRC-WEXP",
+    "market": "PEX-WEXP",
     "open": 0,
     "sell": "0",
     "vol": 0
@@ -39,7 +39,7 @@
     "interval": "",
     "last": 0.00054,
     "low": 0.00049004,
-    "market": "LRC-WEXP",
+    "market": "PEX-WEXP",
     "open": 0,
     "sell": "",
     "vol": 0

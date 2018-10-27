@@ -1,7 +1,7 @@
 {
   "defaultPricePrecision": 8,
   "defaultVolumePrecision": 8,
-  "defaultLrcFeePermillage": 2,
+  "defaultPexFeePermillage": 2,
   "defaultGasPrice": 21,
   "defaultMarginSplitPercentage": 50,
   "defaultGasLimit": "0x15f90",
@@ -10,7 +10,7 @@
   "delegateAddress": "0xa0af16edd397d9e826295df9e564b10d57e3c457",
   "chainId": 7107171,
   "bindContractAddress": "0x87ab705372cb463c967d396ee2cb2b25da0efb7e",
-  "minimumLrcfeeInEth":0.00045,
+  "minimumPexfeeInEth":0.00045,
   "demoAccount":"0x750ad4351bb728cec7d639a9511f9d6488f1e259",
   "localStorageVersion":201805181828,
   "walletAddress":"0xa44282db26ec80c6cfdd748ec09f386a64d645bd",
@@ -93,11 +93,11 @@
       "minTradeValue": 0.001
     },
     {
-      "symbol": "LRC",
+      "symbol": "PEX",
       "name": "Loopring",
       "digits": 18,
       "address": "0xe1C541BA900cbf212Bc830a5aaF88aB499931751",
-      "unit": "LRC",
+      "unit": "PEX",
       "website": "https://loopring.org",
       "allowance": "1000000000000000000000",
       "allowanceWarn": "50000000000000000000",
@@ -218,7 +218,7 @@
   "supportedTokenRInMarkets":["WETH", "BAR"],
   "markets": [
     {
-      "tokenx": "LRC",
+      "tokenx": "PEX",
       "tokeny": "WETH",
       "pricePrecision": 8
     },

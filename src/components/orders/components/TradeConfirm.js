@@ -28,7 +28,7 @@ class TradeConfirm extends React.Component {
   componentDidMount() {
     const {modals, tradingConfig} = this.props;
     const modal = modals['trade/confirm'] || {};
-    let {side, pair, amount, total, validSince,validUntil, marginSplit, lrcFee} = modal;
+    let {side, pair, amount, total, validSince,validUntil, marginSplit, pexFee} = modal;
     const token = pair.split('-')[0];
     const token2 = pair.split('-')[1];
     marginSplit = marginSplit === undefined ? tradingConfig.marginSplit : marginSplit;
@@ -44,7 +44,7 @@ class TradeConfirm extends React.Component {
     order.tokenS = tokenS.address;
     order.amountB = toHex(toBig(side.toLowerCase() === "buy" ? amount : total).times('1e' + tokenB.digits));
     order.amountS = toHex(toBig(side.toLowerCase() === "sell" ? amount : total).times('1e' + tokenS.digits));
-    order.lrcFee = toHex(toBig(lrcFee).times(1e18));
+    order.pexFee = toHex(toBig(pexFee).times(1e18));
     order.validSince = toHex(validSince);
     order.validUntil = toHex(validUntil);
     order.marginSplitPercentage = Number(marginSplit);
@@ -239,7 +239,7 @@ class TradeConfirm extends React.Component {
   render() {
     const {modals, tradingConfig} = this.props;
     const modal = modals['trade/confirm'] || {};
-    let {side, amount, pair, total, marginSplit, price, lrcFee} = modal;
+    let {side, amount, pair, total, marginSplit, price, pexFee} = modal;
     let {order, signedOrder, since, till,loading} = this.state;
     marginSplit = marginSplit === undefined ? tradingConfig.marginSplit : marginSplit;
     const token = pair.split('-')[0];
@@ -266,7 +266,7 @@ class TradeConfirm extends React.Component {
         <div className="fs14 color-grey-500 mt5">{window.uiFormatter.getFormatNum(price)}
           x {intl.get('global.amount', {amount})} = {total} {token2} </div>
       </div>
-      <MetaItem label={intl.get('trade.lrc_fee')} value={`${window.uiFormatter.getFormatNum(lrcFee)} LRC`}/>
+      <MetaItem label={intl.get('trade.pex_fee')} value={`${window.uiFormatter.getFormatNum(pexFee)} PEX`}/>
       <MetaItem label={intl.get('order.margin')} value={`${marginSplit} %`}/>
       <MetaItem label={intl.get('order.since')} value={since}/>
       <MetaItem label={intl.get('order.till')} value={till}/>

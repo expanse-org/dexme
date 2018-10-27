@@ -11,7 +11,7 @@ export function solSHA3(types, data) {
 function generateCancelOrderData(signedOrder, amount) {
   const {
     owner, tokenS, tokenB, walletAddress,authAddr,
-    amountS, amountB, validSince, validUntil, lrcFee,
+    amountS, amountB, validSince, validUntil, pexFee,
     buyNoMoreThanAmountB,
     marginSplitPercentage,
     v,
@@ -20,7 +20,7 @@ function generateCancelOrderData(signedOrder, amount) {
   } = signedOrder;
   const addresses = [owner, tokenS, tokenB,walletAddress, authAddr];
   amount = amount || (buyNoMoreThanAmountB ? amountB : amountS);
-  const orderValues = [amountS, amountB, validSince, validUntil, lrcFee, amount];
+  const orderValues = [amountS, amountB, validSince, validUntil, pexFee, amount];
   const method = methodID('cancelOrder', ['address[5]', 'uint[6]', 'bool', 'uint8', 'uint8', 'bytes32', 'bytes32']).toString('hex');
   const data = rawEncode(['address[5]', 'uint[6]', 'bool', 'uint8', 'uint8', 'bytes32', 'bytes32'], [
     addresses, orderValues, buyNoMoreThanAmountB, marginSplitPercentage, v, r, s]).toString('hex');

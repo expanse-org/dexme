@@ -19,7 +19,7 @@ export default class TxGas extends React.Component {
           <span className="bg-grey-50 color-black-3 fs10 border-grey-100 border d-inline-block" style={{padding: '2px 10px',borderRadius:'50em'}}>
             {intl.get('global.gas').toLowerCase()}
           </span>
-          {(item.type === 'sell' || item.type === 'buy' || item.type === 'lrc_fee' || item.type === 'lrc_reward') &&
+          {(item.type === 'sell' || item.type === 'buy' || item.type === 'pex_fee' || item.type === 'pex_reward') &&
           <Tooltip title={intl.get('txs.miner_pay')}>
                       <span className={`fs10 bg-${change==='-' ? 'red':'green'}-500 color-white d-inline-block`} style={{padding: '2px 10px',borderRadius:'50em',marginLeft:'-2px'}}>
                         {intl.get('ring.miner')}

@@ -6,7 +6,7 @@ import {accAdd, accSub, accMul, accDiv} from '../../../common/Loopring/common/ma
 import {configs} from '../../../common/config/data'
 import config from '../../../common/config'
 import Currency from '../../../modules/settings/CurrencyContainer'
-import {getEstimatedAllocatedAllowance, getFrozenLrcFee} from '../../../common/Loopring/relay/utils'
+import {getEstimatedAllocatedAllowance, getFrozenPexFee} from '../../../common/Loopring/relay/utils'
 import intl from 'react-intl-universal';
 import Notification from 'Loopr/Notification'
 import moment from 'moment'
@@ -19,7 +19,7 @@ class TradeForm extends React.Component {
     availableAmount: 0,
     timeToLivePatternSelect: 'easy',
     timeToLivePopularSetting: true,
-    sliderMilliLrcFee:0,
+    sliderMilliPexFee:0,
     timeToLive:0,
     timeToLiveUnit:'',
     timeToLiveStart: null,
@@ -38,7 +38,7 @@ class TradeForm extends React.Component {
     const _this = this
     const RadioButton = Radio.Button;
     const RadioGroup = Radio.Group;
-    const {form, dispatch, side = 'sell', pair = 'LRC-WEXP',assets,prices,tickersByLoopring,tickersByPair,account,settings} = this.props
+    const {form, dispatch, side = 'sell', pair = 'PEX-WEXP',assets,prices,tickersByLoopring,tickersByPair,account,settings} = this.props
     const tickerByLoopring = tickersByLoopring.getTickerByMarket(pair)
     if(!config.isSupportedMarket(pair)) {
       Notification.open({
@@ -46,7 +46,7 @@ class TradeForm extends React.Component {
         message:intl.get('trade.not_supported_market_title'),
         description:intl.get('trade.not_supported_market_content', {market:pair})
       });
-      window.routeActions.gotoPath('/trade/LRC-WEXP')
+      window.routeActions.gotoPath('/trade/PEX-WEXP')
       return null
     }
     const tokenL = pair.split('-')[0].toUpperCase()
@@ -55,8 +55,8 @@ class TradeForm extends React.Component {
     const tokenLBalance = tokenDivDigist(tokenLBalanceOriginal)
     const tokenRBalanceOriginal = {...config.getTokenBySymbol(tokenR), ...assets.getTokenBySymbol(tokenR)}
     const tokenRBalance = tokenDivDigist(tokenRBalanceOriginal)
-    const LrcBalanceOriginal = {...config.getTokenBySymbol('LRC'), ...assets.getTokenBySymbol('LRC')}
-    const lrcBalance = tokenDivDigist(LrcBalanceOriginal)
+    const PexBalanceOriginal = {...config.getTokenBySymbol('PEX'), ...assets.getTokenBySymbol('PEX')}
+    const pexBalance = tokenDivDigist(PexBalanceOriginal)
     const marketConfig = window.CONFIG.getMarketBySymbol(tokenL, tokenR)
     const tokenRPrice = prices.getTokenBySymbol(tokenR)
     const integerReg = new RegExp("^[0-9]*$")
@@ -80,10 +80,10 @@ class TradeForm extends React.Component {
     } else {
       availableAmount = Math.floor(availableAmount)
     }
-    let sliderMilliLrcFee = this.state.sliderMilliLrcFee || settings.trading.lrcFee || configs.defaultLrcFeePermillage
+    let sliderMilliPexFee = this.state.sliderMilliPexFee || settings.trading.pexFee || configs.defaultPexFeePermillage
     const total = accMul(this.state.priceInput > 0 ? this.state.priceInput : displayPrice, this.state.amountInput)
-    let calculatedLrcFee = 0
-    calculateLrcFee(total, sliderMilliLrcFee)
+    let calculatedPexFee = 0
+    calculatePexFee(total, sliderMilliPexFee)
     let ttlInSecond = 0, ttlShow = ''
     if(this.state.timeToLivePatternSelect === 'easy') {
       const ttl = this.state.timeToLive ? Number(this.state.timeToLive) : Number(settings.trading.timeToLive)
@@ -102,7 +102,7 @@ class TradeForm extends React.Component {
     }
 
     const isWatchOnly = window.WALLET_UNLOCK_TYPE === 'Address'
-    const lrcPrice = prices.getTokenBySymbol('LRC')
+    const pexPrice = prices.getTokenBySymbol('PEX')
 
     const showModal = (payload)=>{
       dispatch({
@@ -157,7 +157,7 @@ class TradeForm extends React.Component {
         needUnlockCheck()
         return;
       }
-      // if(!lrcBalance || lrcBalance.balance.lessThan(900)){
+      // if(!pexBalance || pexBalance.balance.lessThan(900)){
       //   if(window.CONFIG.getChainId() !== 7107171 && !await window.CONFIG.isinWhiteList(window.WALLET.getAddress())){
       //     Notification.open({
       //       type:'warning',
@@ -217,8 +217,8 @@ class TradeForm extends React.Component {
             _this.setState({loading:false})
             return
           }
-          tradeInfo.milliLrcFee = sliderMilliLrcFee
-          tradeInfo.lrcFee = 1
+          tradeInfo.milliPexFee = sliderMilliPexFee
+          tradeInfo.pexFee = 1
           toConfirm(tradeInfo, _this.props.txs)
         }
       });
@@ -250,7 +250,7 @@ class TradeForm extends React.Component {
       const approveGasLimit = config.getGasLimitByType('approve').gasLimit
       const frozenAmountLResult = await getEstimatedAllocatedAllowance(window.WALLET.getAddress(), tokenL)
       const frozenAmountRResult = await getEstimatedAllocatedAllowance(window.WALLET.getAddress(), tokenR)
-      const lrcBalance = tokenDivDigist({...config.getTokenBySymbol('LRC'), ...assets.getTokenBySymbol('LRC')})
+      const pexBalance = tokenDivDigist({...config.getTokenBySymbol('PEX'), ...assets.getTokenBySymbol('PEX')})
       let tokenBalanceS = null, tokenBalanceB = null
       let frozenAmountS = null
       if(side === 'buy') {//buy eos-weth
@@ -264,7 +264,7 @@ class TradeForm extends React.Component {
       }
       let approveCount = 0
       const warn = new Array()
-      if(tokenBalanceB.symbol === 'LRC') { //buy lrc, only verify eth balance could cover gas cost if approve is needed
+      if(tokenBalanceB.symbol === 'PEX') { //buy pex, only verify eth balance could cover gas cost if approve is needed
         if(tokenBalanceS.balance.lessThan(frozenAmountS)) {
           warn.push({type:"BalanceNotEnough", value:{symbol:tokenBalanceS.symbol, balance:cutDecimal(tokenBalanceS.balance.toNumber(),6), required:ceilDecimal(frozenAmountS.sub(tokenBalanceS.balance).toNumber(),6)}})
         }
@@ -294,37 +294,37 @@ class TradeForm extends React.Component {
           return
         }
       } else {
-        //lrc balance not enough, lrcNeed = frozenLrc + lrcFee
-        const frozenLrcFee = await getFrozenLrcFee(window.WALLET.getAddress())
-        let frozenLrc = fm.toBig(frozenLrcFee.result).div(1e18).add(fm.toBig(tradeInfo.lrcFee))
+        //pex balance not enough, pexNeed = frozenPex + pexFee
+        const frozenPexFee = await getFrozenPexFee(window.WALLET.getAddress())
+        let frozenPex = fm.toBig(frozenPexFee.result).div(1e18).add(fm.toBig(tradeInfo.pexFee))
         let failed = false
-        if(lrcBalance.balance.lessThan(frozenLrc)){
+        if(pexBalance.balance.lessThan(frozenPex)){
           // const errors = new Array()
-          // errors.push({type:"BalanceNotEnough", value:{symbol:'LRC', balance:cutDecimal(lrcBalance.balance.toNumber(), 6), required:ceilDecimal(frozenLrc.sub(lrcBalance.balance).toNumber(),6)}})
+          // errors.push({type:"BalanceNotEnough", value:{symbol:'PEX', balance:cutDecimal(pexBalance.balance.toNumber(), 6), required:ceilDecimal(frozenPex.sub(pexBalance.balance).toNumber(),6)}})
           // gotoError(errors)
           Notification.open({
             message: intl.get('trade.send_failed'),
-            description: intl.get('trade.lrcfee_is_required', {required:ceilDecimal(frozenLrc.sub(lrcBalance.balance).toNumber(),6)}),
+            description: intl.get('trade.pexfee_is_required', {required:ceilDecimal(frozenPex.sub(pexBalance.balance).toNumber(),6)}),
             type:'error',
             actions:(
               <div>
-                <Button className="alert-btn mr5" onClick={showModal.bind(this,{id:'token/receive',symbol:'LRC'})}>{`${intl.get('tokens.options_receive')} LRC`}</Button>
+                <Button className="alert-btn mr5" onClick={showModal.bind(this,{id:'token/receive',symbol:'PEX'})}>{`${intl.get('tokens.options_receive')} PEX`}</Button>
               </div>
             )
           })
           failed = true
         }
-        const frozenLrcInOrderResult = await getEstimatedAllocatedAllowance(window.WALLET.getAddress(), "LRC")
-        frozenLrc = frozenLrc.add(fm.toBig(frozenLrcInOrderResult.result).div(1e18))
-        if(tokenL === 'LRC' && side === 'sell') {// sell LRC-WEXP
-          frozenLrc = frozenLrc.add(fm.toBig(tradeInfo.amount))
+        const frozenPexInOrderResult = await getEstimatedAllocatedAllowance(window.WALLET.getAddress(), "PEX")
+        frozenPex = frozenPex.add(fm.toBig(frozenPexInOrderResult.result).div(1e18))
+        if(tokenL === 'PEX' && side === 'sell') {// sell PEX-WEXP
+          frozenPex = frozenPex.add(fm.toBig(tradeInfo.amount))
         }
-        if(tokenR === 'LRC' && side === 'buy'){// buy eos-lrc
-          frozenLrc = frozenLrc.add(fm.toBig(tradeInfo.total))
+        if(tokenR === 'PEX' && side === 'buy'){// buy eos-pex
+          frozenPex = frozenPex.add(fm.toBig(tradeInfo.total))
         }
         // verify tokenL/tokenR balance and allowance cause gas cost
-        if(tokenBalanceS.symbol === 'LRC') {
-          frozenAmountS = frozenLrc
+        if(tokenBalanceS.symbol === 'PEX') {
+          frozenAmountS = frozenPex
         }
         if(tokenBalanceS.balance.lessThan(frozenAmountS)) {
           warn.push({type:"BalanceNotEnough", value:{symbol:tokenBalanceS.symbol, balance:cutDecimal(tokenBalanceS.balance.toNumber(),6), required:ceilDecimal(frozenAmountS.sub(tokenBalanceS.balance).toNumber(),6)}})
@@ -335,12 +335,12 @@ class TradeForm extends React.Component {
           approveCount += 1
           if(pendingAllowance.greaterThan(0)) approveCount += 1
         }
-        // lrcFee allowance
-        const pendingLRCAllowance = fm.toBig(txs.isApproving('LRC') ? txs.isApproving('LRC').div(1e18):lrcBalance.allowance);
-        if(frozenLrc.greaterThan(pendingLRCAllowance) && tokenBalanceS.symbol !== 'LRC') {
-          warn.push({type:"AllowanceNotEnough", value:{symbol:"LRC", allowance:cutDecimal(pendingLRCAllowance.toNumber(),6), required:ceilDecimal(frozenLrc.sub(lrcBalance.allowance).toNumber(),6)}})
+        // pexFee allowance
+        const pendingPEXAllowance = fm.toBig(txs.isApproving('PEX') ? txs.isApproving('PEX').div(1e18):pexBalance.allowance);
+        if(frozenPex.greaterThan(pendingPEXAllowance) && tokenBalanceS.symbol !== 'PEX') {
+          warn.push({type:"AllowanceNotEnough", value:{symbol:"PEX", allowance:cutDecimal(pendingPEXAllowance.toNumber(),6), required:ceilDecimal(frozenPex.sub(pexBalance.allowance).toNumber(),6)}})
           approveCount += 1
-          if(pendingLRCAllowance.greaterThan(0)) approveCount += 1
+          if(pendingPEXAllowance.greaterThan(0)) approveCount += 1
         }
         const gas = fm.toBig(settings.trading.gasPrice).times(approveGasLimit).div(1e9).times(approveCount)
         if(ethBalance.lessThan(gas)){
@@ -374,20 +374,20 @@ class TradeForm extends React.Component {
       return accMul(amount, price)
     }
 
-    function calculateLrcFeeInEth(totalWorth, milliLrcFee) {
+    function calculatePexFeeInEth(totalWorth, milliPexFee) {
       const price = prices.getTokenBySymbol("eth").price
-      return accDiv(accDiv(accMul(totalWorth, milliLrcFee), 1000), price)
+      return accDiv(accDiv(accMul(totalWorth, milliPexFee), 1000), price)
     }
 
-    function calculateLrcFeeInLrc(totalWorth) {
-      const price = prices.getTokenBySymbol("lrc").price
+    function calculatePexFeeInPex(totalWorth) {
+      const price = prices.getTokenBySymbol("pex").price
       return accDiv(Math.floor(accMul(accDiv(totalWorth, price), 100)), 100)
     }
 
-    function calculateLrcFeeByEth(ethAmount) {
+    function calculatePexFeeByEth(ethAmount) {
       const ethPrice = prices.getTokenBySymbol("eth").price
-      const lrcPrice = prices.getTokenBySymbol("lrc").price
-      const price = accDiv(lrcPrice, ethPrice)
+      const pexPrice = prices.getTokenBySymbol("pex").price
+      const price = accDiv(pexPrice, ethPrice)
       return accDiv(Math.floor(accMul(accDiv(ethAmount, price), 100)), 100)
     }
 
@@ -419,7 +419,7 @@ class TradeForm extends React.Component {
       return Number(value) > 0
     }
 
-    function validateLrcFee(value) {
+    function validatePexFee(value) {
       if (value) {
         const v = Number(value)
         return v > 0 && v <= 50
@@ -445,21 +445,21 @@ class TradeForm extends React.Component {
       }
     }
 
-    function calculateLrcFee(total, milliLrcFee) {
+    function calculatePexFee(total, milliPexFee) {
       const totalWorth = calculateWorthInLegalCurrency(tokenR, total)
       if(totalWorth <= 0) {
-        calculatedLrcFee = 0
+        calculatedPexFee = 0
         return
       }
-      if (!milliLrcFee) {
-        milliLrcFee = Number(configs.defaultLrcFeePermillage)
+      if (!milliPexFee) {
+        milliPexFee = Number(configs.defaultPexFeePermillage)
       }
-      let userSetLrcFeeInEth = calculateLrcFeeInEth(totalWorth, milliLrcFee)
-      const minimumLrcfeeInEth = configs.minimumLrcfeeInEth
-      if(userSetLrcFeeInEth >= minimumLrcfeeInEth){
-        calculatedLrcFee = calculateLrcFeeByEth(userSetLrcFeeInEth)
+      let userSetPexFeeInEth = calculatePexFeeInEth(totalWorth, milliPexFee)
+      const minimumPexfeeInEth = configs.minimumPexfeeInEth
+      if(userSetPexFeeInEth >= minimumPexfeeInEth){
+        calculatedPexFee = calculatePexFeeByEth(userSetPexFeeInEth)
       } else {
-        calculatedLrcFee = calculateLrcFeeByEth(minimumLrcfeeInEth)
+        calculatedPexFee = calculatePexFeeByEth(minimumPexfeeInEth)
       }
     }
 
@@ -510,8 +510,8 @@ class TradeForm extends React.Component {
       form.setFieldsValue({"amountSlider":ratio})
       const total = accMul(price, amount)
       this.setState({total: total})
-      //LRC Fee
-      calculateLrcFee(total, sliderMilliLrcFee)
+      //PEX Fee
+      calculatePexFee(total, sliderMilliPexFee)
     }
 
     function timeToLiveChange(e) {
@@ -536,14 +536,14 @@ class TradeForm extends React.Component {
       }
     }
 
-    function lrcFeeChange(v) {
-      const milliLrcFee = v
-      _this.setState({sliderMilliLrcFee : milliLrcFee})
+    function pexFeeChange(v) {
+      const milliPexFee = v
+      _this.setState({sliderMilliPexFee : milliPexFee})
       const amount = Number(form.getFieldValue("amount"))
       const price = Number(form.getFieldValue("price"))
       if(amount && price) {
         const total = accMul(price, amount)
-        calculateLrcFee(total, milliLrcFee)
+        calculatePexFee(total, milliPexFee)
       }
     }
 
@@ -686,19 +686,19 @@ class TradeForm extends React.Component {
         {this.state.total >0 ? accMul(this.state.total, tokenRPrice.price).toFixed(2) : 0}
       </span>
     )
-    const lrcFeeWorth = (
+    const pexFeeWorth = (
       <span className="">
         <Currency />
-        {calculatedLrcFee > 0 ? accMul(calculatedLrcFee, lrcPrice.price).toFixed(2) : 0}
+        {calculatedPexFee > 0 ? accMul(calculatedPexFee, pexPrice.price).toFixed(2) : 0}
       </span>
     )
-    const editLRCFee = (
-      <Popover overlayClassName="place-order-form-popover" title={<div className="pt5 pb5">{intl.get('trade.custom_lrc_fee_title')}</div>} content={
+    const editPEXFee = (
+      <Popover overlayClassName="place-order-form-popover" title={<div className="pt5 pb5">{intl.get('trade.custom_pex_fee_title')}</div>} content={
         <div>
-          <div className="pb5 fs12">{intl.get('trade.current_lrc_fee_ratio')} : {fm.toNumber(sliderMilliLrcFee)/10}％</div>
-          <div className="pb15 fs12">{intl.get('trade.current_lrc_fee')} : {calculatedLrcFee} LRC</div>
-          {form.getFieldDecorator('lrcFeeSlider', {
-            initialValue: configs.defaultLrcFeePermillage,
+          <div className="pb5 fs12">{intl.get('trade.current_pex_fee_ratio')} : {fm.toNumber(sliderMilliPexFee)/10}％</div>
+          <div className="pb15 fs12">{intl.get('trade.current_pex_fee')} : {calculatedPexFee} PEX</div>
+          {form.getFieldDecorator('pexFeeSlider', {
+            initialValue: configs.defaultPexFeePermillage,
             rules: []
             })(
               <Slider min={1} max={50} step={1}
@@ -706,7 +706,7 @@ class TradeForm extends React.Component {
                     1: intl.get('token.slow'),
                     50: intl.get('token.fast')
                   }}
-                  onChange={lrcFeeChange.bind(this)}
+                  onChange={pexFeeChange.bind(this)}
               />
           )}
         </div>
@@ -908,14 +908,14 @@ class TradeForm extends React.Component {
             <div className="row align-items-center ml0 mr0 pl10 pr10 lh40 zb-b-t">
 
               <div className="col-auto fs12 color-black-1">
-                <Tooltip title={intl.getHTML('trade.tips_lrc_fee')}>
-                {intl.get('trade.lrc_fee')}
+                <Tooltip title={intl.getHTML('trade.tips_pex_fee')}>
+                {intl.get('trade.pex_fee')}
                 &nbsp;:&nbsp;&nbsp;
-                <span className={`font-weight-bold fs12 color-black-1`}>{calculatedLrcFee} LRC ≈ {lrcFeeWorth}</span>
+                <span className={`font-weight-bold fs12 color-black-1`}>{calculatedPexFee} PEX ≈ {pexFeeWorth}</span>
                 </Tooltip>
               </div>
               <div className="col"></div>
-              <div className="col-auto pl0 pr0">{editLRCFee}</div>
+              <div className="col-auto pl0 pr0">{editPEXFee}</div>
             </div>
 
 

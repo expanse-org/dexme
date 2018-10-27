@@ -69,13 +69,13 @@ const schema = [
     },
   },
   {
-    title: () => intl.get('orders.LrcFee'),
-    name: 'lrcFee',
+    title: () => intl.get('orders.PexFee'),
+    name: 'pexFee',
     formatter: (item) => {
-      let token = window.CONFIG.getTokenBySymbol('LRC');
+      let token = window.CONFIG.getTokenBySymbol('PEX');
       token = token || {digits: 18, precision: 6};
-      const total = (toNumber(item.originalOrder.lrcFee) / Number('1e' + token.digits)).toFixed(token.precision);
-      return window.uiFormatter.getFormatNum(toNumber(total))  + ' LRC'
+      const total = (toNumber(item.originalOrder.pexFee) / Number('1e' + token.digits)).toFixed(token.precision);
+      return window.uiFormatter.getFormatNum(toNumber(total))  + ' PEX'
     }
   },
   {

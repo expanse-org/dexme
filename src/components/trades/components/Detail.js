@@ -81,8 +81,8 @@ class DetailBlock extends React.Component {
                         render={renders.blockNumber}/>
               <MetaItem label={intl.get('ring.fee_recipient')} value={ring && ring.ringInfo.feeRecipient}
                         render={renders.address}/>
-              <MetaItem label={intl.get('ring.total_lrc_fee')}
-                        value={ring && (window.uiFormatter.getFormatNum((toNumber(ring.ringInfo.totalLrcFee) / 1e18).toFixed(6)) + ' LRC')}/>
+              <MetaItem label={intl.get('ring.total_pex_fee')}
+                        value={ring && (window.uiFormatter.getFormatNum((toNumber(ring.ringInfo.totalPexFee) / 1e18).toFixed(6)) + ' PEX')}/>
               <MetaItem label={intl.get('ring.total_split_fee')}
                         value={ring && this.getSplitFee(ring.ringInfo.totalSplitFee)}/>
               <MetaItem label={intl.get('ring.time')}

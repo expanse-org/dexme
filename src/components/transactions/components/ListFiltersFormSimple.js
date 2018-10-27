@@ -35,9 +35,9 @@ let FiltersForm = ({
     {label:intl.get(`txs.type_enable`),value:'approve'},
   ]
   let convertTypes = [{label:intl.get(`txs.type_convert`),value:'convert'}]
-  let lrcTypes = [
-     {label:intl.get(`txs.type_lrc_fee`),value:'lrc_fee'},
-     {label:intl.get(`txs.type_lrc_reward`),value:'lrc_reward'},
+  let pexTypes = [
+     {label:intl.get(`txs.type_pex_fee`),value:'pex_fee'},
+     {label:intl.get(`txs.type_pex_reward`),value:'pex_reward'},
   ]
   let othersTypes = [
      // {label:intl.get(`txs.type_others`),value:'others'},
@@ -45,8 +45,8 @@ let FiltersForm = ({
   if(token.toUpperCase() === 'WETH' || token.toUpperCase() === 'ETH'){
     types = [...types,...convertTypes]
   }
-  if(token.toUpperCase() === 'LRC'){
-    types = [...types,...lrcTypes]
+  if(token.toUpperCase() === 'PEX'){
+    types = [...types,...pexTypes]
   }
   types = [...types,...othersTypes]
 

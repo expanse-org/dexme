@@ -4,7 +4,7 @@ import QRCode from 'qrcode.react';
 import copy from 'copy-to-clipboard';
 import intl from 'react-intl-universal';
 import Notification from 'Loopr/Notification'
-import {getEstimatedAllocatedAllowance, getFrozenLrcFee} from 'Loopring/relay/utils'
+import {getEstimatedAllocatedAllowance, getFrozenPexFee} from 'Loopring/relay/utils'
 import {toBig,toNumber} from "Loopring/common/formatter";
 
 const Search = Input.Search;
@@ -24,12 +24,12 @@ export default class Receive extends React.Component {
       getEstimatedAllocatedAllowance(owner, symbol.toUpperCase()).then(res => {
         if (!res.error) {
           const orderAmount = res.result;
-          if (symbol.toUpperCase() === "LRC") {
-            getFrozenLrcFee(owner).then(response => {
+          if (symbol.toUpperCase() === "PEX") {
+            getFrozenPexFee(owner).then(response => {
               let amount;
               if (!response.error) {
-                const lrcFee = response.result;
-                 amount = toBig(orderAmount).plus(toBig(lrcFee));
+                const pexFee = response.result;
+                 amount = toBig(orderAmount).plus(toBig(pexFee));
               } else {
                  amount = toBig(orderAmount);
               }

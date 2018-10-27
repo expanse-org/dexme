@@ -45,7 +45,7 @@ export async function getEstimatedAllocatedAllowance(owner, token) {
 
 }
 
-export async function getFrozenLrcFee(owner) {
+export async function getFrozenPexFee(owner) {
   try {
     validator.validate({value: owner, type: "ADDRESS"})
   } catch (e) {
@@ -53,7 +53,7 @@ export async function getFrozenLrcFee(owner) {
   }
   const params = [{owner}];
   const body = {};
-  body.method = 'loopring_getFrozenLRCFee';
+  body.method = 'loopring_getFrozenPEXFee';
   body.params = params;
   return request({
     method: 'post',

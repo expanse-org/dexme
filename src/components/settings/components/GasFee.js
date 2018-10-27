@@ -9,7 +9,7 @@ const GasFeeForm = ({
   const {trading} = settings
   const integerReg = new RegExp("^0*[1-9]{1}[0-9]*$")
   function handleChange(type, e) {
-    if ('timeToLive' === type || 'lrcFee' === type || 'marginSplit' === type) {
+    if ('timeToLive' === type || 'pexFee' === type || 'marginSplit' === type) {
       handleChangeValue(type, e.target.value)
     } else {
       handleChangeValue(type, e)
@@ -34,13 +34,13 @@ const GasFeeForm = ({
         settings.tradingChange({[type]:v})
       }
     } else {
-      if (('lrcFee' === type && validateLrcFee(v))
+      if (('pexFee' === type && validatePexFee(v))
         || ('marginSplit' === type && validateMarginSplit(v))){
         settings.tradingChange({[type]:v})
       }
     }
   }
-  function validateLrcFee(value) {
+  function validatePexFee(value) {
     let v = Number(value);
     return value && v.toString() === value && v >=0 && v <=50
   }
@@ -65,11 +65,11 @@ const GasFeeForm = ({
   function handleReset() {
     const latestContract = configs.contracts[configs.contracts.length-1]
     form.setFieldsValue({contractVersion:latestContract.version, timeToLive:configs.defaultExpireTime, timeToLiveUnit:configs.defaultExpireTimeUnit,
-      lrcFee:configs.defaultLrcFeePermillage, marginSplit:configs.defaultMarginSplitPercentage, gasPrice:configs.defaultGasPrice})
+      pexFee:configs.defaultPexFeePermillage, marginSplit:configs.defaultMarginSplitPercentage, gasPrice:configs.defaultGasPrice})
     handleChangeValue('contractVersion', latestContract.version)
     handleChangeValue('timeToLive', configs.defaultExpireTime)
     handleChangeValue('timeToLiveUnit', configs.defaultExpireTimeUnit)
-    handleChangeValue('lrcFee', configs.defaultLrcFeePermillage)
+    handleChangeValue('pexFee', configs.defaultPexFeePermillage)
     handleChangeValue('marginSplit', configs.defaultMarginSplitPercentage)
     handleChangeValue('gasPrice', configs.defaultGasPrice)
   }

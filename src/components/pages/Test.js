@@ -26,12 +26,12 @@ function Test(props){
     Notification.open({
       duration:0,
       message:"Order can not be fully filled !",
-      description:'You need 3.2 LRC for order.',
+      description:'You need 3.2 PEX for order.',
       type:'warning',
       actions:(
         <div>
-          <Button className="alert-btn mr5">Buy LRC</Button>
-          <Button className="alert-btn mr5">Receive LRC</Button>
+          <Button className="alert-btn mr5">Buy PEX</Button>
+          <Button className="alert-btn mr5">Receive PEX</Button>
         </div>
       )
 
@@ -56,12 +56,12 @@ function Test(props){
     Notification.open({
       duration:0,
       message:"Place order failed !",
-      description:'You need 0.45+ LRC for order fee.',
+      description:'You need 0.45+ PEX for order fee.',
       type:'error',
       actions:(
         <div>
-          <Button className="alert-btn mr5">Buy LRC</Button>
-          <Button className="alert-btn mr5">Receive LRC</Button>
+          <Button className="alert-btn mr5">Buy PEX</Button>
+          <Button className="alert-btn mr5">Receive PEX</Button>
         </div>
       )
 

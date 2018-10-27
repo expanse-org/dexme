@@ -4,7 +4,7 @@ import {Badge, Button, Icon, Popover, Spin, Tooltip} from 'antd';
 import ListFiltersFormSimple from './ListFiltersFormSimple'
 import intl from 'react-intl-universal'
 import CoinIcon from '../../common/CoinIcon'
-import {getEstimatedAllocatedAllowance, getFrozenLrcFee, getPendingRawTxByHash} from "Loopring/relay/utils";
+import {getEstimatedAllocatedAllowance, getFrozenPexFee, getPendingRawTxByHash} from "Loopring/relay/utils";
 import {toBig} from "Loopring/common/formatter";
 import config from '../../../common/config'
 import Notification from 'Loopr/Notification'
@@ -43,11 +43,11 @@ class ListBlock extends React.Component {
     getEstimatedAllocatedAllowance(window.WALLET.getAddress(), currentToken).then(res => {
       if (!res.error) {
         const orderAmount = toBig(res.result);
-        if (currentToken === 'LRC') {
-          getFrozenLrcFee(window.WALLET.getAddress()).then(res => {
+        if (currentToken === 'PEX') {
+          getFrozenPexFee(window.WALLET.getAddress()).then(res => {
             if (!res.error) {
-              const lrcFee = toBig(res.result);
-              this.setState({needed: orderAmount.plus(lrcFee), token: currentToken});
+              const pexFee = toBig(res.result);
+              this.setState({needed: orderAmount.plus(pexFee), token: currentToken});
             } else {
               this.setState({needed: orderAmount, token: currentToken});
             }
@@ -205,15 +205,15 @@ class ListBlock extends React.Component {
           icon = <i className="icon icon-loopring icon-loopring-trade fs30"/>
           title = intl.get('txs.type_buy_title', {symbol: item.symbol})
           break;
-        case 'lrc_fee':
+        case 'pex_fee':
           change = '-';
           icon = <i className="icon icon-loopring icon-loopring-transfer fs30"/>
-          title = intl.get('orders.LrcFee', {symbol: item.symbol})
+          title = intl.get('orders.PexFee', {symbol: item.symbol})
           break;
-        case 'lrc_reward':
+        case 'pex_reward':
           change = '+';
           icon = <i className="icon icon-loopring icon-loopring-receive fs30"/>
-          title = intl.get('orders.LrcReward', {symbol: item.symbol})
+          title = intl.get('orders.PexReward', {symbol: item.symbol})
           break;
         case 'convert_income':
           change = '+';

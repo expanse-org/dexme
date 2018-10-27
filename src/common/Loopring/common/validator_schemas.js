@@ -73,7 +73,7 @@ let basicSchemas = {
   LOOPRING_TOKEN:{
     type:'enum',
     required:true,
-    enum:['LRC','LRN','LRQ']
+    enum:['PEX','LRN','LRQ']
   },
   PRIVATE_KEY_BUFFER: {
     validator: (rule, value, cb) => {

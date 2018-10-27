@@ -63,7 +63,7 @@ let FiltersForm = ({
                 onBlur={()=>{}}
                 filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
               >
-                <Select.Option value="jack">LRC</Select.Option>
+                <Select.Option value="jack">PEX</Select.Option>
                 <Select.Option value="lucy">USDT</Select.Option>
                 <Select.Option value="tom">BNB</Select.Option>
               </Select>

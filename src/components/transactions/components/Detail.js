@@ -5,7 +5,7 @@ import intl from 'react-intl-universal'
 import {getTransactionByhash} from 'Loopring/ethereum/utils'
 import {
   getEstimatedAllocatedAllowance,
-  getFrozenLrcFee,
+  getFrozenPexFee,
   getPendingRawTxByHash,
   notifyTransactionSubmitted
 } from "Loopring/relay/utils";
@@ -85,10 +85,10 @@ class DetailBlock extends React.Component {
           return intl.get('txs.type_sell_title', {symbol: item.symbol});
         case 'buy':
           return intl.get('txs.type_buy_title', {symbol: item.symbol});
-        case 'lrc_fee':
-          return  intl.get('orders.LrcFee');
-        case 'lrc_reward':
-          return intl.get('orders.LrcReward');
+        case 'pex_fee':
+          return  intl.get('orders.PexFee');
+        case 'pex_reward':
+          return intl.get('orders.PexReward');
         case 'convert_outcome':
           return item.symbol === 'ETH' ? intl.get('txs.type_convert_title_eth') : intl.get('txs.type_convert_title_weth');
         case 'convert_income':
@@ -182,8 +182,8 @@ class DetailBlock extends React.Component {
             fill && <TabPane  tab={<div style={{marginLeft:'0px'}} className="fs16 text-center mb5">{intl.get('orders.fill_detail')}</div>} key="fill">
               <MetaItem label={intl.get('txs.fill_buy')} value={fill && ` + ${getValues(fill.symbol_b,fill.amount_b)} ${fill.symbol_b}` }/>
               <MetaItem label={intl.get('txs.fill_sell')} value={fill && `- ${getValues(fill.symbol_s,fill.amount_s)} ${fill.symbol_s}` }/>
-              {toNumber(fill.lrc_fee) >0 && <MetaItem label={intl.get('orders.LrcFee')} value={fill && `- ${getValues('lrc',fill.lrc_fee)} LRC` }/>}
-              {toNumber(fill.lrc_reward) >0 && <MetaItem label={intl.get('orders.LrcReward')} value={fill && `+ ${getValues('lrc',fill.lrc_reward)} LRC` }/>}
+              {toNumber(fill.pex_fee) >0 && <MetaItem label={intl.get('orders.PexFee')} value={fill && `- ${getValues('pex',fill.pex_fee)} PEX` }/>}
+              {toNumber(fill.pex_reward) >0 && <MetaItem label={intl.get('orders.PexReward')} value={fill && `+ ${getValues('pex',fill.pex_reward)} PEX` }/>}
               {toNumber(fill.split_s) >0 && <MetaItem label={intl.get('txs.margin_split')} value={fill && `- ${getValues(fill.symbol_s,fill.split_s)} ${fill.symbol_s}` } />}
               {toNumber(fill.split_b)>0 && <MetaItem label={intl.get('txs.margin_split')} value={fill && `- ${getValues(fill.symbol_b,fill.split_b)} ${fill.symbol_b}` } />}
             </TabPane>

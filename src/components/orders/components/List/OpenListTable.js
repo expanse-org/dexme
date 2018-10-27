@@ -96,7 +96,7 @@ export default class OpenListTable extends React.Component {
   };
 
   orderFilter = (order, token) => {
-    return token.toLowerCase() === 'lrc' ? true : order.originalOrder.tokenS.toLowerCase() === token.toLowerCase()
+    return token.toLowerCase() === 'pex' ? true : order.originalOrder.tokenS.toLowerCase() === token.toLowerCase()
   };
 
   componentDidMount() {

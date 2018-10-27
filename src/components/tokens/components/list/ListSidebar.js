@@ -472,12 +472,12 @@ class ListSidebar extends React.Component {
     let results = [...items, ...customs]
     results = results.filter(token => token.symbol !== 'WETH_OLD')
 
-    // eth weth lrc
+    // eth weth pex
     const ethToken = results.find(token => token.symbol === 'ETH')
     const wethToken = results.find(token => token.symbol === 'WETH')
-    const lrcToken = results.find(token => token.symbol === 'LRC')
+    const pexToken = results.find(token => token.symbol === 'PEX')
     // other tokens
-    let otherTokens = results.filter(token => (token.symbol !== 'ETH' && token.symbol !== 'WETH' && token.symbol !== 'LRC'))
+    let otherTokens = results.filter(token => (token.symbol !== 'ETH' && token.symbol !== 'WETH' && token.symbol !== 'PEX'))
     otherTokens = otherTokens.map((token, index) => {
       let balance = fm.toBig(token.balance).div('1e' + token.digits).toNumber()
       token.sortByBalance = balance
@@ -495,8 +495,8 @@ class ListSidebar extends React.Component {
     otherTokens.sort(sorter);
 
     let sortedTokens = new Array()
-    if (lrcToken) {
-      sortedTokens.push(lrcToken)
+    if (pexToken) {
+      sortedTokens.push(pexToken)
     }
     if (ethToken) {
       sortedTokens.push(ethToken)

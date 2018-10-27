@@ -167,7 +167,7 @@ function Navbar(props) {
           return;
         }
       }
-      const asset = assets.getTokenBySymbol('LRC');
+      const asset = assets.getTokenBySymbol('PEX');
       const balance = toBig(asset.balance).div(1e18);
       if (balance.gte(5000)) {
         showModal({id: 'wallet/claimTicket'})

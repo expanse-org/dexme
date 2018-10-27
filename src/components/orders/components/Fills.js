@@ -80,13 +80,13 @@ export default class Fills extends React.Component {
         const amount = item.side === 'buy' ? fmS.getAmount(item.amountS) : fmS.getAmount(item.amountB);
         return <span> {uiFormatter.getFormatNum(amount)} {item.side === 'buy' ? item.tokenS : item.tokenB} </span>
       },
-      lrcFee: (value, item, index) => {
-        const fmLrc = new fm({symbol: 'LRC'});
-        return <span> {uiFormatter.getFormatNum(fmLrc.getAmount(item.lrcFee))} {'LRC'} </span>
+      pexFee: (value, item, index) => {
+        const fmPex = new fm({symbol: 'PEX'});
+        return <span> {uiFormatter.getFormatNum(fmPex.getAmount(item.pexFee))} {'PEX'} </span>
       },
-      lrcReward:(value, item, index) => {
-        const fmLrc = new fm({symbol: 'LRC'});
-        return <span> {uiFormatter.getFormatNum(fmLrc.getAmount(item.lrcReward))} {'LRC'} </span>
+      pexReward:(value, item, index) => {
+        const fmPex = new fm({symbol: 'PEX'});
+        return <span> {uiFormatter.getFormatNum(fmPex.getAmount(item.pexReward))} {'PEX'} </span>
       },
       time: (value, item, index) => {
         return uiFormatter.getFormatTime(toNumber(item.createTime) * 1e3)

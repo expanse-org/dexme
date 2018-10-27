@@ -214,7 +214,7 @@ export function getOrderHash(order) {
     toBN(order.amountB),
     toBN(order.validSince),
     toBN(order.validUntil),
-    toBN(order.lrcFee),
+    toBN(order.pexFee),
     order.buyNoMoreThanAmountB,
     order.marginSplitPercentage
   ];

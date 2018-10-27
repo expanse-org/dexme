@@ -18,7 +18,7 @@ class TransactionsSocketContainer extends React.Component {
     const owner = window.WALLET && window.WALLET.getAddress()
     const query = {
       owner,
-      symbol:'LRC',
+      symbol:'PEX',
       pageIndex:'1',
       pageSize:'20',
     }

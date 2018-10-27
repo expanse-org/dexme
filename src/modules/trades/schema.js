@@ -31,14 +31,14 @@ const schema = [
     name: 'total',
   },
   {
-    title: () => intl.get('orders.LrcFee'),
-    description: 'The total lrc fee.',
-    name: 'lrcFee',
+    title: () => intl.get('orders.PexFee'),
+    description: 'The total pex fee.',
+    name: 'pexFee',
   },
   {
-    title: () => intl.get('orders.LrcReward'),
-    description: 'The total lrc Reward.',
-    name: 'lrcReward',
+    title: () => intl.get('orders.PexReward'),
+    description: 'The total pex Reward.',
+    name: 'pexReward',
   },
   {
     title: () => intl.get('orders.time'),

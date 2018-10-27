@@ -183,7 +183,7 @@ class Airdrop extends React.Component {
                   }
                   {this.findBindAddress(project) && !project.valid &&
                   <div className='fs3 color-black-1 color-error-1 list-inline-item'>
-                    {intl.get('wallet.invalid_bind_add', {token: project.lrc})}
+                    {intl.get('wallet.invalid_bind_add', {token: project.pex})}
                   </div>
                   }
                 </div>

@@ -38,7 +38,7 @@ let schemas = {
     amountB: {
       ...basicSchemas.ETH_DATA
     },
-    lrcFee: {
+    pexFee: {
       ...basicSchemas.ETH_DATA
     },
     walletAddress: {
@@ -90,7 +90,7 @@ let schemas = {
     amountB: {
       ...basicSchemas.ETH_DATA
     },
-    lrcFee: {
+    pexFee: {
       ...basicSchemas.ETH_DATA
     },
     walletAddress: {

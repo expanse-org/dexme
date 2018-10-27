@@ -12,9 +12,9 @@ function DetailBlock({modal = {}}) {
   const tokenB = item.originalOrder.tokenB;
   const amountB = item.originalOrder.amountB;
   const amountS = item.originalOrder.amountS;
-  const amountLrc = item.originalOrder.lrcFee;
+  const amountPex = item.originalOrder.pexFee;
   const fm = window.uiFormatter.TokenFormatter;
-  const fmLrc = new fm({symbol: 'LRC'});
+  const fmPex = new fm({symbol: 'PEX'});
   const fmS = new fm({symbol:tokenS});
   const fmB = new fm({symbol:tokenB});
   const tokensConfig = window.CONFIG.getTokenBySymbol(tokenS);
@@ -103,10 +103,10 @@ function DetailBlock({modal = {}}) {
       <MetaItem label={intl.get('orders.price')} value={
         getPrice()
       }/>
-      <MetaItem label={intl.get('orders.LrcFee')} value={
+      <MetaItem label={intl.get('orders.PexFee')} value={
         <div>
-          <span className="mr5">{window.uiFormatter.getFormatNum(fmLrc.getAmount(amountLrc))}</span>
-          {'LRC'}
+          <span className="mr5">{window.uiFormatter.getFormatNum(fmPex.getAmount(amountPex))}</span>
+          {'PEX'}
         </div>
       }/>
       <MetaItem label={intl.get('order.margin')} value={

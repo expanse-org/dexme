@@ -9,7 +9,7 @@ const TradingSettingForm = ({
   const {trading} = settings
   const integerReg = new RegExp("^0*[1-9]{1}[0-9]*$")
   function handleChange(type, e) {
-    if ('timeToLive' === type || 'lrcFee' === type || 'marginSplit' === type) {
+    if ('timeToLive' === type || 'pexFee' === type || 'marginSplit' === type) {
       handleChangeValue(type, e.target.value)
     } else {
       handleChangeValue(type, e)
@@ -34,13 +34,13 @@ const TradingSettingForm = ({
         settings.tradingChange({[type]:v})
       }
     } else {
-      if (('lrcFee' === type && validateLrcFee(v))
+      if (('pexFee' === type && validatePexFee(v))
         || ('marginSplit' === type && validateMarginSplit(v))){
         settings.tradingChange({[type]:v})
       }
     }
   }
-  function validateLrcFee(value) {
+  function validatePexFee(value) {
     let v = Number(value);
     return value && v.toString() === value && v >=0 && v <=50
   }
@@ -65,11 +65,11 @@ const TradingSettingForm = ({
   function handleReset() {
     const latestContract = configs.contracts[configs.contracts.length-1]
     form.setFieldsValue({contractVersion:latestContract.version, timeToLive:configs.defaultExpireTime, timeToLiveUnit:configs.defaultExpireTimeUnit,
-      lrcFee:configs.defaultLrcFeePermillage, marginSplit:configs.defaultMarginSplitPercentage, gasPrice:configs.defaultGasPrice})
+      pexFee:configs.defaultPexFeePermillage, marginSplit:configs.defaultMarginSplitPercentage, gasPrice:configs.defaultGasPrice})
     handleChangeValue('contractVersion', latestContract.version)
     handleChangeValue('timeToLive', configs.defaultExpireTime)
     handleChangeValue('timeToLiveUnit', configs.defaultExpireTimeUnit)
-    handleChangeValue('lrcFee', configs.defaultLrcFeePermillage)
+    handleChangeValue('pexFee', configs.defaultPexFeePermillage)
     handleChangeValue('marginSplit', configs.defaultMarginSplitPercentage)
     handleChangeValue('gasPrice', configs.defaultGasPrice)
   }
@@ -139,16 +139,16 @@ const TradingSettingForm = ({
             <Input size="large" addonAfter={timeToLiveSelectAfter} onChange={handleChange.bind(this, "timeToLive")}/>
           )}
         </Form.Item>
-        <Form.Item {...formItemLayout} label={intl.get('settings.lrcfee')} colon={false}>
-          {form.getFieldDecorator('lrcFee', {
-            initialValue:trading.lrcFee,
+        <Form.Item {...formItemLayout} label={intl.get('settings.pexfee')} colon={false}>
+          {form.getFieldDecorator('pexFee', {
+            initialValue:trading.pexFee,
             rules:[
               {message: intl.get("settings.ttl_tip").concat('(0~50)') ,
-                validator: (rule, value, cb) => validateLrcFee(value) ? cb() : cb(true)
+                validator: (rule, value, cb) => validatePexFee(value) ? cb() : cb(true)
               }
             ]
           })(
-            <Input size="large" addonAfter="‰" onChange={handleChange.bind(this, "lrcFee")}/>
+            <Input size="large" addonAfter="‰" onChange={handleChange.bind(this, "pexFee")}/>
           )}
         </Form.Item>
         <Form.Item {...formItemLayout} label={intl.get('settings.margin')} colon={false}>

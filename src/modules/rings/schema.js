@@ -37,10 +37,10 @@ const schema = [
       name:'blockNumber',
     },
     {
-      title:'LrcFee',
-      description:'The total lrc fee.',
-      name:'totalLrcFee',
-      formatter:(item)=> (Number(item.totalLrcFee)/1e18).toFixed(6),
+      title:'PexFee',
+      description:'The total pex fee.',
+      name:'totalPexFee',
+      formatter:(item)=> (Number(item.totalPexFee)/1e18).toFixed(6),
     },
 
     {

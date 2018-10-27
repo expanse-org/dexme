@@ -25,7 +25,7 @@ const get = ()=>{
         },
         timeToLive: configs.defaultExpireTime,
         timeToLiveUnit: configs.defaultExpireTimeUnit,
-        lrcFee: configs.defaultLrcFeePermillage,
+        pexFee: configs.defaultPexFeePermillage,
         marginSplit: configs.defaultMarginSplitPercentage,
         gasPrice: configs.defaultGasPrice
       },
