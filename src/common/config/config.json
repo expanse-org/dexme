@@ -7,7 +7,7 @@
   "defaultGasLimit": "0x30d40",
   "defaultExpireTime": 1,
   "defaultExpireTimeUnit": "day",
-  "delegateAddress": "0xa1e12d235da5a3d2c98a1695875526e98ded0a6e",
+  "delegateAddress": "0x97b3a09cc403ba0fe9a054a8d50afeb9d3c5004a",
   "chainId":2,
   "bindContractAddress": "0xbf78B6E180ba2d1404c92Fc546cbc9233f616C42",
   "minimumLrcfeeInEth":0.00045,
@@ -15,7 +15,7 @@
   "walletAddress":"0xaF6CF28cB921027b2A134c52Cf5BF072c0E769D7",
   "contracts": [
     {
-      "address": "0xa58056ec3726a7dfb3c407a6eb67800a16f7c560",
+      "address": "0xa33f039cb441eba250bf3b8da25c21ce6ac10d49",
       "version": "v1.5.1"
     }
   ],
@@ -45,12 +45,12 @@
       "name": "Test"
     }
   ],
-  "supportedTokenRInMarkets":["WEXP", "LRC"],
+  "supportedTokenRInMarkets":["WEXP", "PEX"],
   "markets": [
   ],
   "newMarkets":[
     {
-      "tokenx": "LRC",
+      "tokenx": "PEX",
       "tokeny": "WEXP",
       "pricePrecision": 8
     }
@@ -127,11 +127,11 @@
       "minTradeValue": 0.0001
     },
     {
-      "symbol": "LRC",
-      "name": "Loopring",
+      "symbol": "PEX",
+      "name": "EXPEX",
       "digits": 18,
-      "address": "0x8c18da5ca46754f2cbb8c151b0cd88e990f33d6f",
-      "unit": "LRC",
+      "address": "0xbdaaafdcdbabf18623ca84a6dea81f05fd735182",
+      "unit": "PEX",
       "website": "https://loopring.org",
       "allowance": "1000000000000000000000",
       "allowanceWarn": "50000000000000000000",

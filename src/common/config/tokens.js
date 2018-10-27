@@ -24,8 +24,8 @@ export default [
       "icon": true
   },
   {
-      "symbol": "LRC",
-      "title": "Loopring",
+      "symbol": "PEX",
+      "title": "EXPEX",
       "icon": true
   },
   {
