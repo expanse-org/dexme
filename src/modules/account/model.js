@@ -11,8 +11,8 @@ import {unlockWithMetaMask} from '../../components/common/Unlock'
 let unlockedType = window.STORAGE.wallet.getUnlockedType()
 let unlockedAddress = window.STORAGE.wallet.getUnlockedAddress()
 if(unlockedType && unlockedType === 'MetaMask' && window.web3) {
-  if(window.web3.exp.accounts[0]) {
-    unlockedAddress = window.web3.exp.accounts[0]
+  if(window.web3.eth.accounts[0]) {
+    unlockedAddress = window.web3.eth.accounts[0]
     unlockWithMetaMask(window.web3)
   } else {
     Notification.open({
@@ -97,9 +97,9 @@ export default {
     },
     * setMetamask({payload}, {put}) {
       const {web3} = payload;
-      window.WALLET = new MetaMaskUnlockAccount({web3: web3, address: web3.exp.accounts[0]});
+      window.WALLET = new MetaMaskUnlockAccount({web3: web3, address: web3.eth.accounts[0]});
       window.WALLET_UNLOCK_TYPE = 'MetaMask';
-      yield put({type: 'setWallet', payload: {address: web3.exp.accounts[0], walletType: 'MetaMask'}})
+      yield put({type: 'setWallet', payload: {address: web3.eth.accounts[0], walletType: 'MetaMask'}})
     },
     * createWallet({payload}, {put}) {
       const wallet = create(payload.password);
