@@ -12,7 +12,7 @@
   "bindContractAddress": "0xbf78B6E180ba2d1404c92Fc546cbc9233f616C42",
   "minimumPexfeeInEth":0.00045,
   "localStorageVersion":201806040000,
-  "walletAddress":"0xaF6CF28cB921027b2A134c52Cf5BF072c0E769D7",
+  "walletAddress":"0xD033736d6DbC4b5DE792638B63561f1500eBc2C7",
   "contracts": [
     {
       "address": "0xa33f039cb441eba250bf3b8da25c21ce6ac10d49",
