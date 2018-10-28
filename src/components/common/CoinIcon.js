@@ -11,9 +11,14 @@ const CoinIcon = (props)=>{
     color = 'color-'+ color
   }
   if(icons[symbol.toUpperCase()]){
-    return <i className={`icon icon-loopring icon-loopring-${symbol} fs${size} ${color} ${className}`} />
+    return <i className={`icon icon-loopring icon-${symbol} fs${size} ${color} ${className}`} />
   }else{
-    return <i className={`icon icon-loopring color-grey-300 icon-loopring-ETH fs${size} ${className}`} />
+    if(symbol.toUpperCase() === 'EXP' || symbol.toUpperCase() === 'WEXP' || symbol.toUpperCase() === 'PEX'){
+      return <i className={`icon icon-loopring icon-${symbol} fs${size} ${color} ${className}`} />
+    }
+    else {
+      return <i className={`icon icon-loopring color-grey-300 icon-loopring-ETH fs${size} ${className}`} />
+    }
   }
 
 }

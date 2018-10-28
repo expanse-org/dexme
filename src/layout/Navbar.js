@@ -80,11 +80,11 @@ function Navbar(props) {
 
   const getFlagIcon = (name) => {
     switch (name) {
-      case "zh-CN":
-        return (
-          <img style={{height: '18px', width: '24px'}} src={require('../assets/images/flag-ch.png')}/>
-        )
-        break;
+      // case "zh-CN":
+      //   return (
+      //     <img style={{height: '18px', width: '24px'}} src={require('../assets/images/flag-ch.png')}/>
+      //   )
+      //   break;
       case "en-US":
         return <img style={{height: '18px', width: '24px'}} src={require('../assets/images/flag-en.png')}/>
         break;
@@ -403,7 +403,8 @@ function Navbar(props) {
           <div className="col-auto pl25 pr10 zb-b-r pr" style={{width: '200px'}}>
             <Link to="/wallet" className="d-block">
               <Popover content={VersionTip} title={null} trigger="hover">
-                <i className="icon-loopring icon-loopring-logo d-block" style={{fontSize: '36px', marginTop: '0px'}}/>
+                {/*<i className="icon-loopring icon-loopring-logo d-block" style={{fontSize: '36px', marginTop: '0px'}}/>*/}
+                <p>EXPEX</p>
                 <span style={{position: 'absolute', top: '-22px', right: '50px'}}>
                         <span className="navbar-version-badge">
                           <Badge status="processing" className=""/>
@@ -468,7 +469,7 @@ function Navbar(props) {
 
 
           <div className="col-auto pl15 pr15 zb-b-r">
-            <Select showArrow={false} dropdownMatchSelectWidth={false} value={props.locales.locale}
+            <Select showArrow={false} disabled dropdownMatchSelectWidth={false} value={props.locales.locale}
                     onChange={localeChange} className="navbar-language fs16">
               {localesOptions}
             </Select>

@@ -55,7 +55,7 @@ class Home extends React.Component {
     const showWithDrawAll = () => {
       this.props.dispatch({
         type: 'modals/modalChange',
-        payload: {id: "token/withdrawall", visible: true, item: {symbol: "WETH_OLD", balance: this.state.oldWeth}}
+        payload: {id: "token/withdrawall", visible: true, item: {symbol: "WEXP_OLD", balance: this.state.oldWeth}}
       })
     };
     const gotoTrade = (market)=>{
@@ -77,10 +77,10 @@ class Home extends React.Component {
                   <div className="color-black-1 fs14 lh20">Test Loopring’s web wallet & DEX</div>
                   <div className="color-black-2 fs12" >
                     Participate in the private sale of ARP and VITE tokens by submitting your first Loopring DEX orders.
-                    <span onClick={gotoTrade.bind(this,'VITE-WETH')} className="fs12 color-primary-1 ml10 mr10 cursor-pointer">
+                    <span onClick={gotoTrade.bind(this,'VITE-WEXP')} className="fs12 color-primary-1 ml10 mr10 cursor-pointer">
                       {intl.get('trade.buy')} VITE<Icon type="right"/>
                     </span>
-                    <span onClick={gotoTrade.bind(this,'ARP-WETH')} className="fs12 color-primary-1 cursor-pointer">
+                    <span onClick={gotoTrade.bind(this,'ARP-WEXP')} className="fs12 color-primary-1 cursor-pointer">
                       {intl.get('trade.buy')} ARP<Icon type="right"/>
                     </span>
                   </div>

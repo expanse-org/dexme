@@ -4,7 +4,7 @@ import {Badge, Button, Icon, Popover, Spin, Tooltip} from 'antd';
 import ListFiltersFormSimple from './ListFiltersFormSimple'
 import intl from 'react-intl-universal'
 import CoinIcon from '../../common/CoinIcon'
-import {getEstimatedAllocatedAllowance, getFrozenLrcFee, getPendingRawTxByHash} from "Loopring/relay/utils";
+import {getEstimatedAllocatedAllowance, getFrozenPEXFee, getPendingRawTxByHash} from "Loopring/relay/utils";
 import {toBig} from "Loopring/common/formatter";
 import config from '../../../common/config'
 import Notification from 'Loopr/Notification'
@@ -43,8 +43,8 @@ class ListBlock extends React.Component {
     getEstimatedAllocatedAllowance(window.WALLET.getAddress(), currentToken).then(res => {
       if (!res.error) {
         const orderAmount = toBig(res.result);
-        if (currentToken === 'LRC') {
-          getFrozenLrcFee(window.WALLET.getAddress()).then(res => {
+        if (currentToken === 'PEX') {
+          getFrozenPEXFee(window.WALLET.getAddress()).then(res => {
             if (!res.error) {
               const lrcFee = toBig(res.result);
               this.setState({needed: orderAmount.plus(lrcFee), token: currentToken});
@@ -65,8 +65,9 @@ class ListBlock extends React.Component {
     const token = filters.token;
     const currentToken = this.state.token;
     let {needed} = this.state;
-    let balance = token && assets.getTokenBySymbol(token).balance;
-    const tokenConfig = window.CONFIG.getTokenBySymbol(token);
+    let balance = token && assets.getTokenBySymbol('PEX').balance;
+    const tokenConfig = window.CONFIG.getTokenBySymbol('PEX');
+    console.log(tokenConfig,"tokenConfig");
     needed = toBig((tokenConfig && tokenConfig.digits && toBig(needed).div('1e' + tokenConfig.digits)).toFixed(tokenConfig.precision || 6));
     balance = toBig((tokenConfig && tokenConfig.digits && toBig(balance).div('1e' + tokenConfig.digits)).toFixed(tokenConfig.precision || 6));
     const showModal = (payload) => {

@@ -11,8 +11,9 @@
   "chainId":2,
   "bindContractAddress": "0xbf78B6E180ba2d1404c92Fc546cbc9233f616C42",
   "minimumLrcfeeInEth":0.00045,
+  "demoAccount":"0xeba7136a36da0f5e16c6bdbc739c716bb5b65a00",
   "localStorageVersion":201806040000,
-  "walletAddress":"0xaF6CF28cB921027b2A134c52Cf5BF072c0E769D7",
+  "walletAddress":"0xd033736d6dbc4b5de792638b63561f1500ebc2c7",
   "contracts": [
     {
       "address": "0xa33f039cb441eba250bf3b8da25c21ce6ac10d49",
@@ -96,7 +97,7 @@
       "digits": 18,
       "address": "",
       "unit": "EXP",
-      "website": "https://ethereum.org",
+      "website": "https://expanse.tech/",
       "allowance": "1000000000000000000000",
       "allowanceWarn": "500000000000000000000",
       "precision": 6,
@@ -132,7 +133,7 @@
       "digits": 18,
       "address": "0xbdaaafdcdbabf18623ca84a6dea81f05fd735182",
       "unit": "PEX",
-      "website": "https://loopring.org",
+      "website": "http://expex.io/",
       "allowance": "1000000000000000000000",
       "allowanceWarn": "50000000000000000000",
       "precision": 6,

@@ -57,12 +57,12 @@
   ],
   "tokens": [
     {
-      "symbol": "ETH",
-      "name": "Ether",
+      "symbol": "EXP",
+      "name": "Expanse",
       "digits": 18,
       "address": "",
-      "unit": "ETH",
-      "website": "https://ethereum.org",
+      "unit": "EXP",
+      "website": "https://expanse.tech/",
       "allowance": "1000000000000000000000",
       "allowanceWarn": "500000000000000000000",
       "precision": 6,
