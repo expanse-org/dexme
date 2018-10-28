@@ -57,24 +57,24 @@
   ],
   "tokens": [
     {
-      "symbol": "ETH",
+      "symbol": "EXP",
       "name": "Ether",
       "digits": 18,
       "address": "",
-      "unit": "ETH",
-      "website": "https://ethereum.org",
+      "unit": "EXP",
+      "website": "https://expanse.org",
       "allowance": "1000000000000000000000",
       "allowanceWarn": "500000000000000000000",
       "precision": 6,
       "minTradeValue": 0.001
     },
     {
-      "symbol": "WETH",
+      "symbol": "WEXP",
       "name": "Wrapped Ether",
       "digits": 18,
       "address": "0x639687b7f8501f174356d3acb1972f749021ccd0",
-      "unit": "WETH",
-      "website": "https://weth.io",
+      "unit": "WEXP",
+      "website": "https://wexp.io",
       "allowance": "1000000000000000000000",
       "allowanceWarn": "100000000000000000000",
       "precision": 6,
@@ -85,8 +85,8 @@
       "name": "Ether Token",
       "digits": 18,
       "address": "0x88699e7fee2da0462981a08a15a3b940304cc516",
-      "unit": "WETH",
-      "website": "https://weth.io",
+      "unit": "WEXP",
+      "website": "https://wexp.io",
       "allowance": "1000000000000000000000",
       "allowanceWarn": "100000000000000000000",
       "precision": 6,
@@ -215,11 +215,11 @@
       "name": "Test Relay"
     }
   ],
-  "supportedTokenRInMarkets":["WETH", "BAR"],
+  "supportedTokenRInMarkets":["WEXP", "BAR"],
   "markets": [
     {
       "tokenx": "PEX",
-      "tokeny": "WETH",
+      "tokeny": "WEXP",
       "pricePrecision": 8
     },
     {
@@ -228,7 +228,7 @@
       "pricePrecision": 4
     }
   ],
-  "newMarkets": ["FOO-WETH", "BAR-WETH"],
+  "newMarkets": ["FOO-WEXP", "BAR-WEXP"],
   "whiteList": [
     "0x80679a2c82ab82f1e73e14c4bec4ba1992f9f25a",
     "0x8311804426a24495bd4306daf5f595a443a52e32",

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Button, Card, Form, Input, Modal, Icon, Tooltip,Alert} from 'antd';
-import {generateBindAddressTx, getBindAddress} from "Loopring/ethereum/utils";
+import {generateBindAddressTx, getBindAddress} from "Loopring/expanse/utils";
 import {notifyTransactionSubmitted} from 'Loopring/relay/utils'
 import {connect} from 'dva';
 import {toHex,trimAll} from "Loopring/common/formatter";
@@ -208,7 +208,7 @@ class AirdropBind extends React.Component {
               initialValue: account.address
             })(
               <Input
-                addonBefore={'ETH ' + intl.get('wallet.address')}
+                addonBefore={'EXP ' + intl.get('wallet.address')}
                 size="large"
                 className="fs14"
                 disabled

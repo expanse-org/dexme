@@ -8,7 +8,7 @@ import CurrencyContainer from '../../../../modules/settings/CurrencyContainer';
 import {toNumber, toBig} from "Loopring/common/formatter";
 import CoinIcon from '../../../common/CoinIcon'
 import intl from 'react-intl-universal'
-import Token from 'Loopring/ethereum/token'
+import Token from 'Loopring/expanse/token'
 import config from '../../../../common/config'
 import Notification from 'Loopr/Notification'
 
@@ -268,26 +268,26 @@ class ListSidebar extends React.Component {
             </Button>
           </div>
           {
-            (token.symbol === 'ETH') &&
+            (token.symbol === 'EXP') &&
             <div className="col-12 p5">
               <Button onClick={gotoConvert.bind(this, token)} className="d-block w-100 text-left" type="primary"
                       disabled={isWatchOnly}>
                 <i className="icon icon-loopring icon-loopring-trade fs16 mr5"/>
-                {intl.get('token.token_convert', {from: token.symbol, to: 'WETH'})}
+                {intl.get('token.token_convert', {from: token.symbol, to: 'WEXP'})}
               </Button>
             </div>
           }
           {
-            (token.symbol === 'WETH') && !token.custom &&
+            (token.symbol === 'WEXP') && !token.custom &&
             <div className="col-12 p5">
               <Button onClick={gotoConvert.bind(this, token)} className="d-block w-100 text-left" type="primary"
                       icon="retweet" disabled={!!isWatchOnly}>
-                {intl.get('token.token_convert', {from: token.symbol, to: 'ETH'})}
+                {intl.get('token.token_convert', {from: token.symbol, to: 'EXP'})}
               </Button>
             </div>
           }
           {
-            (token.symbol !== 'ETH' && token.symbol !== 'WETH') &&
+            (token.symbol !== 'EXP' && token.symbol !== 'WEXP') &&
             <div className="col-12 p5">
               <Button onClick={gotoTrade.bind(this, token)} className="d-block w-100 text-left" type="primary"
                       disabled={isWatchOnly}>
@@ -312,7 +312,7 @@ class ListSidebar extends React.Component {
               <Button onClick={gotoTrade.bind(this, token)} className="m5 color-blue-500"
                       disabled={isWatchOnly}>Buy</Button>
               {
-                token.symbol === 'WETH' &&
+                token.symbol === 'WEXP' &&
                 <Button onClick={gotoConvert.bind(this, token)} className="m5 color-blue-500" disabled={isWatchOnly}>Convert</Button>
               }
             </div>
@@ -472,12 +472,12 @@ class ListSidebar extends React.Component {
     let results = [...items, ...customs]
     results = results.filter(token => token.symbol !== 'WETH_OLD')
 
-    // eth weth pex
-    const ethToken = results.find(token => token.symbol === 'ETH')
-    const wethToken = results.find(token => token.symbol === 'WETH')
+    // exp wexp pex
+    const ethToken = results.find(token => token.symbol === 'EXP')
+    const wethToken = results.find(token => token.symbol === 'WEXP')
     const pexToken = results.find(token => token.symbol === 'PEX')
     // other tokens
-    let otherTokens = results.filter(token => (token.symbol !== 'ETH' && token.symbol !== 'WETH' && token.symbol !== 'PEX'))
+    let otherTokens = results.filter(token => (token.symbol !== 'EXP' && token.symbol !== 'WEXP' && token.symbol !== 'PEX'))
     otherTokens = otherTokens.map((token, index) => {
       let balance = fm.toBig(token.balance).div('1e' + token.digits).toNumber()
       token.sortByBalance = balance

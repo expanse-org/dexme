@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'dva/router';
 import {Alert, Button, Form, Icon, Input, message, Select,Radio} from 'antd';
 import {isValidateMnemonic} from "Loopring/common/mnemonic"
-import {fromMnemonic} from 'Loopring/ethereum/account';
+import {fromMnemonic} from 'Loopring/expanse/account';
 import MnemonicUnlockAccount from '../../../modules/account/MnemonicUnlockAccount'
 import intl from 'react-intl-universal';
 import Notification from 'Loopr/Notification'

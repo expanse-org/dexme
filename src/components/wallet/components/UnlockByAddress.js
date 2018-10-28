@@ -4,7 +4,7 @@ import { Modal, Button,Icon,Alert, Input, Form } from 'antd';
 import AddressUnlockAccount from '../../../modules/account/AddressUnlockAccount'
 import intl from 'react-intl-universal';
 import {unlockRedirection} from '../../../common/utils/redirection'
-import {isValidEthAddress} from 'Loopring/ethereum/utils'
+import {isValidEthAddress} from 'Loopring/expanse/utils'
 import Notification from 'Loopr/Notification'
 
 const walletType = "Address"

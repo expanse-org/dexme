@@ -15,11 +15,11 @@ class PlaceOrderSuccess extends React.Component {
           {intl.get('order.balance_not_enough', {token: item.value.symbol})}
           <a onClick={modal.showModal.bind(this, {id: 'token/receive'})}
              className="ml15 color-primary-1">{intl.get('order.receive')}<Icon type="right"/></a>
-          {item.value.symbol.toUpperCase() !== 'WETH' &&
-          <a onClick={window.routeActions.gotoPath.bind(this, `/trade/${item.value.symbol.toUpperCase()}-WETH`)}
+          {item.value.symbol.toUpperCase() !== 'WEXP' &&
+          <a onClick={window.routeActions.gotoPath.bind(this, `/trade/${item.value.symbol.toUpperCase()}-WEXP`)}
              className="ml15 color-primary-1">{intl.get('order.buy')} <Icon type="right"/></a>}
-          {item.value.symbol.toUpperCase() === 'WETH' &&
-          <a onClick={modal.showModal.bind(this, {id: 'token/convert', item: {symbol: 'ETH'}})}
+          {item.value.symbol.toUpperCase() === 'WEXP' &&
+          <a onClick={modal.showModal.bind(this, {id: 'token/convert', item: {symbol: 'EXP'}})}
              className="ml15 color-primary-1">{intl.get('txs.type_convert')} <Icon type="right"/></a>}
         </div>
       )

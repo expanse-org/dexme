@@ -1,10 +1,10 @@
 import Account from "./Account";
-import {trezorSign} from "../../common/Loopring/ethereum/trezor";
-import Transaction from "../../common/Loopring/ethereum/transaction";
+import {trezorSign} from "../../common/Loopring/expanse/trezor";
+import Transaction from "../../common/Loopring/expanse/transaction";
 import EthTransaction from 'ethereumjs-tx'
 import {addHexPrefix, clearPrefix, toHex, toNumber} from '../../common/Loopring/common/formatter'
 import HDKey from 'hdkey';
-import {publicKeytoAddress} from "Loopring/ethereum/account";
+import {publicKeytoAddress} from "Loopring/expanse/account";
 import {getOrderHash} from "Loopring/relay/order";
 import BN from "bn.js";
 
@@ -53,7 +53,7 @@ export default class TrezorUnlockAccount extends Account {
         return item
       });
       const finalPath = `${this.dpath}/${this.index}`;
-      window.TrezorConnect.ethereumSignTx(
+      window.TrezorConnect.expanseSignTx(
         finalPath,
         ...tx,
         rawTx.chainId,

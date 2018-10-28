@@ -1,7 +1,7 @@
 import React from 'react';
 import {Form,Button,Popconfirm,Alert} from 'antd';
 import icon from '../../../assets/images/icon-backup-wallet.png'
-import {download} from "Loopring/ethereum/account"
+import {download} from "Loopring/expanse/account"
 import intl from 'react-intl-universal';
 
 class BackupKeystore extends React.Component {

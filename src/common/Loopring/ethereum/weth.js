@@ -3,7 +3,7 @@ import {generateAbiData} from './abi'
 import validator from './validator'
 import Transaction from './transaction'
 
-export default class WETH extends Token {
+export default class WEXP extends Token {
 
   async deposit({amount, privateKey, gasPrice, gasLimit, nonce, chainId,walletType,path}) {
     validator.validate({value:amount,type:"ETH_DATA"});

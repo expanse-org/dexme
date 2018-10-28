@@ -12,7 +12,7 @@
     "dpath": "m/44'/60'/0'/0"
   },
   {
-    "name": "TREZOR (ETH)",
+    "name": "TREZOR (EXP)",
     "dpath": "m/44'/60'/0'/0"
   },
   {
@@ -28,7 +28,7 @@
     "dpath": "m/44'/60'/0'/0"
   },
   {
-    "name": "Ledger (ETH)",
+    "name": "Ledger (EXP)",
     "dpath": "m/44'/60'/0'"
   },
   {

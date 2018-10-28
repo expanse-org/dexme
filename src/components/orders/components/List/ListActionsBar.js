@@ -69,8 +69,8 @@ class ListActionsBar extends React.Component {
         tx = generateCancelOrdersByTokenPairTx({
           ...params,
           gasLimit: config.getGasLimitByType('cancelOrderByTokenPair') ? config.getGasLimitByType('cancelOrderByTokenPair').gasLimit : configs['defaultGasLimit'],
-          tokenA: window.CONFIG.getTokenBySymbol(tokenA === 'ETH' ? 'WETH' : tokenA).address,
-          tokenB: window.CONFIG.getTokenBySymbol(tokenB === 'ETH' ? 'WETH' : tokenB).address
+          tokenA: window.CONFIG.getTokenBySymbol(tokenA === 'EXP' ? 'WEXP' : tokenA).address,
+          tokenB: window.CONFIG.getTokenBySymbol(tokenB === 'EXP' ? 'WEXP' : tokenB).address
         })
       } else {
         tx = generateCancelAllOrdresTx({
@@ -100,8 +100,8 @@ class ListActionsBar extends React.Component {
       //       tx = generateCancelOrdersByTokenPairTx({
       //         ...params,
       //         gasLimit: config.getGasLimitByType('cancelOrderByTokenPair') ? config.getGasLimitByType('cancelOrderByTokenPair').gasLimit : configs['defaultGasLimit'],
-      //         tokenA: window.CONFIG.getTokenBySymbol(tokenA === 'ETH' ? 'WETH' : tokenA).address,
-      //         tokenB: window.CONFIG.getTokenBySymbol(tokenB === 'ETH' ? 'WETH' : tokenB).address
+      //         tokenA: window.CONFIG.getTokenBySymbol(tokenA === 'EXP' ? 'WEXP' : tokenA).address,
+      //         tokenB: window.CONFIG.getTokenBySymbol(tokenB === 'EXP' ? 'WEXP' : tokenB).address
       //       })
       //     } else {
       //       tx = generateCancelAllOrdresTx({

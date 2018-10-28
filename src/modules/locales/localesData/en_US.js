@@ -50,7 +50,7 @@ export default {
   version:{
     label:'Beta3',
     title:'Beta3',
-    description:'LOOPRING.IO (Loopr2) is an open-sourced implementation of a web-based non-custodial Ethereum wallet that enables users to trade ERC20 tokens using the Loopring Protocol. Before proceeding, you should review the codebase. Loopr2 is a not-for-profit product, and the Loopring Foundation cannot take responsibility for any loss of your crypto-assets.',
+    description:'LOOPRING.IO (Loopr2) is an open-sourced implementation of a web-based non-custodial Expanse wallet that enables users to trade ERC20 tokens using the Loopring Protocol. Before proceeding, you should review the codebase. Loopr2 is a not-for-profit product, and the Loopring Foundation cannot take responsibility for any loss of your crypto-assets.',
     feedback:'Feedback',
     feedback_submit:'Report an issue',
     roadmap_label:'More Info',
@@ -66,7 +66,7 @@ export default {
 Select Topics: Unlock Wallet | Generate Wallet | Bind Airdrop Addresses | Send/Receive | Trading | History Data | Others \n
 Browser: Chrome | Safari | Internet Explorer | Others (please specify)\n
 Operation System:\n
-Your Ethereum address: (if applicable)\n
+Your Expanse address: (if applicable)\n
 I've found some issues:
 \n
 \n
@@ -142,9 +142,9 @@ I got this great idea:
     why_buy_price_avaliable_but_could_not_deal:`
     <div class="p5">
         <div class="fs14 lh25"> Order Depth Tips </div>
-        <div class="fs12">1. The depth maybe under matching: Miners may need some time to submit txs to ethereum.
+        <div class="fs12">1. The depth maybe under matching: Miners may need some time to submit txs to expanse.
   </div>
-        <div class="fs12">2. The depth maybe deprecated: Miners's matching income (PEX Fee) is lower than matching cost ( ethereum gas ) </div>
+        <div class="fs12">2. The depth maybe deprecated: Miners's matching income (PEX Fee) is lower than matching cost ( expanse gas ) </div>
     </div>
     `
   },
@@ -169,7 +169,7 @@ I got this great idea:
   },
   home: {
     title: 'Loopr',
-    subtitle: 'A non-custodial Ethereum wallet and Loopring DEX.',
+    subtitle: 'A non-custodial Expanse wallet and Loopring DEX.',
     beta_notification_title:'Can\'t wait to trade with Loopring?',
     beta_notifycation_content: 'Loopr wallet is still in its beta. Test with great caution!'
   },
@@ -201,8 +201,8 @@ I got this great idea:
     type_sell: 'Sell',
     type_buy: 'Buy',
     buy: "Buy",
-    type_convert_title_eth: 'Convert to WETH',
-    type_convert_title_weth: 'Convert to ETH',
+    type_convert_title_eth: 'Convert to WEXP',
+    type_convert_title_weth: 'Convert to EXP',
     type_receive: 'Receive',
     type_enable: 'Enable',
     type_enable_title: "Enabled {symbol} to Trade",
@@ -267,7 +267,7 @@ I got this great idea:
     lacked: "Lacked",
     receive: "Receive {token}",
     buy: "Buy {token}",
-    convert: "Convert to WETH",
+    convert: "Convert to WEXP",
     token_not_enough: "Your token balance is insufficient!",
     sell_amount: 'Sell Amount',
     buy_amount: 'Buy Amount',
@@ -373,7 +373,7 @@ I got this great idea:
     custom_time_to_live_title:'Adjust Order Time-To-Live',
     send_failed: 'Place Order Failed !',
     failed_fetch_data:'Failed fetch data from server, you could wait a moment and come back later',
-    eth_is_required:'ETH is required to pay Ethereum transaction fees, calculated with your current order cost that need to send Ethereum transactions, totally required {required} ETH.',
+    eth_is_required:'EXP is required to pay Expanse transaction fees, calculated with your current order cost that need to send Expanse transactions, totally required {required} EXP.',
     pexfee_is_required:'PEX is required to pay trade fees, added on your history orders need PEX, totally required {required} PEX.',
     not_supported_token_to_trade_title:'{token} Is Not Supported To Trade Now',
     not_supported_token_to_trade_content:'Please look forward to opening more markets',
@@ -397,8 +397,8 @@ I got this great idea:
     amount: "Amount",
     amount_verification_message: "Please input valid amount",
     convert_max: "Convert Max",
-    min_gas_remain_warn: "0.1 ETH is reserved as gas so that you can send additional transactions.",
-    no_eth_balance_warn: "You do not or will not have sufficient ETH as gas for sending transactions.",
+    min_gas_remain_warn: "0.1 EXP is reserved as gas so that you can send additional transactions.",
+    no_eth_balance_warn: "You do not or will not have sufficient EXP as gas for sending transactions.",
     convert_confirm: "Yes, Convert Now!",
     send_title: "Send",
     result_failed: "Your have failed {do} {amount} {token} - {reason}",
@@ -409,13 +409,13 @@ I got this great idea:
     view_transaction: 'View Transaction on Etherscan.io',
     send_again: 'Send Again',
     convert_again: 'Convert Again',
-    ethereum_address: "My Ethereum Address",
+    expanse_address: "My Expanse Address",
     copy: "Copy",
     copy_success: "Copy Successfully",
     copy_failed: "Copy Failed",
     send: "Send",
     recipient: "Recipient",
-    eth_address_verification_message: "Invalid Ethereum address",
+    eth_address_verification_message: "Invalid Expanse address",
     send_max: "Send Max",
     transaction_fee: "Gas Fee",
     advanced: "Advanced",
@@ -455,7 +455,7 @@ I got this great idea:
     gas_custom_setting: 'Custom Settings'
   },
   airdrop:{
-    cost_eth_gas:"Binding address takes one Ethereum transaction.",
+    cost_eth_gas:"Binding address takes one Expanse transaction.",
     goback:"Back",
     watch_only_not_allowed:"Watch-only mode cannot bind addresses.",
     eth_adress_null:'Please unlocked your wallet and try again',
@@ -512,13 +512,13 @@ I got this great idea:
     error_title: "Error",
     failed_connect_ledger_title: 'Failed to connect with Ledger Wallet!',
     content_ledger_unlock_require_https: "Unlocking a Ledger hardware wallet is only possible on pages served over HTTPS",
-    content_ledger_connect_failed: "Failed to connect with your Ledger device, you could follow these advices and have a try later. 1、Make sure your Ledger device has connected with your computer and unlocked. 2、Set this to 'yes': Settings->Browser support 3、Enter into Ethereum app",
+    content_ledger_connect_failed: "Failed to connect with your Ledger device, you could follow these advices and have a try later. 1、Make sure your Ledger device has connected with your computer and unlocked. 2、Set this to 'yes': Settings->Browser support 3、Enter into Expanse app",
     content_leder_locked: "Your Ledger seems to be locked",
     recommended: "Recommended",
     recommend_way: "This is a recommended way to access your wallet.",
     connect_to_ledger: "Connect to Ledger",
     failed_connect_metamask_title: 'Failed To Connect With MetaMask',
-    content_metamask_mainnet: "We only support Ethereum mainnet when using MetaMask",
+    content_metamask_mainnet: "We only support Expanse mainnet when using MetaMask",
     title_metamask_logout: "Logout From MetaMask",
     content_metamask_logout: "We detected you have logged out from MetaMask, for your assets safety we have relocked your wallet",
     content_metamask_unlock_again: "We detected your computer or MetaMask network has changed, for your assets safety we have relocked your wallet, you should make sure your MetaMask is using MainNetwork and unlock your wallet again",
@@ -613,7 +613,7 @@ I got this great idea:
     token: "Token",
     title_metamask_account_change: "Account changed in MetaMask",
     content_metamask_account_change: "Loopr detected your address in MetaMask has just changed. The old one is closed and the new one will be used instead.",
-    old_weth_detect: "We detected you have some outdated WETH token, we strongly suggest you to convert them back to Ether",
+    old_weth_detect: "We detected you have some outdated WEXP token, we strongly suggest you to convert them back to Ether",
     to_convert: "Convert",
     instruction_trezor: '',
     instruction_ledger: '',
@@ -626,7 +626,7 @@ I got this great idea:
     watch_only: 'Watch-Only',
     address_input_placeholder: 'Your address',
     unlock_by_address: 'Unlock with your address',
-    invalid_eth_address: 'Invalid Ethereum address',
+    invalid_eth_address: 'Invalid Expanse address',
     unlocked_notification_title: 'Your wallet has been unlocked successfully.',
     unlocked_notification_content: 'Good job. Now you can experience the Loopr wallet. Be sure to let us know your feedback.',
     unlocked_by:'{type} Wallet',
@@ -673,7 +673,7 @@ I got this great idea:
     confirm_save: "Save",
     save_successfully: "Token added successfully",
     supportToken: "This token has already been added.",
-    add_token_failed: "Failed to read the token's information from Ethereum blockchain.",
+    add_token_failed: "Failed to read the token's information from Expanse blockchain.",
     already_add: "This token has already been added."
   },
   portfolio: {

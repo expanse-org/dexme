@@ -12,7 +12,7 @@ import {getFormatNum} from "../common/utils/uiFormatter";
 import Sockets from '../modules/socket/containers'
 import {toBig, toHex} from "../common/Loopring/common/formatter";
 import {queryTicketCount, queryTicket} from "../common/Loopring/relay/account";
-import {getHash} from "../common/Loopring/ethereum/utils";
+import {getHash} from "../common/Loopring/expanse/utils";
 
 function Navbar(props) {
   let selectedKeys = []

@@ -95,7 +95,7 @@ class PendingTxsContainer extends React.Component {
 
   isDepositWeth() {
     const txs = this.state.pendingTxs;
-    const depositTxs = txs.filter(tx => tx.symbol.toLowerCase() === 'weth' && tx.type === 'convert_income');
+    const depositTxs = txs.filter(tx => tx.symbol.toLowerCase() === 'wexp' && tx.type === 'convert_income');
     let totalValue = toBig(0);
     depositTxs.forEach(tx => totalValue = totalValue.plus(toBig(tx.value)));
     return totalValue;

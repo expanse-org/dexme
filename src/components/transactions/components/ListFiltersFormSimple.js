@@ -42,7 +42,7 @@ let FiltersForm = ({
   let othersTypes = [
      // {label:intl.get(`txs.type_others`),value:'others'},
   ]
-  if(token.toUpperCase() === 'WETH' || token.toUpperCase() === 'ETH'){
+  if(token.toUpperCase() === 'WEXP' || token.toUpperCase() === 'EXP'){
     types = [...types,...convertTypes]
   }
   if(token.toUpperCase() === 'PEX'){

@@ -5,7 +5,7 @@ import Notification from 'Loopr/Notification'
 export function unlockWithMetaMask(web3){
   // account.setWallet has done
   const walletType = "MetaMask"
-  let selectedAccount = web3.eth.accounts[0]
+  let selectedAccount = web3.exp.accounts[0]
   window.WALLET = new MetaMaskUnlockAccount({web3: web3, address: selectedAccount})
   window.WALLET_UNLOCK_TYPE = walletType
   web3.version.getNetwork((err, netId) => {
@@ -25,7 +25,7 @@ export function unlockWithMetaMask(web3){
     })
     let alert = false
     var accountInterval = setInterval(function() {
-      if ((!web3 || !web3.eth.accounts[0]) && window.STORE && !alert) {
+      if ((!web3 || !web3.exp.accounts[0]) && window.STORE && !alert) {
         alert = true
         console.log("MetaMask account locked:", selectedAccount)
         clearInterval(accountInterval)
@@ -57,8 +57,8 @@ export function unlockWithMetaMask(web3){
           return
         }
       })
-      if (web3.eth.accounts[0] !== selectedAccount) {
-        selectedAccount = web3.eth.accounts[0];
+      if (web3.exp.accounts[0] !== selectedAccount) {
+        selectedAccount = web3.exp.accounts[0];
         Notification.open({
           message:intl.get('wallet.title_metamask_account_change'),
           description:intl.get('wallet.content_metamask_account_change'),

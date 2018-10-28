@@ -1,7 +1,7 @@
 export async function getAddress(path) {
   path = path || "m/44'/60'/0'/0/0";
   return new Promise((resolve) => {
-    window.TrezorConnect.ethereumGetAddress(path, function (result) {
+    window.TrezorConnect.expanseGetAddress(path, function (result) {
       if (result.success) {
         resolve(result.address)
       } else {
@@ -14,7 +14,7 @@ export async function getAddress(path) {
 export async function trezorSign({path, hash}) {
   path = path || "m/44'/60'/0'/0/0";
   return new Promise((resolve) => {
-    window.TrezorConnect.ethereumSignMessage(path, hash, function (result) {
+    window.TrezorConnect.expanseSignMessage(path, hash, function (result) {
       if (result.success) {
         resolve(result.signature)
       } else {

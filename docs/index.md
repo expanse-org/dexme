@@ -2,13 +2,13 @@
 - [中文文档](chinese)
 
 ## About
-Loopr is an ethereum wallet and also a Loopring DEX, therefore we call it a Wallex. If you are only interested in a Loopring DEX frontend, please check out [Circulr](https://loopring.github.io/circulr), another open-sourced frontend project by Loopring.
+Loopr is an expanse wallet and also a Loopring DEX, therefore we call it a Wallex. If you are only interested in a Loopring DEX frontend, please check out [Circulr](https://loopring.github.io/circulr), another open-sourced frontend project by Loopring.
 
 ## Features
 
-- Loopring protocol: A web-based Ethereum wallet with Loopring protocol integration
+- Loopring protocol: A web-based Expanse wallet with Loopring protocol integration
 - Unlock: unlock wallet by Metamask,TRZEOR,Ledger,Keystore,Mnemonic,Privatekey,Watch Only
-- Assets:View balances & eth transactions 
+- Assets:View balances & exp transactions 
 - Trade: Sell & Buy tokens
 - Airdrop: Bind  address for LRN & LRQ
 - Support multiple languages

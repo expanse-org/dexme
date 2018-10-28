@@ -10,7 +10,7 @@ import config from '../../../common/config'
 import Notification from 'Loopr/Notification'
 import moment from 'moment'
 import Alert from 'Loopr/Alert'
-import {getTransactionByhash,getTransactionRecipt} from 'Loopring/ethereum/utils'
+import {getTransactionByhash,getTransactionRecipt} from 'Loopring/expanse/utils'
 import TxGas from './TxGas'
 
 const uiFormatter = window.uiFormatter;
@@ -218,7 +218,7 @@ class ListBlock extends React.Component {
         case 'convert_income':
           change = '+';
           icon = <i className="icon icon-loopring icon-loopring-convert fs30"/>
-          if (item.symbol === 'WETH') {
+          if (item.symbol === 'WEXP') {
             title = intl.get('txs.type_convert_title_eth')
           } else {
             title = intl.get('txs.type_convert_title_weth')
@@ -227,7 +227,7 @@ class ListBlock extends React.Component {
         case 'convert_outcome':
           change = '-';
           icon = <i className="icon icon-loopring icon-loopring-convert fs30"/>
-          if (item.symbol === 'WETH') {
+          if (item.symbol === 'WEXP') {
             title = intl.get('txs.type_convert_title_weth')
           } else {
             title = intl.get('txs.type_convert_title_eth')
@@ -359,7 +359,7 @@ class ListBlock extends React.Component {
               <span
                 style={{position: "relative", top: '-2px'}}>{intl.get('tokens.options_receive')} {filters.token}</span>
             </Button>
-            {filters.token !== 'ETH' && filters.token !== 'WETH' && getTokenSupportedMarkets(filters.token).length > 0 &&
+            {filters.token !== 'EXP' && filters.token !== 'WEXP' && getTokenSupportedMarkets(filters.token).length > 0 &&
             <Popover
               title={null}
               placement="bottom"
@@ -375,7 +375,7 @@ class ListBlock extends React.Component {
               </Button>
             </Popover>
             }
-            {filters.token !== 'ETH' && filters.token !== 'WETH' && getTokenSupportedMarkets(filters.token).length === 0 &&
+            {filters.token !== 'EXP' && filters.token !== 'WEXP' && getTokenSupportedMarkets(filters.token).length === 0 &&
             <Tooltip title={intl.getHTML('trade.not_supported_market')}>
               <Button className="mr15" type="primary" disabled={true}>
                 <i className="icon-loopring icon-loopring-trade fs16 mr5"></i>
@@ -385,17 +385,17 @@ class ListBlock extends React.Component {
             </Tooltip>
             }
             {
-              (filters.token === 'ETH') &&
+              (filters.token === 'EXP') &&
               <Button onClick={gotoConvert.bind(this, {symbol: filters.token})} className="mr15" type="primary">
                 <i className="icon-loopring icon-loopring-convert fs16 mr5"/>
-                {intl.get('token.token_convert', {from: "", to: 'WETH'})}
+                {intl.get('token.token_convert', {from: "", to: 'WEXP'})}
               </Button>
             }
             {
-              (filters.token === 'WETH') &&
+              (filters.token === 'WEXP') &&
               <Button onClick={gotoConvert.bind(this, {symbol: filters.token})} className="mr15" type="primary">
                 <i className="icon-loopring icon-loopring-convert fs16 mr5"/>
-                {intl.get('token.token_convert', {from: "", to: 'ETH'})}
+                {intl.get('token.token_convert', {from: "", to: 'EXP'})}
               </Button>
             }
           </div>
@@ -435,9 +435,9 @@ class ListBlock extends React.Component {
                      <div>
                        <Button onClick={gotoReceive.bind(this, token)} type='primary'
                                className="border-none  ">{intl.get('txs.type_receive')} {token}</Button>
-                       {token !== 'WETH' && <Button onClick={gotoTrade.bind(this, token)}
+                       {token !== 'WEXP' && <Button onClick={gotoTrade.bind(this, token)}
                                                     className="m5 border-none">{intl.get('txs.buy')} {token}</Button>}
-                       {token === 'WETH' && <Button onClick={gotoConvert.bind(this, {symbol: 'ETH'})}
+                       {token === 'WEXP' && <Button onClick={gotoConvert.bind(this, {symbol: 'EXP'})}
                                                     className="m5 border-none">{intl.get('txs.type_convert_title_eth')}</Button>}
                        <a className="cursor-pointer fs12 ml5 color-primary-1" onClick={showModal.bind(this, {
                          id: 'order/open/detail',

@@ -1,11 +1,11 @@
 import React from 'react';
 import {Button, Card, Collapse, Input} from 'antd';
 import {connect} from 'dva';
-import {create} from 'Loopring/ethereum/account';
+import {create} from 'Loopring/expanse/account';
 import {placeOrder, sign} from 'Loopring/relay/order';
 import {notifyTransactionSubmitted} from 'Loopring/relay/utils'
 import {toBig, toHex, toNumber} from 'Loopring/common/formatter';
-import Token from 'Loopring/ethereum/token';
+import Token from 'Loopring/expanse/token';
 import {configs} from "../../../common/config/data";
 import config from "../../../common/config";
 import eachLimit from 'async/eachLimit';
@@ -98,16 +98,16 @@ class TradeConfirm extends React.Component {
           id: 'token/receive',
           symbol: item.value.symbol.toUpperCase()
         })}> {intl.get('order.receive_token', {token: item.value.symbol.toUpperCase()})}</Button>
-        {item.value.symbol.toUpperCase() !== 'WETH' && item.value.symbol.toUpperCase() !== 'BAR' && item.value.symbol.toUpperCase() !== 'FOO' &&
+        {item.value.symbol.toUpperCase() !== 'WEXP' && item.value.symbol.toUpperCase() !== 'BAR' && item.value.symbol.toUpperCase() !== 'FOO' &&
         <Button className="alert-btn mr5"
-                onClick={() => window.routeActions.gotoPath(`/trade/${item.value.symbol.toUpperCase()}-WETH`)}> {intl.get('order.buy_token', {token: item.value.symbol.toUpperCase()})}</Button>}
+                onClick={() => window.routeActions.gotoPath(`/trade/${item.value.symbol.toUpperCase()}-WEXP`)}> {intl.get('order.buy_token', {token: item.value.symbol.toUpperCase()})}</Button>}
         {(item.value.symbol.toUpperCase() === 'BAR' || item.value.symbol.toUpperCase() === 'FOO') &&
         <Button className="alert-btn mr5"
                 onClick={() => window.routeActions.gotoPath('/trade/FOO-BAR')}> {intl.get('order.buy_token', {token: item.value.symbol.toUpperCase()})}</Button>}
-        {item.value.symbol.toUpperCase() === 'WETH' &&
+        {item.value.symbol.toUpperCase() === 'WEXP' &&
         <Button className="alert-btn mr5" onClick={() => modal.showModal({
           id: 'token/convert',
-          item: {symbol: 'ETH'},
+          item: {symbol: 'EXP'},
           showFrozenAmount: true
         })}> {intl.get('order.convert_token', {token: item.value.symbol.toUpperCase()})}</Button>}
       </div>

@@ -134,7 +134,7 @@ function getMarkets() {
   // const tokens = getTokens();
   // const supportedMarktesR = getSupportedMarketsTokenR()
   // let markets = new Array()
-  // tokens.filter(item => item.symbol !== 'ETH' && item.symbol !== 'WETH').forEach(token=> {
+  // tokens.filter(item => item.symbol !== 'EXP' && item.symbol !== 'WEXP').forEach(token=> {
   //   supportedMarktesR.forEach(marketR => {
   //     if(marketR !== token.symbol) {
   //       const tokenConfig = getTokenBySymbol(token.symbol)

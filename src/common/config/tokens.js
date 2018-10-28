@@ -1,26 +1,26 @@
 
 export default [
   {
-      "symbol": "ETH",
-      "title": "Ethereum",
+      "symbol": "EXP",
+      "title": "Expanse",
       "icon": true
   },
   // {
   //     "symbol": "TEST",
-  //     "title": "Ethereum",
+  //     "title": "Expanse",
   //     "custom":true,
   //     "digits": 18,
-  //     "unit": "ETH",
+  //     "unit": "EXP",
   //     "address": "0x2956356cD2a2bf3202F771F50D3D14A367b48070",
-  //     "website": "https://ethereum.org",
+  //     "website": "https://expanse.org",
   //     "allowance": "1000000000000000000000",
   //     "allowanceWarn": "500000000000000000000",
   //     "precision": 6,
   //     "minTradeValue": 0.001
   // },
   {
-      "symbol": "WETH",
-      "title": "WETH",
+      "symbol": "WEXP",
+      "title": "WEXP",
       "icon": true
   },
   {

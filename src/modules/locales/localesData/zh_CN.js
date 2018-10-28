@@ -63,7 +63,7 @@ export default {
         <br />
         订单自动取消：无需支付任何费用（订单过期之后会自动取消）
         <br />
-        订单手动取消：需支付的 ETH 油费
+        订单手动取消：需支付的 EXP 油费
         <br />
         <span class="color-black-1 font-weight-bold">与传统交易所相比，路印协议的交易费用方面：</span>
         <br />
@@ -337,8 +337,8 @@ export default {
     type: '类型',
     type_transfer: '转账',
     type_convert: '转换',
-    type_convert_title_eth: 'ETH 转换为 WETH',
-    type_convert_title_weth: 'WETH 转换为 ETH',
+    type_convert_title_eth: 'EXP 转换为 WEXP',
+    type_convert_title_weth: 'WEXP 转换为 EXP',
     type_receive: '收款',
     type_others: '其他',
     type_pex_fee: 'PEX撮合费',
@@ -518,7 +518,7 @@ export default {
     custom_time_to_live_title: '设置本次生效的有效时间',
     send_failed: '下单失败 !',
     failed_fetch_data: '从服务器获取数据失败, 请稍后在尝试',
-    eth_is_required: '由于需要支付ETH油费, 根据您当前订单需要发送的以太坊交易计算，还需要 {required} ETH',
+    eth_is_required: '由于需要支付ETH油费, 根据您当前订单需要发送的以太坊交易计算，还需要 {required} EXP',
     pexfee_is_required: '由于需要支付PEX油费, 汇总您历史订单所需PEX，还需要 {required} PEX',
     not_supported_token_to_trade_title: '我们暂时未支持{token}交易',
     not_supported_token_to_trade_content: '敬请期待我们开放更多市场',
@@ -554,7 +554,7 @@ export default {
     view_transaction: '通过Etherscan查看交易',
     send_again: '继续转账',
     convert_again: '继续转换',
-    ethereum_address: "我的以太坊地址",
+    expanse_address: "我的以太坊地址",
     copy: "复制",
     copy_success: "复制成功",
     copy_failed: "复制失败",
@@ -657,13 +657,13 @@ export default {
     error_title: "错误信息",
     failed_connect_ledger_title: '连接Ledger失败',
     content_ledger_unlock_require_https: "解锁Ledger钱包只能在HTTPS网页上",
-    content_ledger_connect_failed: "与您的Ledger设备连接失败, 您可以参照以下建议. 1、请确保您的设备与电脑连接并解锁. 2、在设备上将该选项设置为'yes': Settings->Browser support 3、在设备上选择'Ethereum app'并进入",
+    content_ledger_connect_failed: "与您的Ledger设备连接失败, 您可以参照以下建议. 1、请确保您的设备与电脑连接并解锁. 2、在设备上将该选项设置为'yes': Settings->Browser support 3、在设备上选择'Expanse app'并进入",
     content_leder_locked: "您的Ledger设备似乎被锁定了",
     recommended: "推荐",
     recommend_way: "这是推荐的解锁方式.",
     connect_to_ledger: "连接您的Ledger钱包",
     failed_connect_metamask_title: '连接MetaMask失败',
-    content_metamask_mainnet: "在您使用MetaMask解锁时，我们只支持Ethereum mainnet，请在您的MetaMask切换",
+    content_metamask_mainnet: "在您使用MetaMask解锁时，我们只支持Expanse mainnet，请在您的MetaMask切换",
     title_metamask_logout: "您已从MetaMask登出",
     content_metamask_logout: "我们检测到您已经从MetaMask登出, 为了您资金安全您的钱包重新锁定",
     content_metamask_unlock_again: "我们检测到您的网络环境或MetaMask network发生了变化，为了您的资产安全钱包已经被登出, 如要继续使用请确认MetaMask正在使用MainNetwork并再次解锁您的钱包",

@@ -223,14 +223,14 @@ class ListBlock extends React.Component {
                         className="bg-red-500 border-none">{intl.get('orders.receive', {token: tokenS})}</Button>
                 <span className="color-grey-500 ml5 mr5"> or </span>
                 {
-                  tokenS !== 'WETH' &&
-                  <Button onClick={window.routeActions.gotoPath.bind(this, `/trade/${tokenS}-WETH`)}
+                  tokenS !== 'WEXP' &&
+                  <Button onClick={window.routeActions.gotoPath.bind(this, `/trade/${tokenS}-WEXP`)}
                           className="bg-red-500 border-none"
                           type="primary">{intl.get('orders.buy', {token: tokenS})}</Button>
                 }
                 {
-                  tokenS === 'WETH' &&
-                  <Button onClick={showModal.bind(this, {id: 'token/convert', item: {symbol: 'ETH'}})}
+                  tokenS === 'WEXP' &&
+                  <Button onClick={showModal.bind(this, {id: 'token/convert', item: {symbol: 'EXP'}})}
                           className="bg-red-500 border-none" type="primary">{intl.get('orders.convert')} </Button>
                 }
               </div>

@@ -13,13 +13,13 @@ function parseJSON(res) {
 let checkHost = () => {
   const relayHost = window.STORAGE.settings.getRelay()
   window.LOOPRING_PROVIDER_HOST = relayHost + '/rpc/v2'
-  window.ETH_HOST = relayHost + '/eth'
+  window.ETH_HOST = relayHost + '/exp'
 
   if (!window.LOOPRING_PROVIDER_HOST) {
     throw new Error('host is required. Do not forget: new Loopring(host)')
   }
   if(!window.ETH_HOST){
-    throw new Error('host is required. Do not forget: new ETH(host)')
+    throw new Error('host is required. Do not forget: new EXP(host)')
   }
 };
 
@@ -38,7 +38,7 @@ function request(options,url) {
     options.body = JSON.stringify(options.body)
   }
   // options.credentials = 'include'
-   url =  url || (method.startsWith('eth')? window.ETH_HOST : window.LOOPRING_PROVIDER_HOST);
+   url =  url || (method.startsWith('exp')? window.ETH_HOST : window.LOOPRING_PROVIDER_HOST);
   return fetch(url, options)
     .then(checkStatus)
     .then(parseJSON)

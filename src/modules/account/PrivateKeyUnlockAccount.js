@@ -1,8 +1,8 @@
 import Account from "./Account";
 import EthTransaction from 'ethereumjs-tx'
-import Transaction from "../../common/Loopring/ethereum/transaction";
+import Transaction from "../../common/Loopring/expanse/transaction";
 import {toHex, toBuffer, addHexPrefix} from '../../common/Loopring/common/formatter'
-import {privateKeytoAddress,download} from 'Loopring/ethereum/account';
+import {privateKeytoAddress,download} from 'Loopring/expanse/account';
 import {sign} from 'Loopring/relay/order'
 import {hashPersonalMessage} from 'ethereumjs-util'
 

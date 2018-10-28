@@ -69,7 +69,7 @@ class CancelConfirm extends React.Component {
     const {modal, prices} = this.props;
     const {loading} = this.state;
     const {tx, type, market, order} = modal;
-    const price = prices.getTokenBySymbol('ETH');
+    const price = prices.getTokenBySymbol('EXP');
     const amount = toBig(tx.gasPrice).times(tx.gasLimit).div(1e18).toNumber();
     const worth = `${getDisplaySymbol(window.STORAGE.settings.get().preference.currency)}${math.accMul(amount, price.price).toFixed(2)}`
     const title = type === 'order' ? intl.get('order.confirm_cancel_order') : intl.get('order.confirm_cancel_all', {pair: market || ''})
@@ -117,7 +117,7 @@ class CancelConfirm extends React.Component {
             <div className="col-auto">
               {
                 false &&
-                <div className="">{amount.toFixed(8)}ETH ≈ {worth}</div>
+                <div className="">{amount.toFixed(8)}EXP ≈ {worth}</div>
               }
               {
                 !loading &&

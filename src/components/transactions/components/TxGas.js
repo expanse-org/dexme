@@ -1,5 +1,5 @@
 import React from 'react';
-import {getTransactionByhash, getTransactionRecipt} from 'Loopring/ethereum/utils'
+import {getTransactionByhash, getTransactionRecipt} from 'Loopring/expanse/utils'
 import {getPendingRawTxByHash} from "Loopring/relay/utils";
 import {toBig} from "../../../common/Loopring/common/formatter";
 import {Icon, Tooltip} from 'antd'
@@ -15,7 +15,7 @@ export default class TxGas extends React.Component {
     return (
       <div className="fs12 color-black-3">
         {gas && <div>
-          {gas} ETH
+          {gas} EXP
           <span className="bg-grey-50 color-black-3 fs10 border-grey-100 border d-inline-block" style={{padding: '2px 10px',borderRadius:'50em'}}>
             {intl.get('global.gas').toLowerCase()}
           </span>

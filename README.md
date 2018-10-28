@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Loopr is a non-custodial Ethereum wallet and Loopring DEX，which is in Beta phase of V3. 
+Loopr is a non-custodial Expanse wallet and Loopring DEX，which is in Beta phase of V3. 
 
 Start your first decentralized trade at [loopring.io](https://loopring.io) or [https://loopr.io](https://loopr.io)
 

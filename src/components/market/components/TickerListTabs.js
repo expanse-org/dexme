@@ -172,7 +172,7 @@ const TickerTabs = ({tickersByLoopring:tickers,dispatch})=>{
       favoredNumber += 1
     }
   }
-  const activeTab = favoredNumber > 0 ? 'favorites' : 'WETH'
+  const activeTab = favoredNumber > 0 ? 'favorites' : 'WEXP'
   // tab(intl.get('ticker.favorites'))
   const tab = (text)=> <div className="fs16 font-weight-bold">{text}</div>
   return (

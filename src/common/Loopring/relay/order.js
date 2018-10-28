@@ -1,12 +1,12 @@
 import request from '../common/request'
 import Response from '../common/response'
 import code from "../common/code"
-import {generateAbiData, solSHA3, isValidSig} from '../ethereum/abi'
+import {generateAbiData, solSHA3, isValidSig} from '../expanse/abi'
 import validator from './validator'
-import Transaction from '../ethereum/transaction'
+import Transaction from '../expanse/transaction'
 import {toBN, toNumber, toHex, toBuffer, addHexPrefix, clearPrefix} from "../common/formatter";
 import {hashPersonalMessage, ecsign, sha3} from "ethereumjs-util"
-import {privateKeytoAddress} from "../ethereum/account";
+import {privateKeytoAddress} from "../expanse/account";
 
 
 let headers = {

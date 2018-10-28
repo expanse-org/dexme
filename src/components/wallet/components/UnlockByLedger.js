@@ -27,7 +27,7 @@ class UnlockByLedger extends React.Component {
     const {modal, pageFrom} = this.props;
     ledger.comm_u2f.create_async()
       .then(comm => {
-        const ledgerConnection = new ledger.eth(comm)
+        const ledgerConnection = new ledger.exp(comm)
         window.WALLET = new LedgerUnlockAccount({ ledger:ledgerConnection })
         window.WALLET_UNLOCK_TYPE = walletType
         this.isConnected()

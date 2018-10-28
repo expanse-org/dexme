@@ -260,13 +260,13 @@ this.TrezorConnect = (function () {
       }, requiredFirmware), callback);
     };
 
-    // new implementation with ethereum at beginnig
-    this.ethereumSignTx = function() {
-      this.signEthereumTx.apply(this, arguments);
+    // new implementation with expanse at beginnig
+    this.expanseSignTx = function() {
+      this.signExpanseTx.apply(this, arguments);
     }
 
     // old fallback
-    this.signEthereumTx = function (
+    this.signExpanseTx = function (
       address_n,
       nonce,
       gas_price,
@@ -279,7 +279,7 @@ this.TrezorConnect = (function () {
       requiredFirmware
     ) {
       if (requiredFirmware == null) {
-        requiredFirmware = '1.4.0'; // first firmware that supports ethereum
+        requiredFirmware = '1.4.0'; // first firmware that supports expanse
       }
       if (typeof address_n === 'string') {
         address_n = parseHDPath(address_n);
@@ -405,7 +405,7 @@ this.TrezorConnect = (function () {
     };
 
     /**
-     * Sign an Ethereum message
+     * Sign an Expanse message
      *
      * @param {string|array} path
      * @param {string} message to sign (ascii)
@@ -413,7 +413,7 @@ this.TrezorConnect = (function () {
      * @param {?(string|array<number>)} requiredFirmware
      *
      */
-    this.ethereumSignMessage = function (
+    this.expanseSignMessage = function (
       path,
       message,
       callback,
@@ -467,7 +467,7 @@ this.TrezorConnect = (function () {
     };
 
     /**
-     * Verify ethereum message
+     * Verify expanse message
      *
      * @param {string} address
      * @param {string} signature (base64)
@@ -476,7 +476,7 @@ this.TrezorConnect = (function () {
      * @param {?(string|array<number>)} requiredFirmware
      *
      */
-    this.ethereumVerifyMessage = function (
+    this.expanseVerifyMessage = function (
       address,
       signature,
       message,
@@ -623,13 +623,13 @@ this.TrezorConnect = (function () {
     }
 
     /**
-     * Display ethereum address on device
+     * Display expanse address on device
      *
      * @param {array} address
      * @param {?(string|array<number>)} requiredFirmware
      *
      */
-    this.ethereumGetAddress = function (address, callback, requiredFirmware) {
+    this.expanseGetAddress = function (address, callback, requiredFirmware) {
 
       if (typeof address === 'string') {
         address = parseHDPath(address);

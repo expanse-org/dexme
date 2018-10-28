@@ -1,12 +1,12 @@
 import Account from "./Account";
-import Transaction from "../../common/Loopring/ethereum/transaction";
+import Transaction from "../../common/Loopring/expanse/transaction";
 import EthTransaction from 'ethereumjs-tx'
 import { toBuffer, addHexPrefix, bufferToHex } from 'ethereumjs-util';
-import {signatureRecover} from '../../common/Loopring/ethereum/utils'
+import {signatureRecover} from '../../common/Loopring/expanse/utils'
 import {toHex} from '../../common/Loopring/common/formatter'
 import trimStart from 'lodash/trimStart';
 import HDKey from 'hdkey';
-import {publicKeytoAddress} from "Loopring/ethereum/account";
+import {publicKeytoAddress} from "Loopring/expanse/account";
 import {getOrderHash} from "Loopring/relay/order";
 
 export default class LedgerUnlockAccount extends Account {
@@ -139,8 +139,8 @@ export default class LedgerUnlockAccount extends Account {
             r: addHexPrefix(result.r),
             s: addHexPrefix(result.s)
           };
-          const eth = new EthTransaction(txToSerialize)
-          const serializedTx = eth.serialize();
+          const exp = new EthTransaction(txToSerialize)
+          const serializedTx = exp.serialize();
           resolve({result:serializedTx});
         })
         .catch(err => {

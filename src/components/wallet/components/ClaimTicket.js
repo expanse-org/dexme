@@ -4,7 +4,7 @@ import validator from 'Loopring/common/validator'
 import {claimTicket,queryTicket,queryTicketCount} from "../../../common/Loopring/relay/account";
 import {toBuffer,toHex} from "../../../common/Loopring/common/formatter";
 import intl from 'react-intl-universal'
-import {getHash} from "../../../common/Loopring/ethereum/utils";
+import {getHash} from "../../../common/Loopring/expanse/utils";
 import Notification from 'Loopr/Notification';
 
 

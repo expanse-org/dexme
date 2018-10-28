@@ -4,7 +4,7 @@ import {accMul} from 'Loopring/common/math'
 import {toBig, toHex, toNumber,getDisplaySymbol} from "Loopring/common/formatter";
 import Currency from '../../../modules/settings/CurrencyContainer'
 import wrapArrow from '../../../assets/images/wrap-arrow.png';
-import {generateAbiData} from '../../../common/Loopring/ethereum/abi'
+import {generateAbiData} from '../../../common/Loopring/expanse/abi'
 import config from '../../../common/config'
 import {notifyTransactionSubmitted} from 'Loopring/relay/utils'
 import intl from 'react-intl-universal';
@@ -23,7 +23,7 @@ class WithdrawAll extends React.Component {
     const {modal,prices,settings,form} = this.props;
     const selectedToken = modal.item || {};
     const balance = toBig(selectedToken.balance).div(1e18).toNumber();
-    const price = prices.getTokenBySymbol('ETH');
+    const price = prices.getTokenBySymbol('EXP');
     const priceValue = (
       <span className="fs10">
         ≈
@@ -42,9 +42,9 @@ class WithdrawAll extends React.Component {
         <div className="row justify-content-center align-items-center mb30">
           <div className="col text-right">
             <div className="text-center d-inline-block">
-               <CoinIcon size="60" symbol="WETH" />
+               <CoinIcon size="60" symbol="WEXP" />
                 <br/>
-                <span className="fs12">Old WETH</span>
+                <span className="fs12">Old WEXP</span>
             </div>
           </div>
           <div className="col-2">
@@ -52,9 +52,9 @@ class WithdrawAll extends React.Component {
           </div>
           <div className="col text-left">
             <div className="text-center d-inline-block">
-               <CoinIcon size="60" symbol="ETH" />
+               <CoinIcon size="60" symbol="EXP" />
                <br/>
-               <span className="fs12">ETH</span>
+               <span className="fs12">EXP</span>
             </div>
           </div>
         </div>

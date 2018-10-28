@@ -2,7 +2,7 @@ import React from 'react';
 import {Card, Spin, Button,Tabs} from 'antd';
 import {toNumber,toBig,toHex} from "Loopring/common/formatter";
 import intl from 'react-intl-universal'
-import {getTransactionByhash} from 'Loopring/ethereum/utils'
+import {getTransactionByhash} from 'Loopring/expanse/utils'
 import {
   getEstimatedAllocatedAllowance,
   getFrozenPexFee,
@@ -90,9 +90,9 @@ class DetailBlock extends React.Component {
         case 'pex_reward':
           return intl.get('orders.PexReward');
         case 'convert_outcome':
-          return item.symbol === 'ETH' ? intl.get('txs.type_convert_title_eth') : intl.get('txs.type_convert_title_weth');
+          return item.symbol === 'EXP' ? intl.get('txs.type_convert_title_eth') : intl.get('txs.type_convert_title_weth');
         case 'convert_income':
-          return item.symbol === 'WETH' ? intl.get('txs.type_convert_title_eth') : intl.get('txs.type_convert_title_weth');
+          return item.symbol === 'WEXP' ? intl.get('txs.type_convert_title_eth') : intl.get('txs.type_convert_title_weth');
         case 'cancel_order':
           return intl.get('txs.cancel_order')
         case 'cutoff':
@@ -167,7 +167,7 @@ class DetailBlock extends React.Component {
             <MetaItem label={intl.get('txs.type')} value={getType()}/>
             {ethTx && <MetaItem label={intl.get('token.gas')} value={
               <div className="mr15">
-                <div className="row justify-content-end">{`${toBig(ethTx.gasPrice.toString()).times(ethTx.gas).times('1e-18').toString(10)}  ETH`}</div>
+                <div className="row justify-content-end">{`${toBig(ethTx.gasPrice.toString()).times(ethTx.gas).times('1e-18').toString(10)}  EXP`}</div>
                 <div className="row justify-content-end fs14 color-black-3">{`Gas(${toNumber(ethTx.gas).toString(10)}) * Gas Price(${toNumber(ethTx.gasPrice)/(1e9).toString(10)} Gwei)`}</div>
               </div>
             }/>}
@@ -175,7 +175,7 @@ class DetailBlock extends React.Component {
             {false && <MetaItem label={intl.get('token.gas_price')}
                                 value={ethTx && window.uiFormatter.getFormatNum(toNumber(ethTx.gasPrice) / 1e9) + " Gwei"}/>}
             <MetaItem label={intl.get('wallet.nonce')} value={toNumber(item.nonce)}/>
-            <MetaItem label={intl.get('txs.value')} value={ethTx && toBig(ethTx.value).div(1e18).toNumber() + ' ETH'}/>
+            <MetaItem label={intl.get('txs.value')} value={ethTx && toBig(ethTx.value).div(1e18).toNumber() + ' EXP'}/>
           </Spin>
           </TabPane>
           {

@@ -13,7 +13,7 @@ const PlaceOrderError = ({
 
   const gotoBuy = (token)=>{
     modal.hideModal({id:'trade/place-order-error'})
-    window.routeActions.gotoPath(`/trade/${token.toUpperCase()}-WETH`)
+    window.routeActions.gotoPath(`/trade/${token.toUpperCase()}-WEXP`)
   }
 
   return (

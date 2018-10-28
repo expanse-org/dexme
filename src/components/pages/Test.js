@@ -41,11 +41,11 @@ function Test(props){
     Notification.open({
       duration:0,
       message:"Order can not be fully filled !",
-      description:'You need 3.2 WETH for order.',
+      description:'You need 3.2 WEXP for order.',
       type:'warning',
       actions:(
         <div>
-          <Button className="alert-btn mr5">Convert ETH To WETH</Button>
+          <Button className="alert-btn mr5">Convert EXP To WEXP</Button>
         </div>
       )
 
@@ -71,11 +71,11 @@ function Test(props){
     Notification.open({
       duration:0,
       message:"Place order failed !",
-      description:'You need 0.003+ ETH for order gas .',
+      description:'You need 0.003+ EXP for order gas .',
       type:'error',
       actions:(
         <div>
-          <Button className="alert-btn mr5">Receive ETH</Button>
+          <Button className="alert-btn mr5">Receive EXP</Button>
         </div>
       )
 

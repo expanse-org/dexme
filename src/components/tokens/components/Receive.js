@@ -65,7 +65,7 @@ export default class Receive extends React.Component {
       }) : Notification.open({message: intl.get('navbar.subs.copy_failed'), type: "error", size: 'small'})
     };
     return (
-      <Card title={intl.get('token.ethereum_address')}>
+      <Card title={intl.get('token.expanse_address')}>
         <div className='text-center'>
           <div className='pt30 pb30 pr20 pl20'>
             <QRCode value={address} size={240}/>

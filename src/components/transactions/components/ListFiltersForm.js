@@ -37,7 +37,7 @@ let FiltersForm = ({
                 filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
               >
                 <Select.Option value="PEX">PEX</Select.Option>
-                <Select.Option value="ETH">ETH</Select.Option>
+                <Select.Option value="EXP">EXP</Select.Option>
                 <Select.Option value="BTC">BTC</Select.Option>
               </Select>
           </Form.Item>

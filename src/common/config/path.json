@@ -5,7 +5,7 @@
       "Loopring Wallet",
       "imtoken",
       "MetaMask",
-      "TREZOR (ETH)",
+      "TREZOR (EXP)",
       "Digital Bitbox",
       "Exodus",
       "Jaxx"
@@ -14,7 +14,7 @@
   {
     "path": "m/44'/60'/0'",
     "wallet": [
-      "Ledger (ETH)"
+      "Ledger (EXP)"
     ]
   },
   {

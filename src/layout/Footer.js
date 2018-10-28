@@ -25,7 +25,7 @@ export default function Footer(props){
       title:'LOOPRING PROTOCOL',
       sub:[
         {title:'Whitepaper',href:''},
-        {title:'Ethereum Smart Contracts',href:''},
+        {title:'Expanse Smart Contracts',href:''},
         {title:'Github Repositories',href:''},
         {title:'Protocol Audit Report',href:''},
       ]

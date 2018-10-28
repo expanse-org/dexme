@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'dva/router';
 import { Card, Button,Icon,Input, Form } from 'antd';
 import intl from 'react-intl-universal';
-import {isValidEthAddress} from 'Loopring/ethereum/utils'
+import {isValidEthAddress} from 'Loopring/expanse/utils'
 import {configs} from '../../../common/config/data'
 import Alert from 'Loopr/Alert'
 

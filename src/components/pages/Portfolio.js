@@ -75,7 +75,7 @@ class AssetsPieChart extends React.Component{
       COLORS = ['#eee']
     }
     // console.log(data, data.length)
-    //const data = [{name: "ETH", value: 1},{name: "WETH", value: 0},{name: "EOS", value: 0},{name: "AE", value: 0},{name: "RDN", value: 0},{name: "OTHERS", value: 0}]
+    //const data = [{name: "EXP", value: 1},{name: "WEXP", value: 0},{name: "EOS", value: 0},{name: "AE", value: 0},{name: "RDN", value: 0},{name: "OTHERS", value: 0}]
 
     const RADIAN = Math.PI / 180;
     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {

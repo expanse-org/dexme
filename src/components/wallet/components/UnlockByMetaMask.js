@@ -31,7 +31,7 @@ class UnlockByMetaMask extends React.Component {
     }
     let metamaskState = ''
     if(window.web3){
-      if(!window.web3.eth.accounts[0]) { // locked
+      if(!window.web3.exp.accounts[0]) { // locked
         metamaskState = 'locked'
       }
     } else { // to install
@@ -43,7 +43,7 @@ class UnlockByMetaMask extends React.Component {
   connectToMetamask = () => {
     const {modal, account, pageFrom} = this.props
     this.setState({loading:true})
-    if (window.web3 && window.web3.eth.accounts[0]) {
+    if (window.web3 && window.web3.exp.accounts[0]) {
       window.web3.version.getNetwork((err, netId) => {
         if (netId !== '1') {
           Notification.open({
@@ -54,7 +54,7 @@ class UnlockByMetaMask extends React.Component {
           this.setState({loading:false})
           return
         }
-        let selectedAccount = window.web3.eth.accounts[0]
+        let selectedAccount = window.web3.exp.accounts[0]
         window.WALLET = new MetaMaskUnlockAccount({web3: window.web3, address: selectedAccount})
         window.WALLET_UNLOCK_TYPE = walletType
         account.setWallet({address:selectedAccount, walletType:walletType})
@@ -71,7 +71,7 @@ class UnlockByMetaMask extends React.Component {
         }
         let alert = false
         var accountInterval = setInterval(function() {
-          if ((!window.web3 || !window.web3.eth.accounts[0]) && !alert) {
+          if ((!window.web3 || !window.web3.exp.accounts[0]) && !alert) {
             alert = true
             console.log("MetaMask account locked:", selectedAccount)
             clearInterval(accountInterval)
@@ -97,8 +97,8 @@ class UnlockByMetaMask extends React.Component {
               return
             }
           })
-          if (window.web3.eth.accounts[0] !== selectedAccount) {
-            selectedAccount = window.web3.eth.accounts[0];
+          if (window.web3.exp.accounts[0] !== selectedAccount) {
+            selectedAccount = window.web3.exp.accounts[0];
             Notification.open({
               message:intl.get('wallet.title_metamask_account_change'),
               description:intl.get('wallet.content_metamask_account_change'),
@@ -113,7 +113,7 @@ class UnlockByMetaMask extends React.Component {
       })
     } else {
       let content = intl.get('wallet.content_metamask_install')
-      if(window.web3 && !window.web3.eth.accounts[0]) { // locked
+      if(window.web3 && !window.web3.exp.accounts[0]) { // locked
         content = intl.get('wallet.content_metamask_locked')
       }
       Notification.open({
@@ -149,7 +149,7 @@ class UnlockByMetaMask extends React.Component {
     }
 
     const refresh = () => {
-      if (window.web3 && window.web3.eth.accounts[0]) {
+      if (window.web3 && window.web3.exp.accounts[0]) {
         this.connectToMetamask()
       } else {
         window.STORAGE.wallet.storeUnlockedAddress('MetaMask', '')

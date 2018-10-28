@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button, Card, Form, Input, Spin} from 'antd';
-import Token from 'Loopring/ethereum/token'
-import validator from 'Loopring/ethereum/validator';
+import Token from 'Loopring/expanse/token'
+import validator from 'Loopring/expanse/validator';
 import intl from 'react-intl-universal';
 import {configs} from '../../../common/config/data'
 import Notification from 'Loopr/Notification'

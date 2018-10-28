@@ -242,7 +242,7 @@
     {
       "allowance": "<nil>",
       "balance": "63870889000000000",
-      "symbol": "ETH"
+      "symbol": "EXP"
     },
     {
       "allowance": "0",
@@ -322,7 +322,7 @@
     {
       "allowance": "0",
       "balance": "0",
-      "symbol": "WETH"
+      "symbol": "WEXP"
     },
     {
       "allowance": "0",

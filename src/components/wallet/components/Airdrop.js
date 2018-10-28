@@ -1,6 +1,6 @@
 import React from 'react';
 import {Card, Icon, Tooltip, Button, Alert} from 'antd';
-import {generateBindAddressTx, getBindAddress} from "Loopring/ethereum/utils";
+import {generateBindAddressTx, getBindAddress} from "Loopring/expanse/utils";
 import {toHex, toBig, toNumber,clearPrefix} from "Loopring/common/formatter";
 import CoinIcon from '../../common/CoinIcon';
 import {projects} from "../../../common/config/data";
