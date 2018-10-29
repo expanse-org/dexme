@@ -101,7 +101,7 @@ const TradingSettingForm = ({
     </Select>
   )
 
-  const contractVersionExtra = <div className="fs10 mt5"><a target="_blank" href={"https://etherscan.io/address/"+trading.contract.address}>{trading.contract.address}</a></div>
+  const contractVersionExtra = <div className="fs10 mt5"><a target="_blank" href={"https://gander.tech/address/"+trading.contract.address}>{trading.contract.address}</a></div>
 
   return (
     <div className="" >

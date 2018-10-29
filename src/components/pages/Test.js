@@ -89,7 +89,7 @@ function Test(props){
       type:'info',
       actions:(
         <div>
-          <Button className="alert-btn mr5">View transaction in etherscan.io</Button>
+          <Button className="alert-btn mr5">View transaction in gander.tech</Button>
         </div>
       )
 
