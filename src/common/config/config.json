@@ -45,13 +45,23 @@
       "name": "Test"
     }
   ],
-  "supportedTokenRInMarkets":["WEXP", "PEX"],
+  "supportedTokenRInMarkets":["WEXP", "PEX", "LAB"],
   "markets": [
   ],
   "newMarkets":[
     {
       "tokenx": "PEX",
       "tokeny": "WEXP",
+      "pricePrecision": 8
+    },
+    {
+      "tokenx": "LAB",
+      "tokeny": "WEXP",
+      "pricePrecision": 8
+    },
+    {
+      "tokenx": "PEX",
+      "tokeny": "LAB",
       "pricePrecision": 8
     }
 ],
@@ -96,7 +106,19 @@
       "digits": 18,
       "address": "",
       "unit": "EXP",
-      "website": "https://ethereum.org",
+      "website": "https://expanse.tech",
+      "allowance": "1000000000000000000000",
+      "allowanceWarn": "500000000000000000000",
+      "precision": 6,
+      "minTradeValue": 0.0001
+    }, 
+    {
+      "symbol": "LAB",
+      "name": "TokenLab",
+      "digits": 18,
+      "address": "0xa887adb722cf15bc1efe3c6a5d879e0482e8d197",
+      "unit": "LAB",
+      "website": "https://tokenlab.io",
       "allowance": "1000000000000000000000",
       "allowanceWarn": "500000000000000000000",
       "precision": 6,
@@ -108,7 +130,7 @@
       "digits": 18,
       "address": "0x1871B7f0B930173Be7F7F6abe6E90a0dd83A3C91",
       "unit": "WEXP",
-      "website": "https://weth.io",
+      "website": "https://expanse.tech",
       "allowance": "1000000000000000000000",
       "allowanceWarn": "100000000000000000000",
       "precision": 6,
@@ -120,7 +142,7 @@
       "digits": 18,
       "address": "0x1871B7f0B930173Be7F7F6abe6E90a0dd83A3C91",
       "unit": "WEXP",
-      "website": "https://weth.io",
+      "website": "https://expanse.tech",
       "allowance": "1000000000000000000000",
       "allowanceWarn": "100000000000000000000",
       "precision": 6,
@@ -132,7 +154,7 @@
       "digits": 18,
       "address": "0xbdaaafdcdbabf18623ca84a6dea81f05fd735182",
       "unit": "PEX",
-      "website": "https://loopring.org",
+      "website": "https://expex.io",
       "allowance": "1000000000000000000000",
       "allowanceWarn": "50000000000000000000",
       "precision": 6,
