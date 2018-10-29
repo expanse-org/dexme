@@ -12,7 +12,7 @@ function DetailBlock({LIST={},actions={}}) {
       miner:(value,item,index)=> <Link className="text-truncate d-block" style={{}} to={`/miner/detail/${value}`}>{value}</Link>,
       feeRecipient:(value,item,index)=> <a className="text-truncate d-block" style={{}} target="_blank" href={`https://gander.tech/address/${value}`}>{value}</a>,
       txHash:(value,item,index)=> <a className="text-truncate d-block" style={{}} target="_blank" href={`https://gander.tech/tx/${value}`}>{value}</a>,
-      blockNumber:(value,item,index)=> <a className="text-truncate d-block" style={{}} target="_blank" href={`https://gander.tech/block/${value}`}>{value}</a>,
+      blockNumber:(value,item,index)=> <a className="text-truncate d-block" style={{}} target="_blank" href={`https://gander.tech/block/${value && value.replace(/,/g, '')}`}>{value}</a>,
       protocol:(value,item,index)=> <a className="text-truncate d-block" style={{}} target="_blank" href={`https://gander.tech/address/${value}`}>{value}</a>,
   }
   return (
