@@ -66,11 +66,11 @@ class DetailBlock extends React.Component {
     };
     const renders = {
       txHash: (value) => <a className="text-truncate d-block" target="_blank" onCopy={handleCopy.bind(this, value)}
-                            href={`https://etherscan.io/tx/${value}`}>{value}</a>,
+                            href={`https://gander.tech/tx/${value}`}>{value}</a>,
       blockNumber: (value) => <a className="text-truncate d-block" target="_blank"
-                                 href={`https://etherscan.io/block/${value}`}>{value}</a>,
+                                 href={`https://gander.tech/block/${value}`}>{value}</a>,
       address: (value) => <a className="text-truncate d-block" target="_blank" onCopy={handleCopy.bind(this, value)}
-                             href={`https://etherscan.io/address/${value}`}>{value}</a>,
+                             href={`https://gander.tech/address/${value}`}>{value}</a>,
     };
     const getType = () => {
 
@@ -90,9 +90,9 @@ class DetailBlock extends React.Component {
         case 'pex_reward':
           return intl.get('orders.PexReward');
         case 'convert_outcome':
-          return item.symbol === 'ETH' ? intl.get('txs.type_convert_title_eth') : intl.get('txs.type_convert_title_weth');
+          return item.symbol === 'EXP' ? intl.get('txs.type_convert_title_eth') : intl.get('txs.type_convert_title_weth');
         case 'convert_income':
-          return item.symbol === 'WETH' ? intl.get('txs.type_convert_title_eth') : intl.get('txs.type_convert_title_weth');
+          return item.symbol === 'WEXP' ? intl.get('txs.type_convert_title_eth') : intl.get('txs.type_convert_title_weth');
         case 'cancel_order':
           return intl.get('txs.cancel_order')
         case 'cutoff':
@@ -125,7 +125,7 @@ class DetailBlock extends React.Component {
           tx.data = tx.input;
           window.WALLET.sendTransaction(tx).then(({response, rawTx}) => {
             if (!response.error) {
-              Notification.open({message: intl.get("txs.resend_success"), type: "success", description:(<Button className="alert-btn mr5" onClick={() => window.open(`https://etherscan.io/tx/${response.result}`,'_blank')}> {intl.get('token.transfer_result_etherscan')}</Button> )});
+              Notification.open({message: intl.get("txs.resend_success"), type: "success", description:(<Button className="alert-btn mr5" onClick={() => window.open(`https://gander.tech/tx/${response.result}`,'_blank')}> {intl.get('token.transfer_result_etherscan')}</Button> )});
               notifyTransactionSubmitted({txHash: response.result, rawTx, from: window.WALLET.getAddress()});
             } else {
               Notification.open({message: intl.get("txs.resend_failed"), type: "error", description:response.error.message})
@@ -167,7 +167,7 @@ class DetailBlock extends React.Component {
             <MetaItem label={intl.get('txs.type')} value={getType()}/>
             {ethTx && <MetaItem label={intl.get('token.gas')} value={
               <div className="mr15">
-                <div className="row justify-content-end">{`${toBig(ethTx.gasPrice.toString()).times(ethTx.gas).times('1e-18').toString(10)}  ETH`}</div>
+                <div className="row justify-content-end">{`${toBig(ethTx.gasPrice.toString()).times(ethTx.gas).times('1e-18').toString(10)}  EXP`}</div>
                 <div className="row justify-content-end fs14 color-black-3">{`Gas(${toNumber(ethTx.gas).toString(10)}) * Gas Price(${toNumber(ethTx.gasPrice)/(1e9).toString(10)} Gwei)`}</div>
               </div>
             }/>}
@@ -175,7 +175,7 @@ class DetailBlock extends React.Component {
             {false && <MetaItem label={intl.get('token.gas_price')}
                                 value={ethTx && window.uiFormatter.getFormatNum(toNumber(ethTx.gasPrice) / 1e9) + " Gwei"}/>}
             <MetaItem label={intl.get('wallet.nonce')} value={toNumber(item.nonce)}/>
-            <MetaItem label={intl.get('txs.value')} value={ethTx && toBig(ethTx.value).div(1e18).toNumber() + ' ETH'}/>
+            <MetaItem label={intl.get('txs.value')} value={ethTx && toBig(ethTx.value).div(1e18).toNumber() + ' EXP'}/>
           </Spin>
           </TabPane>
           {

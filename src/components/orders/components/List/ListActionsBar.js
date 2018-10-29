@@ -69,8 +69,8 @@ class ListActionsBar extends React.Component {
         tx = generateCancelOrdersByTokenPairTx({
           ...params,
           gasLimit: config.getGasLimitByType('cancelOrderByTokenPair') ? config.getGasLimitByType('cancelOrderByTokenPair').gasLimit : configs['defaultGasLimit'],
-          tokenA: window.CONFIG.getTokenBySymbol(tokenA === 'ETH' ? 'WETH' : tokenA).address,
-          tokenB: window.CONFIG.getTokenBySymbol(tokenB === 'ETH' ? 'WETH' : tokenB).address
+          tokenA: window.CONFIG.getTokenBySymbol(tokenA === 'EXP' ? 'WEXP' : tokenA).address,
+          tokenB: window.CONFIG.getTokenBySymbol(tokenB === 'EXP' ? 'WEXP' : tokenB).address
         })
       } else {
         tx = generateCancelAllOrdresTx({
@@ -100,8 +100,8 @@ class ListActionsBar extends React.Component {
       //       tx = generateCancelOrdersByTokenPairTx({
       //         ...params,
       //         gasLimit: config.getGasLimitByType('cancelOrderByTokenPair') ? config.getGasLimitByType('cancelOrderByTokenPair').gasLimit : configs['defaultGasLimit'],
-      //         tokenA: window.CONFIG.getTokenBySymbol(tokenA === 'ETH' ? 'WETH' : tokenA).address,
-      //         tokenB: window.CONFIG.getTokenBySymbol(tokenB === 'ETH' ? 'WETH' : tokenB).address
+      //         tokenA: window.CONFIG.getTokenBySymbol(tokenA === 'EXP' ? 'WEXP' : tokenA).address,
+      //         tokenB: window.CONFIG.getTokenBySymbol(tokenB === 'EXP' ? 'WEXP' : tokenB).address
       //       })
       //     } else {
       //       tx = generateCancelAllOrdresTx({
@@ -115,7 +115,7 @@ class ListActionsBar extends React.Component {
       //         //window.STORAGE.transactions.addTx({hash: response.result, owner: account.address});
       //         window.STORAGE.wallet.setWallet({address:window.WALLET.getAddress(),nonce:tx.nonce});
       //         notifyTransactionSubmitted({txHash:response.result,rawTx,from :window.WALLET.getAddress()}).then(()=> reEmitPendingTransaction());
-      //         Notification.open({message: intl.get('order.cancel_all_success',{pair:tokenPair}), type: "success", description:(<Button className="alert-btn mr5" onClick={() => window.open(`https://etherscan.io/tx/${response.result}`,'_blank')}> {intl.get('token.transfer_result_etherscan')}</Button> )});
+      //         Notification.open({message: intl.get('order.cancel_all_success',{pair:tokenPair}), type: "success", description:(<Button className="alert-btn mr5" onClick={() => window.open(`https://gander.tech/tx/${response.result}`,'_blank')}> {intl.get('token.transfer_result_etherscan')}</Button> )});
       //       } else {
       //         Notification.open({message: intl.get('order.cancel_all_failed',{pair:tokenPair}), type: "error", description:response.error.message})
       //       }

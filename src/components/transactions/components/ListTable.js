@@ -13,10 +13,10 @@ function ListBlock({LIST,actions}) {
   const renders = {
       ringHash:(value,item,index)=><Link className="text-truncate d-block" style={{maxWidth:'150px'}} to={`/rings/detail/${value}`}>{value}</Link>,
       miner:(value,item,index)=> <Link className="text-truncate d-block" style={{maxWidth:'150px'}} to={`/miner/detail/${value}`}>{value}</Link>,
-      feeRecipient:(value,item,index)=> <a className="text-truncate d-block" style={{maxWidth:'150px'}} target="_blank" href={`https://etherscan.io/address/${value}`}>{value}</a>,
-      txHash:(value,item,index)=> <a className="text-truncate d-block" style={{maxWidth:'150px'}} target="_blank" href={`https://etherscan.io/tx/${value}`}>{value}</a>,
-      blockNumber:(value,item,index)=> <a className="text-truncate d-block" style={{maxWidth:'150px'}} target="_blank" href={`https://etherscan.io/block/${value}`}>{value}</a>,
-      protocol:(value,item,index)=> <a className="text-truncate d-block" style={{maxWidth:'150px'}} target="_blank" href={`https://etherscan.io/address/${value}`}>{value}</a>,
+      feeRecipient:(value,item,index)=> <a className="text-truncate d-block" style={{maxWidth:'150px'}} target="_blank" href={`https://gander.tech/address/${value}`}>{value}</a>,
+      txHash:(value,item,index)=> <a className="text-truncate d-block" style={{maxWidth:'150px'}} target="_blank" href={`https://gander.tech/tx/${value}`}>{value}</a>,
+      blockNumber:(value,item,index)=> <a className="text-truncate d-block" style={{maxWidth:'150px'}} target="_blank" href={`https://gander.tech/block/${value}`}>{value}</a>,
+      protocol:(value,item,index)=> <a className="text-truncate d-block" style={{maxWidth:'150px'}} target="_blank" href={`https://gander.tech/address/${value}`}>{value}</a>,
   }
   const actionRender = (value,item,index)=>{
     return <Button>Cancel</Button>
@@ -45,7 +45,7 @@ function ListBlock({LIST,actions}) {
     }
     actions.queryChange({
       sort,filters // TODO
-    }) 
+    })
   }
   const tableProps={
     dataSource:items,
@@ -58,7 +58,7 @@ function ListBlock({LIST,actions}) {
   }
   return (
     <div className="">
-      <Table {...tableProps}/>  
+      <Table {...tableProps}/>
     </div>
   )
 }

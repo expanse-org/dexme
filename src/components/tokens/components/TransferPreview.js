@@ -13,7 +13,7 @@ let Preview = ({
   }) => {
   const {tx,extraData} = modal
   const viewInEtherscan = (txHash) => {
-    window.open(`https://etherscan.io/tx/${txHash}`,'_blank')
+    window.open(`https://gander.tech/tx/${txHash}`,'_blank')
   }
   const handelSubmit = ()=>{
     modal.showLoading({id:'token/transfer/preview'})
@@ -123,7 +123,7 @@ let Preview = ({
       <MetaItem label={intl.get('token.to')} value={extraData.to} />
       <MetaItem label={intl.get('token.gas')} value={
         <div className="mr15">
-          <div className="row justify-content-end">{`${fm.toBig(tx.gasPrice.toString()).times(tx.gasLimit).times('1e-18').toString(10)}  ETH`}</div>
+          <div className="row justify-content-end">{`${fm.toBig(tx.gasPrice.toString()).times(tx.gasLimit).times('1e-18').toString(10)}  EXP`}</div>
           <div className="row justify-content-end fs14 color-black-3">{`Gas(${fm.toNumber(tx.gasLimit).toString(10)}) * Gas Price(${fm.toNumber(tx.gasPrice)/(1e9).toString(10)} Gwei)`}</div>
         </div>
       }/>

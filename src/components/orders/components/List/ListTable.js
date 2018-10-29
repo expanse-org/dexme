@@ -103,7 +103,7 @@ class ListBlock extends React.Component {
       //         notifyTransactionSubmitted({txHash:response.result,rawTx,from :window.WALLET.getAddress()}).then(() => {
       //           reEmitPendingTransaction()
       //         });
-      //         Notification.open({message: intl.get('order.cancel_order_success'), type: "success",description:(<Button className="alert-btn mr5" onClick={() => window.open(`https://etherscan.io/tx/${response.result}`,'_blank')}> {intl.get('token.transfer_result_etherscan')}</Button> )});
+      //         Notification.open({message: intl.get('order.cancel_order_success'), type: "success",description:(<Button className="alert-btn mr5" onClick={() => window.open(`https://gander.tech/tx/${response.result}`,'_blank')}> {intl.get('token.transfer_result_etherscan')}</Button> )});
       //       } else {
       //         Notification.open({message: intl.get('order.cancel_order_failed'), type: "error", description:response.error.message})
       //       }
@@ -223,14 +223,14 @@ class ListBlock extends React.Component {
                         className="bg-red-500 border-none">{intl.get('orders.receive', {token: tokenS})}</Button>
                 <span className="color-grey-500 ml5 mr5"> or </span>
                 {
-                  tokenS !== 'WETH' &&
-                  <Button onClick={window.routeActions.gotoPath.bind(this, `/trade/${tokenS}-WETH`)}
+                  tokenS !== 'WEXP' &&
+                  <Button onClick={window.routeActions.gotoPath.bind(this, `/trade/${tokenS}-WEXP`)}
                           className="bg-red-500 border-none"
                           type="primary">{intl.get('orders.buy', {token: tokenS})}</Button>
                 }
                 {
-                  tokenS === 'WETH' &&
-                  <Button onClick={showModal.bind(this, {id: 'token/convert', item: {symbol: 'ETH'}})}
+                  tokenS === 'WEXP' &&
+                  <Button onClick={showModal.bind(this, {id: 'token/convert', item: {symbol: 'EXP'}})}
                           className="bg-red-500 border-none" type="primary">{intl.get('orders.convert')} </Button>
                 }
               </div>

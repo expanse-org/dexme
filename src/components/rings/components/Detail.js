@@ -10,10 +10,10 @@ function DetailBlock({LIST={},actions={}}) {
   const renders = {
       ringHash:(value,item,index)=><Link className="text-truncate d-block" style={{}} to={`/rings/detail/${value}`}>{value}</Link>,
       miner:(value,item,index)=> <Link className="text-truncate d-block" style={{}} to={`/miner/detail/${value}`}>{value}</Link>,
-      feeRecipient:(value,item,index)=> <a className="text-truncate d-block" style={{}} target="_blank" href={`https://etherscan.io/address/${value}`}>{value}</a>,
-      txHash:(value,item,index)=> <a className="text-truncate d-block" style={{}} target="_blank" href={`https://etherscan.io/tx/${value}`}>{value}</a>,
-      blockNumber:(value,item,index)=> <a className="text-truncate d-block" style={{}} target="_blank" href={`https://etherscan.io/block/${value}`}>{value}</a>,
-      protocol:(value,item,index)=> <a className="text-truncate d-block" style={{}} target="_blank" href={`https://etherscan.io/address/${value}`}>{value}</a>,
+      feeRecipient:(value,item,index)=> <a className="text-truncate d-block" style={{}} target="_blank" href={`https://gander.tech/address/${value}`}>{value}</a>,
+      txHash:(value,item,index)=> <a className="text-truncate d-block" style={{}} target="_blank" href={`https://gander.tech/tx/${value}`}>{value}</a>,
+      blockNumber:(value,item,index)=> <a className="text-truncate d-block" style={{}} target="_blank" href={`https://gander.tech/block/${value}`}>{value}</a>,
+      protocol:(value,item,index)=> <a className="text-truncate d-block" style={{}} target="_blank" href={`https://gander.tech/address/${value}`}>{value}</a>,
   }
   return (
     <div className="">

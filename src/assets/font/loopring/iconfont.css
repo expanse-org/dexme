@@ -15,6 +15,39 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+@font-face {font-family: "icon-loopring";
+  src: url('../EXPEXicons/icomoon.eot?t=1524828087234'); /* IE9*/
+  src: url('../EXPEXicons/icomoon.eot?t=1524828087234#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../EXPEXicons/icomoon.woff') format('woff'),
+  url('../EXPEXicons/icomoon.ttf?t=1524828087234') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../EXPEXicons/icomoon.svg?t=1524828087234#icon-loopring') format('svg'); /* iOS 4.1- */
+}
+
+.icon-expexs {
+  font-family:"icomoon" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-EXP:before {
+  content: "\e900";
+}
+
+.icon-PEX:before {
+  content: "\e901";
+}
+
+.icon-WEXP:before {
+  content: "\e900";
+}
+
+.icon-WEXP_OLD:before {
+  content: "\e900";
+}
+
 .icon-loopring-BNB:before { content: "\e634"; }
 
 .icon-loopring-send:before { content: "\e636"; }

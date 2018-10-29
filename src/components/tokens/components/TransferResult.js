@@ -78,7 +78,7 @@ let Preview = ({
                   }
                   <Icon type="exclamation-circle-o mr5 color-primary-1" />
                   <span className="fs14 color-black-1 fs14 ">{intl.get('token.transfer_result_title')}</span>
-                  <a className="fs14 ml15 color-primary-1" target="_blank" href={`https://etherscan.io/tx/${result.extraData.txHash}`}>
+                  <a className="fs14 ml15 color-primary-1" target="_blank" href={`https://gander.tech/tx/${result.extraData.txHash}`}>
                     {intl.get('token.transfer_result_etherscan')}
                     <Icon type="right" />
                   </a>

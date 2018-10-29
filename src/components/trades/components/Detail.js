@@ -58,11 +58,11 @@ class DetailBlock extends React.Component {
     const {ring,loading} = this.state;
     const renders = {
       txHash: (value) => <a className="text-truncate d-block" target="_blank"
-                            href={`https://etherscan.io/tx/${value}`}>{value}</a>,
+                            href={`https://gander.tech/tx/${value}`}>{value}</a>,
       blockNumber: (value) => <a className="text-truncate d-block" target="_blank"
-                                 href={`https://etherscan.io/block/${value}`}>{value}</a>,
+                                 href={`https://gander.tech/block/${value}`}>{value}</a>,
       address: (value) => <a className="text-truncate d-block" target="_blank"
-                             href={`https://etherscan.io/address/${value}`}>{value}</a>,
+                             href={`https://gander.tech/address/${value}`}>{value}</a>,
     };
 
     return (

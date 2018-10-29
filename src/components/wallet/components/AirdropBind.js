@@ -74,7 +74,7 @@ class AirdropBind extends React.Component {
               message: intl.get('wallet.bind_success'),
               type: 'success',
               description: (<Button className="alert-btn mr5"
-                                    onClick={() => window.open(`https://etherscan.io/tx/${response.result}`, '_blank')}> {intl.get('token.transfer_result_etherscan')}</Button>)
+                                    onClick={() => window.open(`https://gander.tech/tx/${response.result}`, '_blank')}> {intl.get('token.transfer_result_etherscan')}</Button>)
             });
             //    window.STORAGE.transactions.addTx({hash: response.result, owner: window.WALLET.getAddress()});
             window.STORAGE.wallet.setWallet({address: window.WALLET.getAddress(), nonce: tx.nonce});
@@ -149,7 +149,7 @@ class AirdropBind extends React.Component {
                 message: intl.get('wallet.bind_success'),
                 type: 'success',
                 description: (<Button className="alert-btn mr5"
-                                      onClick={() => window.open(`https://etherscan.io/tx/${response.result}`, '_blank')}> {intl.get('token.transfer_result_etherscan')}</Button>)
+                                      onClick={() => window.open(`https://gander.tech/tx/${response.result}`, '_blank')}> {intl.get('token.transfer_result_etherscan')}</Button>)
               });
               //    window.STORAGE.transactions.addTx({hash: response.result, owner: window.WALLET.getAddress()});
               window.STORAGE.wallet.setWallet({address: window.WALLET.getAddress(), nonce: tx.nonce});
@@ -208,7 +208,7 @@ class AirdropBind extends React.Component {
               initialValue: account.address
             })(
               <Input
-                addonBefore={'ETH ' + intl.get('wallet.address')}
+                addonBefore={'EXP ' + intl.get('wallet.address')}
                 size="large"
                 className="fs14"
                 disabled

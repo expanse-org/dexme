@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form,Avatar,Input,Button,Card} from 'antd';
-import WETH from '../../../common/Loopring/ethereum/weth'
+import WEXP from '../../../common/Loopring/ethereum/weth'
 import {generateAbiData} from '../../../common/Loopring/ethereum/abi'
 import * as fm from '../../../common/Loopring/common/formatter'
 import * as math from '../../../common/Loopring/common/math'
@@ -26,9 +26,9 @@ class Convert extends React.Component {
     const {modal} = this.props;
     let selectedToken = modal.item || {}
     let showFrozenAmount = modal.showFrozenAmount
-    if(selectedToken.symbol === 'ETH' && showFrozenAmount) {
-      const wethConfig = config.getTokenBySymbol('WETH')
-      getEstimatedAllocatedAllowance(window.WALLET.getAddress(), 'WETH').then(res=>{
+    if(selectedToken.symbol === 'EXP' && showFrozenAmount) {
+      const wethConfig = config.getTokenBySymbol('WEXP')
+      getEstimatedAllocatedAllowance(window.WALLET.getAddress(), 'WEXP').then(res=>{
         if (!res.error) {
           let frozenAmount = fm.toBig(res.result).div('1e'+wethConfig.digits);
           if(frozenAmount.gt(0)){
@@ -45,14 +45,14 @@ class Convert extends React.Component {
     selectedToken = {...config.getTokenBySymbol(selectedToken.symbol), ...assets.getTokenBySymbol(selectedToken.symbol)};
     selectedToken.balance = fm.toBig(selectedToken.balance).div("1e"+selectedToken.digits)
     const price = prices.getTokenBySymbol(selectedToken.symbol);
-    const ethConfig = config.getTokenBySymbol('ETH');
-    const ethBalance = assets.getTokenBySymbol('ETH');
+    const ethConfig = config.getTokenBySymbol('EXP');
+    const ethBalance = assets.getTokenBySymbol('EXP');
     ethBalance.balance = fm.toBig(ethBalance.balance).div("1e"+ethConfig.digits);
-    const wethConfig = config.getTokenBySymbol('WETH');
-    const wethBalance = assets.getTokenBySymbol('WETH');
+    const wethConfig = config.getTokenBySymbol('WEXP');
+    const wethBalance = assets.getTokenBySymbol('WEXP');
     wethBalance.balance = fm.toBig(wethBalance.balance).div("1e"+wethConfig.digits);
     let convertAmount = 0, adviceConvert = 0;
-    if(selectedToken.symbol === 'ETH' && modal.showFrozenAmount && this.state.frozenWethAmount.gt(0)) {
+    if(selectedToken.symbol === 'EXP' && modal.showFrozenAmount && this.state.frozenWethAmount.gt(0)) {
       if(wethBalance.balance.lt(this.state.frozenWethAmount) ) {
         convertAmount = this.state.frozenWethAmount.minus(wethBalance.balance);
         if(convertAmount.gt(0)) {
@@ -62,7 +62,7 @@ class Convert extends React.Component {
     }
     const _this = this;
     const viewInEtherscan = (txHash) => {
-      window.open(`https://etherscan.io/tx/${txHash}`,'_blank')
+      window.open(`https://gander.tech/tx/${txHash}`,'_blank')
     };
     function handleSubmit() {
       form.validateFields((err, values) => {
@@ -71,7 +71,7 @@ class Convert extends React.Component {
           let nonce = 0
           window.STORAGE.wallet.getNonce(account.address).then(result => {
             nonce = result
-            if(selectedToken.symbol === "ETH") {
+            if(selectedToken.symbol === "EXP") {
               return deposit(values.amount, nonce)
             } else {
               return withdraw(values.amount, nonce)
@@ -142,7 +142,7 @@ class Convert extends React.Component {
       e.preventDefault();
       let wrapAmount = selectedToken.balance;
       let selectMaxWarn = false;
-      if(selectedToken.symbol === "ETH") {
+      if(selectedToken.symbol === "EXP") {
         const maxAmount = wrapAmount.minus(0.1);
         wrapAmount = maxAmount.gt(0) ?  maxAmount : fm.toBig(0);
         selectMaxWarn = true
@@ -159,7 +159,7 @@ class Convert extends React.Component {
       if(e.target.value) {
         const v = fm.toNumber(e.target.value)
         let inputMaxWarn = false;
-        if(selectedToken.symbol === "ETH" && v >= selectedToken.balance) {
+        if(selectedToken.symbol === "EXP" && v >= selectedToken.balance) {
           inputMaxWarn = true
         }
         this.setState({amount: v, inputMaxWarn: inputMaxWarn})
@@ -197,8 +197,8 @@ class Convert extends React.Component {
         <div className="row justify-content-center align-items-center">
           <div className="col text-right">
             <div className="text-center d-inline-block mb25" style={{position:'relative'}}>
-               <CoinIcon size="60" symbol={selectedToken.symbol === "ETH" ? 'ETH' :'WETH' } color="indigo-500" />
-               <span style={{position:'absolute',bottom:"-15px",left:"0",right:"0"}} className="fs14">{selectedToken.symbol === "ETH" ? 'ETH' :'WETH' }</span>
+               <CoinIcon size="60" symbol={selectedToken.symbol === "EXP" ? 'EXP' :'WEXP' } color="indigo-500" />
+               <span style={{position:'absolute',bottom:"-15px",left:"0",right:"0"}} className="fs14">{selectedToken.symbol === "EXP" ? 'EXP' :'WEXP' }</span>
             </div>
           </div>
           <div className="col-auto">
@@ -206,8 +206,8 @@ class Convert extends React.Component {
           </div>
           <div className="col text-left">
             <div className="text-center d-inline-block mb25" style={{position:'relative'}}>
-              <CoinIcon size="60" symbol={selectedToken.symbol === "ETH" ? 'WETH' :'ETH' } color="pink-500" />
-              <span style={{position:'absolute',bottom:"-15px",left:"0",right:"0"}} className="fs14">{selectedToken.symbol === "ETH" ? 'WETH' :'ETH' }</span>
+              <CoinIcon size="60" symbol={selectedToken.symbol === "EXP" ? 'WEXP' :'EXP' } color="pink-500" />
+              <span style={{position:'absolute',bottom:"-15px",left:"0",right:"0"}} className="fs14">{selectedToken.symbol === "EXP" ? 'WEXP' :'EXP' }</span>
             </div>
           </div>
         </div>
@@ -248,7 +248,7 @@ class Convert extends React.Component {
           {false && modal.showFrozenAmount && convertAmount>0 &&
             <Form.Item colon={false} className="mb0" label='Notice' {...formItemLayout}>
               <div className="fs12 color-grey-500 mb5">
-                <div>Your ETH balance : {ethBalance.balance}</div>
+                <div>Your EXP balance : {ethBalance.balance}</div>
                 <div>Your still need to convert : {convertAmount}</div>
                 <div>We advice you convert : {adviceConvert}</div>
               </div>

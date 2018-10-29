@@ -244,16 +244,16 @@ function Navbar(props) {
                 <div className="grid-title text-truncate text-nowrap">{intl.get('navbar.settings')}</div>
               </div>
             </div>
-            <div className="col-sm-4 text-center pl0 pr0 zb-b-b">
-              <div className="fs14 color-black-2 text-right navbar-account-grid">
-                <a onClick={showModal.bind(this, {id: 'wallet/airdrop'})} className="color-black-2 d-block text-center">
-                  <div className="grid-title">
-                    <Icon type="gift" className="grid-icon"/>
-                  </div>
-                  <div className="grid-title text-truncate text-nowrap">{intl.get('navbar.subs.airdrop')}</div>
-                </a>
-              </div>
-            </div>
+            {/*<div className="col-sm-4 text-center pl0 pr0 zb-b-b">*/}
+              {/*<div className="fs14 color-black-2 text-right navbar-account-grid">*/}
+                {/*<a onClick={showModal.bind(this, {id: 'wallet/airdrop'})} className="color-black-2 d-block text-center">*/}
+                  {/*<div className="grid-title">*/}
+                    {/*<Icon type="gift" className="grid-icon"/>*/}
+                  {/*</div>*/}
+                  {/*<div className="grid-title text-truncate text-nowrap">{intl.get('navbar.subs.airdrop')}</div>*/}
+                {/*</a>*/}
+              {/*</div>*/}
+            {/*</div>*/}
             {false && <div className="col-sm-4 text-center pl0 pr0 zb-b-b">
               <div className="fs14 color-black-2 text-right navbar-account-grid">
                 <Sockets.Assets render={(props) => {
@@ -268,22 +268,22 @@ function Navbar(props) {
                 }}/>
               </div>
             </div>}
-            <div className="col-sm-4 text-center pl0 pr0 zb-b-b">
-              <Tooltip title={intl.get('global.comingsoon')}>
-                <div className="fs14 color-black-2 navbar-account-grid cursor-not-allowed">
-                  <Icon type="question-circle-o" className="d-block grid-icon"/>
-                  <div className="grid-title text-truncate text-nowrap">{intl.get('navbar.subs.help')}</div>
-                </div>
-              </Tooltip>
-            </div>
-            <div className="col-sm-4 text-center pl0 pr0 zb-b-b">
-              <div className="fs14 color-black-2 navbar-account-grid">
-                <a href={emailUrl} className="color-black-2">
-                  <Icon type="form" className="d-block grid-icon"/>
-                  <div className="grid-title text-truncate text-nowrap">{intl.get('navbar.subs.feedback')}</div>
-                </a>
-              </div>
-            </div>
+            {/*<div className="col-sm-4 text-center pl0 pr0 zb-b-b">*/}
+              {/*<Tooltip title={intl.get('global.comingsoon')}>*/}
+                {/*<div className="fs14 color-black-2 navbar-account-grid cursor-not-allowed">*/}
+                  {/*<Icon type="question-circle-o" className="d-block grid-icon"/>*/}
+                  {/*<div className="grid-title text-truncate text-nowrap">{intl.get('navbar.subs.help')}</div>*/}
+                {/*</div>*/}
+              {/*</Tooltip>*/}
+            {/*</div>*/}
+            {/*<div className="col-sm-4 text-center pl0 pr0 zb-b-b">*/}
+              {/*<div className="fs14 color-black-2 navbar-account-grid">*/}
+                {/*<a href={emailUrl} className="color-black-2">*/}
+                  {/*<Icon type="form" className="d-block grid-icon"/>*/}
+                  {/*<div className="grid-title text-truncate text-nowrap">{intl.get('navbar.subs.feedback')}</div>*/}
+                {/*</a>*/}
+              {/*</div>*/}
+            {/*</div>*/}
             <div className="col-sm-4 text-center pl0 pr0 zb-b-b">
               <div className="fs14 color-black-2 navbar-account-grid cursor-pointer" onClick={quit}>
                 <Icon type="poweroff" className="d-block grid-icon"/>
@@ -403,7 +403,8 @@ function Navbar(props) {
           <div className="col-auto pl25 pr10 zb-b-r pr" style={{width: '200px'}}>
             <Link to="/wallet" className="d-block">
               <Popover content={VersionTip} title={null} trigger="hover">
-                <i className="icon-loopring icon-loopring-logo d-block" style={{fontSize: '36px', marginTop: '0px'}}/>
+                {/*<i className="icon-loopring icon-loopring-logo d-block" style={{fontSize: '36px', marginTop: '0px'}}/>*/}
+                <p style={{fontSize: '25px', marginBottom: '0px', marginTop: '0px'}}>EXPEX</p>
                 <span style={{position: 'absolute', top: '-22px', right: '50px'}}>
                         <span className="navbar-version-badge">
                           <Badge status="processing" className=""/>
@@ -422,7 +423,6 @@ function Navbar(props) {
               </Link>
             </div>
           }
-
           <div className="col"></div>
           <div className="col-auto">
             <Menu
@@ -468,7 +468,7 @@ function Navbar(props) {
 
 
           <div className="col-auto pl15 pr15 zb-b-r">
-            <Select showArrow={false} dropdownMatchSelectWidth={false} value={props.locales.locale}
+            <Select disabled showArrow={false} dropdownMatchSelectWidth={false} value={props.locales.locale}
                     onChange={localeChange} className="navbar-language fs16">
               {localesOptions}
             </Select>
@@ -505,10 +505,8 @@ function Navbar(props) {
               }
             </Popover>
           </div>
-
         </div>
       </div>
-
     </div>
   )
 }
