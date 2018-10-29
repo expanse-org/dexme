@@ -246,7 +246,7 @@ class TradeForm extends React.Component {
     async function toConfirm(tradeInfo,txs) {
       const configR = config.getTokenBySymbol(tokenR)
       const configL = config.getTokenBySymbol(tokenL)
-      const ethBalance = fm.toBig(assets.getTokenBySymbol('ETH').balance).div(1e18)
+      const ethBalance = fm.toBig(assets.getTokenBySymbol('EXP').balance).div(1e18)
       const approveGasLimit = config.getGasLimitByType('approve').gasLimit
       const frozenAmountLResult = await getEstimatedAllocatedAllowance(window.WALLET.getAddress(), tokenL)
       const frozenAmountRResult = await getEstimatedAllocatedAllowance(window.WALLET.getAddress(), tokenR)
@@ -278,7 +278,7 @@ class TradeForm extends React.Component {
         const gas = fm.toBig(settings.trading.gasPrice).times(fm.toNumber(approveGasLimit)).div(1e9).times(approveCount)
         if(ethBalance.lessThan(gas)){
           // const errors = new Array()
-          // errors.push({type:"BalanceNotEnough", value:{symbol:'ETH', balance:cutDecimal(ethBalance.toNumber(),6), required:ceilDecimal(gas.sub(ethBalance).toNumber(),6)}})
+          // errors.push({type:"BalanceNotEnough", value:{symbol:'EXP', balance:cutDecimal(ethBalance.toNumber(),6), required:ceilDecimal(gas.sub(ethBalance).toNumber(),6)}})
           // gotoError(errors)
           Notification.open({
             message: intl.get('trade.send_failed'),
@@ -286,7 +286,7 @@ class TradeForm extends React.Component {
             type:'error',
             actions:(
               <div>
-                <Button className="alert-btn mr5" onClick={showModal.bind(this,{id:'token/receive',symbol:'ETH'})}>{`${intl.get('tokens.options_receive')} ETH`}</Button>
+                <Button className="alert-btn mr5" onClick={showModal.bind(this,{id:'token/receive',symbol:'EXP'})}>{`${intl.get('tokens.options_receive')} EXP`}</Button>
               </div>
             )
           })
@@ -345,7 +345,7 @@ class TradeForm extends React.Component {
         const gas = fm.toBig(settings.trading.gasPrice).times(approveGasLimit).div(1e9).times(approveCount)
         if(ethBalance.lessThan(gas)){
           // const errors = new Array()
-          // errors.push({type:"BalanceNotEnough", value:{symbol:'ETH', balance:cutDecimal(ethBalance.toNumber(),6), required:ceilDecimal(gas.sub(ethBalance).toNumber(),6)}})
+          // errors.push({type:"BalanceNotEnough", value:{symbol:'EXP', balance:cutDecimal(ethBalance.toNumber(),6), required:ceilDecimal(gas.sub(ethBalance).toNumber(),6)}})
           // gotoError(errors)
           Notification.open({
             message: intl.get('trade.send_failed'),
@@ -353,7 +353,7 @@ class TradeForm extends React.Component {
             type:'error',
             actions:(
               <div>
-                <Button className="alert-btn mr5" onClick={showModal.bind(this,{id:'token/receive',symbol:'ETH'})}>{`${intl.get('tokens.options_receive')} ETH`}</Button>
+                <Button className="alert-btn mr5" onClick={showModal.bind(this,{id:'token/receive',symbol:'EXP'})}>{`${intl.get('tokens.options_receive')} EXP`}</Button>
               </div>
             )
           })
@@ -375,7 +375,7 @@ class TradeForm extends React.Component {
     }
 
     function calculatePexFeeInEth(totalWorth, milliPexFee) {
-      const price = prices.getTokenBySymbol("eth").price
+      const price = prices.getTokenBySymbol("exp").price
       return accDiv(accDiv(accMul(totalWorth, milliPexFee), 1000), price)
     }
 
@@ -385,7 +385,7 @@ class TradeForm extends React.Component {
     }
 
     function calculatePexFeeByEth(ethAmount) {
-      const ethPrice = prices.getTokenBySymbol("eth").price
+      const ethPrice = prices.getTokenBySymbol("exp").price
       const pexPrice = prices.getTokenBySymbol("pex").price
       const price = accDiv(pexPrice, ethPrice)
       return accDiv(Math.floor(accMul(accDiv(ethAmount, price), 100)), 100)

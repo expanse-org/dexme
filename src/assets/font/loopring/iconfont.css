@@ -48,6 +48,10 @@
   content: "\e900";
 }
 
+.icon-LAB:before {
+  content: "\e902";
+}
+
 .icon-loopring-BNB:before { content: "\e634"; }
 
 .icon-loopring-send:before { content: "\e636"; }

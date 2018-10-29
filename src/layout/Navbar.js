@@ -402,7 +402,7 @@ function Navbar(props) {
         <div className="row align-items-stretch ml0 mr0 zb-b-l">
           <div className="col-auto pl25 pr10 zb-b-r pr" style={{width: '200px'}}>
             <Link to="/wallet" className="d-block">
-              <Popover content={VersionTip} title={null} trigger="hover">
+              {/*<Popover content={VersionTip} title={null} trigger="hover">*/}
                 {/*<i className="icon-loopring icon-loopring-logo d-block" style={{fontSize: '36px', marginTop: '0px'}}/>*/}
                 <p style={{fontSize: '25px', marginBottom: '0px', marginTop: '0px'}}>EXPEX</p>
                 <span style={{position: 'absolute', top: '-22px', right: '50px'}}>
@@ -411,7 +411,7 @@ function Navbar(props) {
                           {intl.get('version.label')}
                         </span>
                     </span>
-              </Popover>
+              {/*</Popover>*/}
             </Link>
           </div>
           {

@@ -39,17 +39,17 @@ export default {
           3. Final version will work very well with no bugs
       </div>
     `,
-    tradetips_title:"Trading Tips ( Beta3 Only )",
+    tradetips_title:"Trading Tips ( Beta1 Only )",
     tradetips_description:`
-      1. You trading address must have 1000+PEX ( Beta3 Only ).
+      1. You trading address must have 1000+PEX ( Beta1 Only ).
       <br />
-      2. The amount of every order shall not be less than 100USD ( Beta3 Only ).
+      2. The amount of every order shall not be less than 100USD ( Beta1 Only ).
     `,
     trades_faq:'',
   },
   version:{
-    label:'Beta3',
-    title:'Beta3',
+    label:'Beta1',
+    title:'Beta1',
     description:'EXPEX.IO (Expex2) is an open-sourced implementation of a web-based non-custodial Expanse wallet that enables users to trade ERC20 tokens using the EXPEX Protocol. Before proceeding, you should review the codebase. Expex2 is a not-for-profit product, and the EXPEX Foundation cannot take responsibility for any loss of your crypto-assets.',
     feedback:'Feedback',
     feedback_submit:'Report an issue',
@@ -142,9 +142,9 @@ I got this great idea:
     why_buy_price_avaliable_but_could_not_deal:`
     <div class="p5">
         <div class="fs14 lh25"> Order Depth Tips </div>
-        <div class="fs12">1. The depth maybe under matching: Miners may need some time to submit txs to ethereum.
+        <div class="fs12">1. The depth maybe under matching: Miners may need some time to submit txs to expanse.
   </div>
-        <div class="fs12">2. The depth maybe deprecated: Miners's matching income (PEX Fee) is lower than matching cost ( ethereum gas ) </div>
+        <div class="fs12">2. The depth maybe deprecated: Miners's matching income (PEX Fee) is lower than matching cost ( expanse gas ) </div>
     </div>
     `
   },
@@ -437,7 +437,7 @@ I got this great idea:
     token_selector_placeholder: 'Select Token',
     token_select_verification_message: "Please select token to send",
     transfer_result_title: "Care about the result?",
-    transfer_result_etherscan: "View transaction on Etherscan.io",
+    transfer_result_etherscan: "View transaction on gander.tech",
     transfer_again_title: "Want to do it again?",
     transfer_again_send: "Send Again",
     transfer_again_convert: "Convert Again",
@@ -613,7 +613,7 @@ I got this great idea:
     token: "Token",
     title_metamask_account_change: "Account changed in MetaMask",
     content_metamask_account_change: "Expex detected your address in MetaMask has just changed. The old one is closed and the new one will be used instead.",
-    old_weth_detect: "We detected you have some outdated WEXP token, we strongly suggest you to convert them back to Ether",
+    old_weth_detect: "We detected you have some outdated WEXP token, we strongly suggest you to convert them back to Expanse",
     to_convert: "Convert",
     instruction_trezor: '',
     instruction_ledger: '',

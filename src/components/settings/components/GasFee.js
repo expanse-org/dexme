@@ -107,7 +107,7 @@ const GasFeeForm = ({
           <Radio value={1} className="d-flex align-items-center mb0 w-100 zb-b-b pl15 pr15">
             <div className="ml5 pt10 pb10">
                 <div className="fs14 color-black-1">
-                  0.000035ETH ≈ $0.35
+                  0.000035EXP ≈ $0.35
                 </div>
                 <div className="fs12 color-black-3">
                   不快不慢，当前网络平均值（系统推荐）
@@ -119,7 +119,7 @@ const GasFeeForm = ({
             <Radio value={2} className="d-flex align-items-center mb0 w-100 zb-b-b pl15 pr15">
               <div className="ml5 pt10 pb10">
                   <div className="fs14 color-black-1">
-                    0.000055ETH ≈ $0.55
+                    0.000055EXP ≈ $0.55
                   </div>
                   <div className="fs12 color-black-3">
                   费用高，时间短（时间优先）
@@ -132,7 +132,7 @@ const GasFeeForm = ({
             <Radio value={3} className="d-flex align-items-center mb0 w-100 zb-b-b pl15 pr15">
               <div className="ml5 pt10 pb10">
                   <div className="fs14 color-black-1">
-                    0.000015ETH ≈ $0.15
+                    0.000015EXP ≈ $0.15
                   </div>
                   <div className="fs12 color-black-3" >
                   费用低，时间长（成本优先）
@@ -146,7 +146,7 @@ const GasFeeForm = ({
               <div className="col fs14 color-black-2">
                 自定义设置
                 <span hidden className="fs12 color-black-3 ml5">
-                  0.000025ETH ≈ $0.25
+                  0.000025EXP ≈ $0.25
                 </span>
               </div>
               <div hidden className="fs14 color-black-1" style={{minWidth:'300px'}}>

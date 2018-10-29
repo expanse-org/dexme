@@ -1,19 +1,7 @@
 {
-  "ETH":true,
-  "WETH":true,
+  "EXP":true,
+  "WEXP":true,
+  "WEXP_OLD":true,
   "PEX":true,
-  "EOS":true,
-  "OMG":true,
-  "REP":true,
-  "PAY":false,
-  "GNT":false,
-  "BAT":true,
-  "KNC":true,
-  "SNT":true,
-  "ZRX":true,
-  "AE":true,
-  "ATC":true,
-  "BNB":true,
-  "XRP":true,
-  "TRX":true
+  "LAB":true
 }

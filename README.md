@@ -1,13 +1,13 @@
-# Loopr - ERC20 Wallet and Loopring DEX
+# Expex - ERC20 Wallet and Expex DEX
 
 ## Introduction
 
-Loopr is a non-custodial Ethereum wallet and Loopring DEX，which is in Beta phase of V3. 
+Expex is a non-custodial Ethereum wallet and Expexing DEX，which is in Beta phase of V3. 
 
-Start your first decentralized trade at [loopring.io](https://loopring.io) or [https://loopr.io](https://loopr.io)
+Start your first decentralized trade at [expex.io](https://expex.io) or [https://expex.io](https://expex.io)
 
 ## Documentations
-For more information regarding this project, please checkout its [github pages](https://loopring.github.io/loopr).
+For more information regarding this project, please checkout its [github pages](https://expex.github.io/expex).
 
 
 

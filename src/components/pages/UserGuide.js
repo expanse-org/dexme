@@ -38,7 +38,7 @@ const SettingPage = (props) => {
           <div className="p10">
             <Steps direction="vertical">
               <Steps.Step status="process" title={"进入：钱包页"} description={
-                <div className="fs12 color-black-3">默认看到 ETH 资产信息</div>
+                <div className="fs12 color-black-3">默认看到 EXP 资产信息</div>
               } />
               <Steps.Step status="process" title={"进入：资产页"} description={
                   <div className="fs12 color-black-3">例如：选择左侧资产列表的PEX，看到PEX资产信息</div>

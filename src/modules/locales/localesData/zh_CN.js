@@ -63,7 +63,7 @@ export default {
         <br />
         订单自动取消：无需支付任何费用（订单过期之后会自动取消）
         <br />
-        订单手动取消：需支付的 ETH 油费
+        订单手动取消：需支付的 EXP 油费
         <br />
         <span class="color-black-1 font-weight-bold">与传统交易所相比，路印协议的交易费用方面：</span>
         <br />
@@ -337,8 +337,8 @@ export default {
     type: '类型',
     type_transfer: '转账',
     type_convert: '转换',
-    type_convert_title_eth: 'ETH 转换为 WETH',
-    type_convert_title_weth: 'WETH 转换为 ETH',
+    type_convert_title_eth: 'EXP 转换为 WEXP',
+    type_convert_title_weth: 'WEXP 转换为 EXP',
     type_receive: '收款',
     type_others: '其他',
     type_pex_fee: 'PEX撮合费',
@@ -409,7 +409,7 @@ export default {
     lacked: "缺少",
     receive: "接收 {token}",
     buy: "买 {token}",
-    convert: "转ETH到WETH",
+    convert: "转EXP到WEXP",
     token_not_enough: "代币数量不足",
     already_add: "您已经添加过该代币!",
     sell_amount: '卖出数量',
@@ -418,8 +418,8 @@ export default {
     basic_detail: "基础详情",
     fill_detail: "撮合详情",
     cancel_cost_gas:"取消订单会消耗Gas",
-    auto_cancel_not_cost_gas:"订单自动失效不会消耗ETH Gas",
-    manual_cancel_cost_gas:"手动取消订单会消耗ETH Gas",
+    auto_cancel_not_cost_gas:"订单自动失效不会消耗EXP Gas",
+    manual_cancel_cost_gas:"手动取消订单会消耗EXP Gas",
     cancel_order:"取消订单",
     canceling:"取消中",
     order_canceling:"订单取消中",
@@ -518,7 +518,7 @@ export default {
     custom_time_to_live_title: '设置本次生效的有效时间',
     send_failed: '下单失败 !',
     failed_fetch_data: '从服务器获取数据失败, 请稍后在尝试',
-    eth_is_required: '由于需要支付ETH油费, 根据您当前订单需要发送的以太坊交易计算，还需要 {required} ETH',
+    eth_is_required: '由于需要支付EXP油费, 根据您当前订单需要发送的以太坊交易计算，还需要 {required} EXP',
     pexfee_is_required: '由于需要支付PEX油费, 汇总您历史订单所需PEX，还需要 {required} PEX',
     not_supported_token_to_trade_title: '我们暂时未支持{token}交易',
     not_supported_token_to_trade_content: '敬请期待我们开放更多市场',
@@ -542,8 +542,8 @@ export default {
     amount: "数量",
     amount_verification_message: "请输入合法的数量",
     convert_max: "最大数量",
-    min_gas_remain_warn: "我们为您保留0.1 ETH作为油费以保证后续可以发送交易",
-    no_eth_balance_warn: "您将没有足够的ETH作为油费发送交易",
+    min_gas_remain_warn: "我们为您保留0.1 EXP作为油费以保证后续可以发送交易",
+    no_eth_balance_warn: "您将没有足够的EXP作为油费发送交易",
     convert_confirm: "是的，马上转换！",
     send_title: "发送",
     result_failed: "您{do} {amount} {token} 失败, 原因:{reason}",
@@ -600,7 +600,7 @@ export default {
     gas_custom_setting: '自定义设置'
   },
   airdrop: {
-    cost_eth_gas: "绑定地址需要支付ETH油费",
+    cost_eth_gas: "绑定地址需要支付EXP油费",
     goback: "返回",
     watch_only_not_allowed: "观察者模式无法绑定空投",
     eth_adress_null:'请解锁钱包后在重试',
@@ -758,7 +758,7 @@ export default {
     token: "代币",
     title_metamask_account_change: "您切换了MetaMask账户",
     content_metamask_account_change: "我们检测到您刚刚在MetaMask切换了账户, 请注意您账户资产发生了改变",
-    old_weth_detect: "检测到您的地址有WETH余额（旧版本WETH合约），建议您转换为ETH. ",
+    old_weth_detect: "检测到您的地址有WEXP余额（旧版本WEXP合约），建议您转换为EXP. ",
     to_convert: "开始转换",
     instruction_metamask: '这是推荐的解锁方式，可以放心使用。</br>MetaMask是一款在浏览器上运行的以太坊轻钱包，通过运行浏览器上的扩展插件即可轻松访问您的以太钱包。MetaMask提供管理用户资金的身份验证和访问接口，用户无需在任何网站上提供私钥，防止钓鱼网站和其他恶意网站的安全风险。',
     instruction_keystore: '我们不推荐您使用这种方式解锁钱包，可能存在安全隐患。</br>在网站上上传keystore文件非常危险，如果网站被黑客攻击或您不小心访问了钓鱼网站，您钱包内的资产将面临巨大的安全风险。建议您使用硬钱包或在上传keystore文件前仔细确认URL & SSL 证书正确无误。',
