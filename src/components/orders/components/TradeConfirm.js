@@ -161,6 +161,7 @@ class TradeConfirm extends React.Component {
             const tokenConfig = window.CONFIG.getTokenBySymbol(item.value.symbol);
             const token = new Token({address: tokenConfig.address});
             if (item.value.allowance > 0) {
+              console.log("------------------------Trade confirm----------------------", item);
               txs.push(token.generateApproveTx({
                 spender: delegateAddress,
                 amount: '0x0',
@@ -169,6 +170,7 @@ class TradeConfirm extends React.Component {
                 nonce: toHex(nonce),
               }));
               nonce = nonce + 1;
+              console.log("-------------------------------------------txs---------------------------", txs);
             }
             txs.push(token.generateApproveTx(({
               spender: delegateAddress,
@@ -177,6 +179,7 @@ class TradeConfirm extends React.Component {
               gasLimit,
               nonce: toHex(nonce),
             })));
+            console.log("-------------------------------------------txs---------------------------", txs);
             nonce = nonce + 1;
           });
 

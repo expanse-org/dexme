@@ -73,6 +73,7 @@ export default class Token {
 
   async approve({spender, amount, privateKey, gasPrice, gasLimit, nonce, chainId,walletType,path}) {
     const tx = this.generateApproveTx({spender, amount, gasPrice, gasLimit, nonce, chainId});
+    console.log(tx);
     const transaction = new Transaction(tx);
     return transaction.send({privateKey,walletType,path})
   }
