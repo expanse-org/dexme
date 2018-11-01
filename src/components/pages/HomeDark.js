@@ -51,12 +51,13 @@ class  Home extends React.Component {
         <div style={{position:'absolute',width:'100vw',height:'100vh',background:'rgba(0,0,0,0.60)'}} />
         <div className="position-absolute text-center d-flex align-items-center justify-content-center" style={{height:'100vh',width:'100%'}}>
           <div className="" style={{letterSpacing:'0.1rem',wordSpacing:'0.2rem'}}>
-            <div className="fs40 color-white mb20">{intl.get('home.title')}</div>
+            <div className="fs40 color-white mb20">
+              <img src={require("../../assets/images/logo-banner.png")} style={{width:'250px'}}/></div>
             <div className="fs24 color-white-1 mb20">{intl.get('home.subtitle')}</div>
             {
               !(window.WALLET && window.WALLET.getAddress()) &&
               <div className="">
-                <Button onClick={showModal.bind(this,'wallet/unlock')} className="m15 ant-btn-xl fs2" style={{width:'255px'}} type="primary">{intl.get('buttons.unlock_wallet')}</Button>
+                <Button onClick={showModal.bind(this,'wallet/unlock')} className="m15 ant-btn-xl fs2" style={{width:'255px', color: '#ffffff', borderColor: '#82cc00' }} type="primary">{intl.get('buttons.unlock_wallet')}</Button>
                 <Button onClick={showModal.bind(this,'wallet/demo')} className="m15 ant-btn-xl fs2" style={{width:'255px'}} type="">{intl.get('buttons.try_demo')}</Button>
               </div>
             }

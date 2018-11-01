@@ -39,7 +39,7 @@
   "relays": [
     {
       "value": "//relayer.tokenlab.io",
-      "name": "Default Loopring Relay"
+      "name": "Default EXPEX Relay"
     },
     {
       "value": "//relayer.tokenlab.io",
@@ -112,7 +112,7 @@
       "allowanceWarn": "500000000000000000000",
       "precision": 6,
       "minTradeValue": 0.0001
-    }, 
+    },
     {
       "symbol": "LAB",
       "name": "TokenLab",

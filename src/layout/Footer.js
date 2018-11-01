@@ -3,29 +3,29 @@ import {Button,Icon} from 'antd'
 
 export default function Footer(props){
   const socials = [
-    {icon:'github',href:''}, 
-    {icon:'wechat',href:''}, 
-    {icon:'twitter',href:''}, 
-    {icon:'envelope',href:''}, 
-    {icon:'reddit',href:''}, 
-    {icon:'medium',href:''}, 
-    {icon:'facebook',href:''}, 
-    {icon:'telegram',href:''}, 
-    {icon:'youtube',href:''}, 
+    {icon:'github',href:''},
+    {icon:'wechat',href:''},
+    {icon:'twitter',href:''},
+    {icon:'envelope',href:''},
+    {icon:'reddit',href:''},
+    {icon:'medium',href:''},
+    {icon:'facebook',href:''},
+    {icon:'telegram',href:''},
+    {icon:'youtube',href:''},
   ]
   const links = [
     {
       title:'FOUNDATION & COMMUNITY',
       sub:[
-        {title:'Loopring Foundation',href:''},
+        {title:'EXPEX Foundation',href:''},
         {title:'Knowledge Base',href:''},
       ]
     },
     {
-      title:'LOOPRING PROTOCOL',
+      title:'EXPEX PROTOCOL',
       sub:[
         {title:'Whitepaper',href:''},
-        {title:'Ethereum Smart Contracts',href:''},
+        {title:'Expanse Smart Contracts',href:''},
         {title:'Github Repositories',href:''},
         {title:'Protocol Audit Report',href:''},
       ]
@@ -50,7 +50,7 @@ export default function Footer(props){
               <div className="col-auto p20" key={index}>
                 <i className={`fa fa-${social.icon} fs32 color-grey-900`}></i>
               </div>
-            ) 
+            )
           }
         </div>
         <hr />
@@ -67,15 +67,15 @@ export default function Footer(props){
                     }
                   </div>
               </div>
-            )  
+            )
           }
         </div>
         <div className="fs12 text-center p20 ">
-          Loopring Project Ltd.(Loopring Foundation), All Right Reserved.
+          EXPEX Project Ltd.(EXPEX Foundation), All Right Reserved.
         </div>
       </div>
     </div>
-    
-    
+
+
   )
 }

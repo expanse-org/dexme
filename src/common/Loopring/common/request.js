@@ -7,7 +7,8 @@ function checkStatus(res) {
 }
 
 function parseJSON(res) {
-  return res.json();
+  console.log(res, res && res.json(), typeof res);
+  return typeof res && res.json();
 }
 
 let checkHost = () => {
@@ -16,10 +17,10 @@ let checkHost = () => {
   window.ETH_HOST = relayHost + '/eth'
 
   if (!window.LOOPRING_PROVIDER_HOST) {
-    throw new Error('host is required. Do not forget: new Loopring(host)')
+    throw new Error('host is required. Do not forget: new EXPEX(host)')
   }
   if(!window.ETH_HOST){
-    throw new Error('host is required. Do not forget: new ETH(host)')
+    throw new Error('host is required. Do not forget: new EXP(host)')
   }
 };
 

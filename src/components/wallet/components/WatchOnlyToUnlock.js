@@ -36,7 +36,7 @@ class WatchOnlyToUnlock extends React.Component {
           actions={
             <div>
               <Button className="alert-btn mr5" size="large" onClick={cancel} >{intl.get('wallet.continue_watch')}</Button>
-              <Button type="primary" className="alert-btn mr5" size="large" onClick={toUnlock} >{intl.get('wallet.to_unlock')}</Button>
+              <Button type="" className="alert-btn mr5" size="large" onClick={toUnlock} >{intl.get('wallet.to_unlock')}</Button>
             </div>
           }
          />

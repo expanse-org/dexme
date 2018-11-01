@@ -1,8 +1,9 @@
 import React from 'react';
-import { Layout, Menu, Breadcrumb,Alert} from 'antd'
-import GlobalFooter from './Footer'
-import Navbar from './Navbar'
-const { Header, Content, Footer } = Layout
+import { Layout, Menu, Breadcrumb,Alert} from 'antd';
+import GlobalFooter from './Footer';
+import Navbar from './Navbar';
+import '../index.css';
+const { Header, Content, Footer } = Layout;
 
 const HomeLayout = (props)=>{
   const { children,location } = props
@@ -17,6 +18,19 @@ const HomeLayout = (props)=>{
           {children}
         </div>
       </Content>
+      <div className="footer-expex">
+        <div className="container">
+          <div className="footer-body">
+            <p>© Copyright 2018 expex.io Powered by <span>EXPEX</span>.</p>
+            <div className="-right">
+              <a href="https://expanse.tech/"><img width="110px" src={require("../assets/images/exp-footer.png")} /></a>
+              <a href=""><img src={require("../assets/images/facebook.svg")} /></a>
+              <a href=""><img src={require("../assets/images/feed.svg")} /></a>
+              <a href=""><img src={require("../assets/images/twitter.svg")} /></a>
+            </div>
+          </div>
+        </div>
+      </div>
     </Layout>
   )
 }
@@ -33,6 +47,19 @@ const MainLayout = (props)=>{
           {children}
         </div>
       </Content>
+      <div className="footer-expex">
+        <div className="container">
+          <div className="footer-body">
+            <p>© Copyright 2018 expex.io Powered by <span>EXPEX</span>.</p>
+            <div className="-right">
+              <a href="https://expanse.tech/"><img width="110px" src={require("../assets/images/exp-footer.png")} /></a>
+              <a href=""><img src={require("../assets/images/facebook.svg")} /></a>
+              <a href=""><img src={require("../assets/images/feed.svg")} /></a>
+              <a href=""><img src={require("../assets/images/twitter.svg")} /></a>
+            </div>
+          </div>
+        </div>
+      </div>
     </Layout>
   )
 }

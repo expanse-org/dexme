@@ -19,7 +19,7 @@ function UnlockWallet({form,modal,account}) {
   const footer = (
     <div className="fs2 mt20 pt20 color-grey-900 zb-b-t text-left">
       {intl.get('wallet.no_wallet')}
-      <a className="color-blue-600 ml5" onClick={gotoGenerate}>
+      <a className="color-light-green-010 ml5" onClick={gotoGenerate}>
         {intl.get('wallet.generate_one')} !
       </a>
     </div>

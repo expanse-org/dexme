@@ -123,7 +123,7 @@ export default class GenerateWallet extends React.Component {
         </Button>
         <div className="fs14 color-grey-900 text-center pt20 zb-b-t mt20">
           {intl.get('wallet.have_one')} ?
-          <a className="color-blue-600 ml5" onClick={this.gotoUnlock.bind(this)}>
+          <a className="color-light-green-010 ml5" onClick={this.gotoUnlock.bind(this)}>
             {intl.get('wallet.to_unlock')} !
           </a>
         </div>
