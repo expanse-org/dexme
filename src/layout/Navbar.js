@@ -400,11 +400,12 @@ function Navbar(props) {
           )
         }}/>}
         <div className="row align-items-stretch ml0 mr0 zb-b-l">
-          <div className="col-auto pl25 pr10 zb-b-r pr" style={{width: '200px'}}>
+          <div className="col-auto pl25 pr10 zb-b-r pr" style={{width: '240px'}}>
             <Link to="/wallet" className="d-block">
               {/*<Popover content={VersionTip} title={null} trigger="hover">*/}
                 {/*<i className="icon-loopring icon-loopring-logo d-block" style={{fontSize: '36px', marginTop: '0px'}}/>*/}
-                <p style={{fontSize: '25px', marginBottom: '0px', marginTop: '0px'}}>EXPEX</p>
+                <img src={require("../assets/images/expex-logo.png")} style={{marginTop: '15px', marginBottom: '10px'}}/>
+                {/*<p style={{fontSize: '25px', marginBottom: '0px', marginTop: '0px'}}>EXPEX</p>*/}
                 <span style={{position: 'absolute', top: '-22px', right: '50px'}}>
                         <span className="navbar-version-badge">
                           <Badge status="processing" className=""/>
@@ -487,7 +488,7 @@ function Navbar(props) {
                     <div className="row gutter-0" style={{marginTop: '0px'}}>
                       <div className="col">
                         <Badge status="processing" className=""/>
-                        <span className="fs12 color-primary-1">{getWalletType()}</span>
+                        <span className="fs12 color-light-green-010">{getWalletType()}</span>
                       </div>
                       <div className="col-auto d-none">
                         <span onClick={quit} className="fs12 ml5 color-black-1  cursor-pointer">解锁</span>

@@ -3,3 +3,64 @@ html, body, :global(#root) {
   height: 100%;
 }
 
+.footer-expex {
+  background-color: #141414;
+  height: 40px;
+  display: block;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+}
+
+
+.footer-expex p{
+  color: #ffffff;
+  padding-top: 8px;
+}
+.footer-expex p span{
+  color: #82cc00;
+}
+
+.footer-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-body .-right{
+  padding-top: 8px;
+}
+
+
+.footer-body a{
+  margin: 10px;
+}
+
+
+.ant-btn-primary {
+  background-color: #82cc00 !important;
+  border-color: #82cc00 !important;
+}
+
+
+.ant-tabs-nav .ant-tabs-tab-active, .color-primary-1,.navbar-version-badge {
+  color: #82cc00 !important;
+  /*z-index: 100;*/
+
+}
+
+.ant-tabs-ink-bar, .ant-slider .ant-slider-track{
+  background: #82cc00!important;
+}
+
+.ant-slider-handle, .ant-slider .ant-slider-dot-active {
+  border-color: #82cc00!important;
+}
+
+.ant-tabs-nav .ant-tabs-tab:hover {
+  color: #82cc00 !important;
+}
+
+button, button:hover , button:focus, button:active {
+  outline: none !important;
+}
