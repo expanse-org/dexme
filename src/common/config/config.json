@@ -13,10 +13,10 @@
   "minimumPexfeeInEth":0.00045,
   "demoAccount":"0xeba7136a36da0f5e16c6bdbc739c716bb5b65a00",
   "localStorageVersion":201806040000,
-  "walletAddress":"0xaF6CF28cB921027b2A134c52Cf5BF072c0E769D7",
+  "walletAddress":"0xd033736d6dbc4b5de792638b63561f1500ebc2c7",
   "contracts": [
     {
-      "address": "0xa33f039cb441eba250bf3b8da25c21ce6ac10d49",
+      "address": "0xb3eb95a1fff544714cff708f77f09819685c8149",
       "version": "v1.5.1"
     }
   ],
@@ -61,8 +61,8 @@
       "pricePrecision": 8
     },
     {
-      "tokenx": "PEX",
-      "tokeny": "LAB",
+      "tokenx": "LAB",
+      "tokeny": "PEX",
       "pricePrecision": 8
     }
 ],
@@ -117,7 +117,7 @@
       "symbol": "LAB",
       "name": "TokenLab",
       "digits": 18,
-      "address": "0xa887adb722cf15bc1efe3c6a5d879e0482e8d197",
+      "address": "0x3b4cfcc4532eec161860cb6544f49947544d940d",
       "unit": "LAB",
       "website": "https://tokenlab.io",
       "allowance": "1000000000000000000000",
@@ -151,7 +151,7 @@
     },
     {
       "symbol": "PEX",
-      "name": "Expex",
+      "name": "Pex",
       "digits": 18,
       "address": "0xbdaaafdcdbabf18623ca84a6dea81f05fd735182",
       "unit": "PEX",
@@ -161,6 +161,6 @@
       "precision": 6,
       "minTradeValue": 0.0001
     }
-  ],
+ ],
   "whiteList": []
 }

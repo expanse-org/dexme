@@ -26,6 +26,7 @@ class TradeConfirm extends React.Component {
   };
 
   componentDidMount() {
+	console.log("-----------------------------------------Trade Confirm ---------------------------------------------------");
     const {modals, tradingConfig} = this.props;
     const modal = modals['trade/confirm'] || {};
     let {side, pair, amount, total, validSince,validUntil, marginSplit, pexFee} = modal;
@@ -240,6 +241,7 @@ class TradeConfirm extends React.Component {
   };
 
   render() {
+	console.log("---------------------------------------Trade Confirm (handle submit)--------------------------------------------");
     const {modals, tradingConfig} = this.props;
     const modal = modals['trade/confirm'] || {};
     let {side, amount, pair, total, marginSplit, price, pexFee} = modal;

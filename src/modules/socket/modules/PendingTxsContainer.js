@@ -88,14 +88,14 @@ class PendingTxsContainer extends React.Component {
 
   isWithdrawOldWeth() {
     const txs = this.state.pendingTxs;
-    const wethConfig = config.getTokenBySymbol('WETH_OLD');
+    const wethConfig = config.getTokenBySymbol('WEXP_OLD');
     const withdrawTx = txs.find(tx => tx.protocol.toLowerCase() === wethConfig.address.toLowerCase() && toBig(tx.value).eq(0));
     return !!withdrawTx
   }
 
   isDepositWeth() {
     const txs = this.state.pendingTxs;
-    const depositTxs = txs.filter(tx => tx.symbol.toLowerCase() === 'weth' && tx.type === 'convert_income');
+    const depositTxs = txs.filter(tx => tx.symbol.toLowerCase() === 'wexp' && tx.type === 'convert_income');
     let totalValue = toBig(0);
     depositTxs.forEach(tx => totalValue = totalValue.plus(toBig(tx.value)));
     return totalValue;
