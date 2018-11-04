@@ -210,7 +210,7 @@ I got this great idea:
     type_receive_title: "Received {symbol}",
     type_buy_title:"Buy {symbol}",
     type_sell_title:"Sell {symbol}",
-    cancel_order: 'Canceled Order',no
+    cancel_order: 'Canceled Order',
     cancel_all: 'Canceled All Orders',
     cancel_pair_order: "Canceled All {pair} Orders",
     others: "Others",
