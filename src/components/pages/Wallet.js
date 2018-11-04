@@ -96,8 +96,8 @@ class Home extends React.Component {
               return (!txs.isWithdrawOldWeth() && <Alert type="warning" showIcon closable className="mt15"
                  description={
                    <div>
-                     {intl.get('wallet.old_weth_detect')} (<a className='color-blue-500 pointer'>Why?</a>)
-                     <a className='color-blue-500 ml5' onClick={showWithDrawAll}>{intl.get('wallet.to_convert')}</a>
+                     {intl.get('wallet.old_weth_detect')} (<a className='color-light-green-010 pointer'>Why?</a>)
+                     <a className='color-light-green-010 ml5' onClick={showWithDrawAll}>{intl.get('wallet.to_convert')}</a>
                    </div>
                  }
                 />

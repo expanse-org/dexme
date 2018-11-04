@@ -21,7 +21,7 @@ const HomeLayout = (props)=>{
       <div className="footer-expex">
         <div className="container">
           <div className="footer-body">
-            <p>© Copyright 2018 expex.io Powered by <span>EXPEX</span>.</p>
+            <p>©<span>EXPEX</span> Exchange  2018-19. All Rights Reserved.</p>
             <div className="-right">
               <a href="https://expanse.tech/"><img width="110px" src={require("../assets/images/exp-footer.png")} /></a>
               <a href=""><img src={require("../assets/images/facebook.svg")} /></a>
@@ -50,7 +50,7 @@ const MainLayout = (props)=>{
       <div className="footer-expex">
         <div className="container">
           <div className="footer-body">
-            <p>© Copyright 2018 expex.io Powered by <span>EXPEX</span>.</p>
+            <p>©<span>EXPEX</span> Exchange  2018-19. All Rights Reserved.</p>
             <div className="-right">
               <a href="https://expanse.tech/"><img width="110px" src={require("../assets/images/exp-footer.png")} /></a>
               <a href=""><img src={require("../assets/images/facebook.svg")} /></a>

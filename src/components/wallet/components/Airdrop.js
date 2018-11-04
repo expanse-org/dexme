@@ -158,7 +158,7 @@ class Airdrop extends React.Component {
                                                 token: neoProject.lrx,
                                                 amount: neoProject.amount
                                               })},
-                                              <a className='color-blue-500 ml5'
+                                              <a className='color-light-green-010 ml5'
                                                  onClick={() => this.claimToken(neoProject)}>{intl.get('wallet.claim_action', {token: neoProject.lrx})}</a>
                                             </div>
                                           }/>}

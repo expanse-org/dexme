@@ -58,7 +58,7 @@ export default class Fills extends React.Component {
       ringHash: (value, item, index) => {
         return (
           <div>
-            <a className="text-truncate text-left color-blue-500" onCopy={handleCopy.bind(this, value)}
+            <a className="text-truncate text-left color-light-green-010" onCopy={handleCopy.bind(this, value)}
                style={{maxWidth: '150px'}}
                onClick={showModal.bind(this, {id: 'trade/detail', item})}>
               {uiFormatter.getShortAddress(value)}

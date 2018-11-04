@@ -34,7 +34,7 @@ function ListBlock(props) {
       const gapPosition = item.fillIndex === 0 ? 'top' : 'bottom';
       return (
         <div>
-          <a className="text-truncate text-left color-blue-500"
+          <a className="text-truncate text-left color-light-green-010"
              style={{maxWidth: '150px'}}
              onClick={showModal.bind(this, {id: 'trade/detail', item})}>
             {value}

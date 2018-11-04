@@ -162,7 +162,7 @@ class Ticker extends React.Component {
     const colSpan = 24 / length
     return (
       <div>
-        <div className="" style={{background:'#0077FF'}}>
+        <div className="" style={{background:'#82cc00'}}>
           <div className="container">
             <LooprTicker pair={pair} tickers={tickers} price={token.price} />
           </div>
