@@ -404,7 +404,7 @@ function Navbar(props) {
             <Link to="/wallet" className="d-block">
               {/*<Popover content={VersionTip} title={null} trigger="hover">*/}
                 {/*<i className="icon-loopring icon-loopring-logo d-block" style={{fontSize: '36px', marginTop: '0px'}}/>*/}
-                <img src={require("../assets/images/logoexpex-black.jpg")} style={{marginTop: '15px', marginBottom: '10px'}}/>
+                <img src={require("../assets/images/logoexpex-black1.png")} style={{width: '150px',marginTop: '25px', marginBottom: '10px'}}/>
                 {/*<p style={{fontSize: '25px', marginBottom: '0px', marginTop: '0px'}}>EXPEX</p>*/}
                 <span style={{position: 'absolute', top: '-22px', right: '50px'}}>
                         <span className="navbar-version-badge">

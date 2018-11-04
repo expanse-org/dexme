@@ -31,7 +31,7 @@ function Home(props){
 
       <div className="position-relative text-center d-flex align-items-center justify-content-center" style={{height:'100vh'}}>
        <div className="" style={{letterSpacing:'0.1rem',wordSpacing:'0.2rem'}}>
-         <div className="fs45 color-grey-900 mb20">{intl.get('home.title')}</div>
+         <img src={require("../../assets/images/logoexpex-white.png")} style={{width:'250px'}}/>
          <div className="fs25 color-grey-800 mb20">{intl.get('home.subtitle')}</div>
         {
           !(window.WALLET && window.WALLET.getAddress()) &&

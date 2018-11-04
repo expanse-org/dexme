@@ -52,7 +52,7 @@ class  Home extends React.Component {
         <div className="position-absolute text-center d-flex align-items-center justify-content-center" style={{height:'100vh',width:'100%'}}>
           <div className="" style={{letterSpacing:'0.1rem',wordSpacing:'0.2rem'}}>
             <div className="fs40 color-white mb20">
-              <img src={require("../../assets/images/logo-banner.png")} style={{width:'250px'}}/></div>
+              <img src={require("../../assets/images/logoexpex-white.png")} style={{width:'250px'}}/></div>
             <div className="fs24 color-white-1 mb20">{intl.get('home.subtitle')}</div>
             {
               !(window.WALLET && window.WALLET.getAddress()) &&
