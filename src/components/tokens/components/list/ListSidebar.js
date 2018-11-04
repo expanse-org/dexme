@@ -308,12 +308,12 @@ class ListSidebar extends React.Component {
               Balance is not enough for orders
             </div>
             <div>
-              <Button onClick={gotoReceive.bind(this, token)} className="m5 color-blue-500">Receive</Button>
-              <Button onClick={gotoTrade.bind(this, token)} className="m5 color-blue-500"
+              <Button onClick={gotoReceive.bind(this, token)} className="m5 color-light-green-010">Receive</Button>
+              <Button onClick={gotoTrade.bind(this, token)} className="m5 color-light-green-010"
                       disabled={isWatchOnly}>Buy</Button>
               {
                 token.symbol === 'WEXP' &&
-                <Button onClick={gotoConvert.bind(this, token)} className="m5 color-blue-500" disabled={isWatchOnly}>Convert</Button>
+                <Button onClick={gotoConvert.bind(this, token)} className="m5 color-light-green-010" disabled={isWatchOnly}>Convert</Button>
               }
             </div>
 

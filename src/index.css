@@ -11,6 +11,7 @@ html, body, :global(#root) {
   left: 0;
   right: 0;
   position: fixed;
+  z-index: 100;
 }
 
 
@@ -53,7 +54,7 @@ html, body, :global(#root) {
   background: #82cc00!important;
 }
 
-.ant-slider-handle, .ant-slider .ant-slider-dot-active {
+.ant-slider-handle, .ant-slider .ant-slider-dot-active, .ant-slider .ant-slider-handle {
   border-color: #82cc00!important;
 }
 

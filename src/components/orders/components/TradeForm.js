@@ -948,7 +948,7 @@ class TradeForm extends React.Component {
             <Form.Item className="mb0">
               {
                 side == 'buy' &&
-                <Button onClick={handleSubmit.bind(this)} type="" className="d-block w-100 bg-green-500 border-none color-white"
+                <Button onClick={handleSubmit.bind(this)} type="" className="d-block w-100 bg-light-green-010 border-none color-white"
                         size="large" loading={this.state.loading}>
                   {intl.get('trade.place_order')}
                 </Button>

@@ -393,7 +393,7 @@ function Navbar(props) {
                    description={
                      <div>
                        {intl.get('ticket.alert_title')},
-                       <a className='color-blue-500 ml5'
+                       <a className='color-light-green-010 ml5'
                           onClick={() => claimTicket(props.assets)}>{intl.get('ticket.alert_action')}</a>
                      </div>
                    }/>

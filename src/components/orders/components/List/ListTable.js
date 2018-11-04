@@ -123,7 +123,7 @@ class ListBlock extends React.Component {
     };
     const renders = {
       orderHash: (value, item, index) => (
-        <a className="text-truncate d-block color-blue-500" onCopy={handleCopy.bind(this, value)}
+        <a className="text-truncate d-block color-light-green-010" onCopy={handleCopy.bind(this, value)}
            style={{maxWidth: '150px'}}
            onClick={showModal.bind(this, {id: 'order/detail', item})}>
           {uiFormatter.getShortAddress(value)}
@@ -267,7 +267,7 @@ class ListBlock extends React.Component {
                              {intl.get('orders.token_not_enough')} !
                            </div>
                            <div className="col-auto">
-                             <a className="fs12 color-blue-500">Why?</a>
+                             <a className="fs12 color-light-green-010">Why?</a>
                            </div>
                          </div>
                        </div>
