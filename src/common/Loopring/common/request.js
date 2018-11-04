@@ -7,7 +7,7 @@ function checkStatus(res) {
 }
 
 function parseJSON(res) {
-  return res.json();
+  return  res.json();\
 }
 
 let checkHost = () => {
