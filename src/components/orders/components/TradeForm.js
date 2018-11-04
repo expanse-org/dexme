@@ -195,11 +195,11 @@ class TradeForm extends React.Component {
             _this.setState({loading:false})
             return
           }
-          let allowed = false
+          let allowed = true
           let priceSymbol = fm.getDisplaySymbol(settings.preference.currency)
           if(settings.preference.currency === 'USD') {
             priceSymbol = '10' + priceSymbol
-            if(totalWorth > 10) {
+            if(totalWorth > 0.01) {
               allowed = true
             }
           } else {
@@ -330,7 +330,8 @@ class TradeForm extends React.Component {
           warn.push({type:"BalanceNotEnough", value:{symbol:tokenBalanceS.symbol, balance:cutDecimal(tokenBalanceS.balance.toNumber(),6), required:ceilDecimal(frozenAmountS.sub(tokenBalanceS.balance).toNumber(),6)}})
         }
         const pendingAllowance = fm.toBig(txs.isApproving(tokenBalanceS.symbol) ? txs.isApproving(tokenBalanceS.symbol).div('1e'+tokenBalanceS.digits) : tokenBalanceS.allowance);
-        if(pendingAllowance.lessThan(frozenAmountS)) {
+        console.log("------------------------------------Allowance------------------------",pendingAllowance);
+	if(pendingAllowance.lessThan(frozenAmountS)) {
           warn.push({type:"AllowanceNotEnough", value:{symbol:tokenBalanceS.symbol, allowance:cutDecimal(pendingAllowance.toNumber(),6), required:ceilDecimal(frozenAmountS.sub(tokenBalanceS.allowance).toNumber(),6)}})
           approveCount += 1
           if(pendingAllowance.greaterThan(0)) approveCount += 1
@@ -366,6 +367,7 @@ class TradeForm extends React.Component {
       }
       tradeInfo.warn = warn
       _this.setState({loading:false});
+	console.log(tradeInfo);
       showTradeModal(tradeInfo)
     }
 

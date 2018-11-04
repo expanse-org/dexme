@@ -7,7 +7,6 @@ function checkStatus(res) {
 }
 
 function parseJSON(res) {
-  // console.log(res, res && res.json(), typeof res);
   return res.json();
 }
 

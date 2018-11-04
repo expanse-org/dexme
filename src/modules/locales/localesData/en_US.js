@@ -169,7 +169,7 @@ I got this great idea:
   },
   home: {
     title: 'EXPEX',
-    subtitle: 'A non-custodial Expanse wallet and EXPEX DEX.',
+    subtitle: 'A Non-Custodial Expanse Wallet and Decentralized Exchange',
     beta_notification_title:'Can\'t wait to trade with EXPEX?',
     beta_notifycation_content: 'Expex wallet is still in its beta. Test with great caution!'
   },
@@ -210,7 +210,7 @@ I got this great idea:
     type_receive_title: "Received {symbol}",
     type_buy_title:"Buy {symbol}",
     type_sell_title:"Sell {symbol}",
-    cancel_order: 'Canceled Order',
+    cancel_order: 'Canceled Order',no
     cancel_all: 'Canceled All Orders',
     cancel_pair_order: "Canceled All {pair} Orders",
     others: "Others",
