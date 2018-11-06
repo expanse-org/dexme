@@ -7,7 +7,7 @@
   "defaultGasLimit": "0x30d40",
   "defaultExpireTime": 1,
   "defaultExpireTimeUnit": "day",
-  "delegateAddress": "0x97b3a09cc403ba0fe9a054a8d50afeb9d3c5004a",
+  "delegateAddress": "0x8601ec16601531e9ef094b8dff113b00fdd5be82",
   "chainId":2,
   "bindContractAddress": "0xbf78B6E180ba2d1404c92Fc546cbc9233f616C42",
   "minimumPexfeeInEth":0.00045,
@@ -16,7 +16,7 @@
   "walletAddress":"0xd033736d6dbc4b5de792638b63561f1500ebc2c7",
   "contracts": [
     {
-      "address": "0xb3eb95a1fff544714cff708f77f09819685c8149",
+	"address": "0xd5b91a88867dfbe8eafefd15e0eaadffcbc1257a",
       "version": "v1.5.1"
     }
   ],
@@ -38,7 +38,7 @@
   ],
   "relays": [
     {
-      "value": "//relayer.tokenlab.io",
+      "value": "//node.expex.io",
       "name": "Default EXPEX Relay"
     },
     {
@@ -126,18 +126,6 @@
       "minTradeValue": 0.0001
     },
     {
-      "symbol": "WEXP_OLD",
-      "name": "Wrapped Expanse",
-      "digits": 18,
-      "address": "0x1871B7f0B930173Be7F7F6abe6E90a0dd83A3C91",
-      "unit": "WEXP",
-      "website": "https://expanse.tech",
-      "allowance": "1000000000000000000000",
-      "allowanceWarn": "100000000000000000000",
-      "precision": 6,
-      "minTradeValue": 0.0001
-    },
-    {
       "symbol": "WEXP",
       "name": "Wrapped Expanse",
       "digits": 18,
@@ -153,7 +141,7 @@
       "symbol": "PEX",
       "name": "Pex",
       "digits": 18,
-      "address": "0xbdaaafdcdbabf18623ca84a6dea81f05fd735182",
+      "address": "0x4f5ec5a69dbe12c48ca1edc9c52b1e8896aed932",
       "unit": "PEX",
       "website": "https://expex.io",
       "allowance": "1000000000000000000000",

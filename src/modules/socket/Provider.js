@@ -8,7 +8,8 @@ class SocketProvider extends React.Component {
   }
   connect(url){
     let options = {
-      transports: ['websocket']
+      transports: ['websocket'],
+      rejectUnauthorized: false
     }
 
     const socket = io(url,options)

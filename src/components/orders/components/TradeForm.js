@@ -246,6 +246,7 @@ class TradeForm extends React.Component {
     async function toConfirm(tradeInfo,txs) {
       const configR = config.getTokenBySymbol(tokenR)
       const configL = config.getTokenBySymbol(tokenL)
+	console.log("-0-------------------------------", configR, configL);
       const ethBalance = fm.toBig(assets.getTokenBySymbol('EXP').balance).div(1e18)
       const approveGasLimit = config.getGasLimitByType('approve').gasLimit
       const frozenAmountLResult = await getEstimatedAllocatedAllowance(window.WALLET.getAddress(), tokenL)
