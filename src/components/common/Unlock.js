@@ -9,7 +9,7 @@ export function unlockWithMetaMask(web3){
   window.WALLET = new MetaMaskUnlockAccount({web3: web3, address: selectedAccount})
   window.WALLET_UNLOCK_TYPE = walletType
   web3.version.getNetwork((err, netId) => {
-    if (netId !== '1') {
+    if (netId !== '2') {
       Notification.open({
         message:intl.get('wallet.failed_connect_metamask_title'),
         description:intl.get('wallet.content_metamask_mainnet'),
@@ -42,7 +42,7 @@ export function unlockWithMetaMask(web3){
       }
       // page will be reload automatically
       web3.version.getNetwork((err, netId) => {
-        if (netId !== '1' && window.STORE && !alert) {
+        if (netId !== '2' && window.STORE && !alert) {
           alert = true
           clearInterval(accountInterval)
           window.STORE.dispatch({

@@ -45,7 +45,7 @@ class UnlockByMetaMask extends React.Component {
     this.setState({loading:true})
     if (window.web3 && window.web3.eth.accounts[0]) {
       window.web3.version.getNetwork((err, netId) => {
-        if (netId !== '1') {
+        if (netId !== '2') {
           Notification.open({
             message:intl.get('wallet.failed_connect_metamask_title'),
             description:intl.get('wallet.content_metamask_mainnet'),
@@ -85,7 +85,7 @@ class UnlockByMetaMask extends React.Component {
           }
           // page will be reload automatically
           window.web3.version.getNetwork((err, netId) => {
-            if (netId !== '1' && !alert) {
+            if (netId !== '2' && !alert) {
               alert = true
               clearInterval(accountInterval)
               account.deleteAccount({})
